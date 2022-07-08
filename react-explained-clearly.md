@@ -7015,10 +7015,444 @@ further ado, let’s get started with CSS stylesheets.
 
 
 
+## How To Use CSS Stylesheets To Style React Elements
+
+
+Here are the two steps of using a regular CSS stylesheet to style 
+React elements:
+
+** Step 1: Create a CSS stylesheet**
+
+First, create a CSS stylesheet inside the `src` folder of any of your 
+React projects. Then, define your ruleset in it.
+
+
+Here’s an example:
+
+```css
+/* style.css */
+.text-color {
+  color: seagreen;
+}
+```
+
+The CSS snippet above told the browser to apply a `seagreen` color on 
+elements with a `text-color` class name.
+
+
+**Step 2: Apply your stylesheet’s ruleset on your element**
+
+
+Import your stylesheet into the component file containing the element 
+you wish to style. Then, apply the stylesheet’s ruleset to it.
+
+Here’s an example:
+
+
+```javascript
+import React from 'react';
+import './style.css';
+
+function ImageTitle(props) {
+  return (
+    <div className="image-title">
+      <p className="text-color">
+        <strong>{props.imageData.title}</strong>
+      </p>
+    </div>
+  );
+}
+
+export default ImageTitle;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-mzkzwr?file=src%2FImageTitle.js)
 
 
 
 
+The snippet above told React to apply the "text-color" ruleset on the 
+`className="text-color"` paragraph element.
 
 
+Note: Suppose you prefer not to import your stylesheet into your script 
+file. In that case, you can use an HTML `<link>` tag to link the CSS 
+stylesheet to your project’s HTML document.
+
+
+An alternate way to style an element in ReactJS is to use an inline 
+style attribute.
+
+
+Let’s talk more about this technique below.
+
+
+
+
+## How Does An Inline Style Attribute Work In ReactJS?
+
+
+React allows you to apply inline styles to your elements.
+
+Keep in mind that in HTML, the norm is to define an inline style as a 
+string value—for instance, `style="color:brown"`.
+
+
+However, in React, you must define inline styles as objects, not 
+strings—for instance, `style={{ color: “brown” }}`. Also, remember 
+that in JSX, you wrap [JavaScript expressions](https://codesweetly.com/javascript-statement#what-is-a-javascript-expression-statement) inside curly 
+braces—for instance, `<p>{props}</p>`.
+
+So, if the expression is a JavaScript object literal, you will need 
+two sets of curly braces —for instance, `<p>{{ color: "brown"}}</p>`.
+
+Therefore, in `style={{ color:"brown" }}`, the first set of curly 
+braces (`{...}`) tells React that you want to write a JavaScript 
+expression.
+
+Meanwhile, the second set of curly braces (`{color: "brown" }`) is 
+the JavaScript expression (an object) you are assigning as the style 
+attribute’s value.
+
+
+Here’s an example:
+
+
+```javascript
+import React from 'react';
+
+function ImageDescription(props) {
+  return (
+    <div className="image-description">
+      <p style={{ color: 'brown' }}>{props.imageData.description}</p>
+    </div>
+  );
+}
+
+export default ImageDescription;
+```
+
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-59cb5r?file=src%2FImageDescription.js)
+
+
+
+The React snippet above instructed the computer to apply an inline 
+style to the paragraph element.
+
+Suppose you wish to specify more than one inline style. In such a 
+case, you can add more properties to the style attribute’s object.
+
+
+Here’s an example:
+
+
+```javascript
+import React from 'react';
+
+function ImageDescription(props) {
+  return (
+    <div className="image-description">
+      <p style={{ color: 'brown', textDecoration: 'underline' }}>
+        {props.imageData.description}
+      </p>
+    </div>
+  );
+}
+
+export default ImageDescription;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-g3dmut?file=src%2FImageDescription.js)
+
+
+Observe that we wrote `textDecoration` in camelCase. This React 
+convention follows the way style attributes get referenced in
+JavaScript.
+
+To make your code easier to read, consider storing your inline style 
+object in a separate variable like so:
+
+
+```javascript
+import React from 'react';
+
+function ImageDescription(props) {
+  const myParagraphStyles = {
+    color: 'brown',
+    textDecoration: 'underline overline'
+  };
+
+  return (
+    <div className="image-description">
+      <p style={myParagraphStyles}>{props.imageData.description}</p>
+    </div>
+  );
+}
+
+export default ImageDescription;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-gr9cgv?file=src%2FImageDescription.js)
+
+So now that we how to use CSS stylesheets and the inline style 
+attribute to style React elements, we can discuss CSS modules.
+
+
+
+
+## What Exactly Is A CSS Module?
+
+According to the official [documentation](https://github.com/css-modules/css-modules), 
+a CSS Module is a CSS file in which all class names and animation 
+names are scoped locally by default.
+
+So, is there any difference between CSS Modules and a regular CSS 
+stylesheet? Let’s find out below.
+
+
+## CSS Module Vs. CSS Stylesheet – What’s The Difference?
+
+
+CSS module is similar to a regular CSS stylesheet in many ways. 
+However, there are two main differences.
+
+
+
+**Difference 1: What are the filename convention of a regular CSS stylesheet and a CSS module?**
+
+
+The syntax for naming a regular CSS stylesheet is `[name].css`—for 
+instance, `codesweetly-styles.css`. However, a CSS module’s file 
+naming convention is `[name].module.css`—for instance, 
+`codesweetlystyles.module.css`.
+
+**Difference 2: Can all components use the styles defined in a regular CSS stylesheet and CSS modules?**
+
+When you import a CSS stylesheet into your script file, the rulesets 
+in that stylesheet are available globally to all components (and 
+child components) of that file.
+
+However, when you import a CSS module into your script file, the 
+rulesets in that module are only available locally to the component 
+that invokes the rule. Moreover, that component must be in the script 
+that imported the CSS module—otherwise, React will throw an error.
+
+Here’s an example:
+
+Create a regular CSS stylesheet inside the `src` folder of any of your 
+React projects and add some ruleset to it:
+
+
+```css
+/* codesweetly-styles.css */
+.imageInfo {
+  text-align: center;
+  color: #442109;
+}
+```
+
+Also, create a CSS module in the same `src` folder and add some 
+ruleset to it:
+
+```css
+/* codesweetly-styles.module.css */
+.imageInfo {
+  border: 8px ridge #71380f;
+  background-color: #ffe5b4;
+  padding: 20px 0 7px;
+}
+
+```
+
+Import both the CSS stylesheet and CSS module you’ve just created into 
+your script file:
+
+```javascript
+// RandomImageGenerator.js (My JavaScript file)
+import React from 'react';
+import Image from './Image';
+import ImageTitle from './ImageTitle';
+import ImageDescription from './ImageDescription';
+// Import the CSS stylesheet and CSS module:
+import './codesweetly-styles.css';
+import codesweetlyStyles from './codesweetly-styles.module.css';
+
+function RandomImageGenerator(props) {
+  return (
+    <div className="imageInfo">
+      <Image imageData={data} />
+      <ImageTitle imageData={data} />
+      <ImageDescription imageData={data} />
+    </div>
+  );
+}
+
+const data = {
+  url: 'https://placeimg.com/400/400/any',
+  title: 'Random Image',
+  description: 'Get a new image each time you refresh your browser.'
+};
+
+export default RandomImageGenerator;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-46dtdw?file=src%2FRandomImageGenerator.js)
+
+
+
+Now, go ahead to run your app and check its output in your browser.
+
+After running your app, you will notice that React only applied the 
+CSS stylesheet’s ruleset—not the CSS module's own.
+
+
+React did so because the stylesheet’s ruleset is globally available to 
+all elements on the page you imported the sheet.
+
+However, the ruleset in the module is locally available only to the 
+component that invokes the rule explicitly.
+
+Therefore, to use your CSS module’s style in your component, you must 
+specifically invoke it like so:
+
+```javascript
+// RandomImageGenerator.js (My JavaScript file)
+import React from 'react';
+import Image from './Image';
+import ImageTitle from './ImageTitle';
+import ImageDescription from './ImageDescription';
+// Import the CSS stylesheet and CSS module:
+import './codesweetly-styles.css';
+import codesweetlyStyles from './codesweetly-styles.module.css';
+
+function RandomImageGenerator(props) {
+  return (
+    // Invoke the CSS module’s ruleset:
+    <div className={`imageInfo ${codesweetlyStyles.imageInfo}`}>
+      <Image imageData={data} />
+      <ImageTitle imageData={data} />
+      <ImageDescription imageData={data} />
+    </div>
+  );
+}
+
+const data = {
+  url: 'https://placeimg.com/400/400/any',
+  title: 'Random Image',
+  description: 'Get a new image each time you refresh your browser.'
+};
+
+export default RandomImageGenerator;
+```
+
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-8ebenr?file=src%2FRandomImageGenerator.js)
+
+
+Another helpful way to style React elements is to use a CSS-in-JS library.
+
+But what exactly is a CSS-in-JS library? Let’s find out.
+
+
+
+## What Exactly Is A CSS-In-JS Library?
+
+
+A CSS-in-JS library allows you to use JavaScript to style React 
+elements by writing CSS declarations directly inside your 
+JavaScript program.
+
+Keep in mind that there are many CSS-in-JS libraries. But the popular 
+ones are styledcomponents, Emotion, glamorous, and JSS.
+
+Feel free to try any CSS-in-JS library. However, we will use Emotion 
+here to illustrate how a CSS-in-JS library works in a React 
+application.
+
+So, go ahead to install the library into any of your React projects 
+by running:
+
+```
+npm i @emotion/react
+```
+
+After you’ve installed Emotion, import, and use it in your component 
+file like so:
+
+
+
+
+```javascript
+// The comment below is essential. Emotion will not work without it!
+/** @jsx jsx */
+
+import React from 'react';
+import Image from './Image';
+import ImageTitle from './ImageTitle';
+import ImageDescription from './ImageDescription';
+// Import Emotion:
+import { css, jsx } from '@emotion/react';
+
+// Use Emotion to define your CSS styles:
+const codesweetlyStyles = css`
+  border: 8px ridge #71380f;
+  background-color: #ffe5b4;
+  padding: 20px 0 7px;
+  text-align: center;
+  color: #442109;
+`;
+
+function RandomImageGenerator(props) {
+  return ( 
+    <div css={codesweetlyStyles}>
+      <Image imageData={data} />
+      <ImageTitle imageData={data} />
+      <ImageDescription imageData={data} />
+    </div>
+  );
+}
+
+const data = {
+  url: 'https://placeimg.com/400/400/any',
+  title: 'Random Image',
+  description: 'Get a new image each time you refresh your browser.'
+};
+
+export default RandomImageGenerator;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-z5isg5?file=src%2FRandomImageGenerator.js)
+
+
+Now, go ahead to run your app and check its output in your browser.
+
+Note: You must place the /** @jsx jsx */ comment before both the React 
+and Emotion importation statements.
+
+The comment tells babel to convert JSX calls to a function called jsx 
+instead of `React.createElement`.
+
+
+And that’s it! You now know how to use the CSS-in-JS library to style 
+your React elements.
+
+Note that I used Emotion here because I like how clean their syntax 
+looks.  So, feel free to test other CSS-in-JS libraries like 
+styled-components. You may find one that suits you better.
+
+
+
+# CHAPTER 19: DEPLOYMENT IN REACTJS - How to Deploy ReactApps
+
+<!-- // page 325 -->
+So, you’ve built that lovely React App, and you are ready to deploy 
+it so everyone can see your genius! But what is the best deployment 
+technique?
+
+The ideal deployment technique for your React application largely 
+depends on the hosting platform you wish to use to host it.
+
+This chapter will show you how to deploy your app on GitHub Pages. 
+Without any further ado, let’s get it started with the first step.
 
