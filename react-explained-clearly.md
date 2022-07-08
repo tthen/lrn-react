@@ -7456,3 +7456,50 @@ depends on the hosting platform you wish to use to host it.
 This chapter will show you how to deploy your app on GitHub Pages. 
 Without any further ado, let’s get it started with the first step.
 
+
+
+# CHAPTER 20: REACT ROUTER - How to Mimic a Multipage App with React
+
+<!-- // page 335  -->
+A ReactJS tutorial won’t be complete without discussing how to create 
+a React app that functions like a multi-page application.
+
+Up until now, we’ve discussed how to build single-page applications 
+(SPA) that render just one component to the root DOM.
+
+
+
+# EPILOGUE
+
+
+<!-- // page 380 -->
+Wow! That was indeed a lot to take in. But guess what?
+
+You made it…Congratulations!
+
+So, What Next?
+
+
+It’s time to build on the concepts you’ve learned thus far. You only 
+become better by practicing. So, never be discouraged if you still 
+feel rusty with ReactJS. Just keep practicing, and building React 
+applications.
+
+Importantly, never be shy to deploy your apps live for the public 
+to use! You will be surprised how much people will appreciate
+your product.
+
+
+By the way, here are some resources you may find helpful:
+
+
+* [React Icons](https://react-icons.github.io/react-icons/) 
+makes it possible to use popular icons in your React projects freely.
+
+* The [online Babel compiler](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.13.15&externalPlugins=&assumptions=%7B%7D) 
+helps to convert JSX to JavaScript.
+
+* React recommends using [Babel language definition](https://babeljs.io/docs/en/editors) to ensure your code editor properly
+highlights both ES6 and JSX codes.
+
+* Here’s an interactive [React lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).
