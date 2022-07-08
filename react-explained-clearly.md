@@ -4572,4573 +4572,6 @@ useState() function.
 
 We used the console.log(myName) code to output myName’s content to 
 the browser’s console.
-# Introduction
-
-The best way to learn is through progressive practice. In other words, 
-the easiest way to understand React is to proactively write React 
-codes - rather than merely reading or watching videos.
-
-Never be discouraged if you get stucked at any point in time. Instead,
-go back to the lessons top re-learn the concepts necessary to continue 
-the projects.
-
-Don'te let the projects type scare you off! You are for an exciting 
-ride -- where you will learn the fundamental concepts needed to build 
-any React application. So, give it a chance.
-
-# Intro to React - Useful key points about React
-
-
-wwhat is React ?
-
-React is a component-based JavaScript library used to build user 
-interfaces (UI) efficiently.
-
-
-Why use React ?
-
-Developers primarily use ReactJS to build independent, reusable 
-components that you combine with other isolated user interfaces to 
-create highly scalable applications.
-
-For example the youtube page.
-
-In other words, React helps to build complex UIs from small, isolated 
-components that you can easily reuse in multiple different 
-applications.
-
-Essentially, each independent componente tells React the exact 
-element you want to see displayed on-screen.
-
-
-Is React a framework ?
-
-No, it is a library -- not a framework. React serves only as an 
-add-on feature to your application. It is not designed to be used as 
-an app's primary support system.
-
-
-Is React only a web Technology ?
-
-No, it is no only used on the web.
-
-For instance, ReactDOM helps to build web applications. And React 
-Native helps to build mobile applications.
-
-Do you need to use React only in certain parts of your site ? 
-No problem! You can add it to specific sections of your website where 
-you whish to use it.
-
-Or perhaps you aim to build a React-powered app. Great! You can 
-configure it to manage your entire project.
-
-No matter how massive or miniature your project  may be, React is 
-well-suited to help you develop interactive user interfaces 
-efficiently.
-
-# React with no toolchain - How to add React Directly to a website
-
-Ypu would use the steps below to add React component to a specific 
-part to an HTML page.
-
-
-Step 1. Cread a DOM container
-
--In the snippet above, we created a `<div>` container—inside which we 
-want React to display and manage a donation button.
-- The div’s id attribute is the reference we would later use in a 
-JavaScript code to find the container and tell React to display a
-donation component inside it.
-- Although most developers use a `<div>` tag as the DOM container, you 
-can use other HTML elements like the `<main>` tag if you wish.
-- You can have multiple DOM containers anywhere inside the `<body>` 
-element.
-- A DOM container is usually left empty as React will overwrite any 
-content inside it.
-
-
-Step 2. Import the React library and your component
-
-- In the snippet above, we used the first two `<script>` tags to load 
-React and ReactDOM.
-- At the same time, we used the third tag to import our donation 
-component (which we will create in the next step).
-- Whenever you are ready to deploy your project, replace all instances 
-of "development.js" in the src attributes with "production.min.js".
-- Suppose you prefer to load a different version of React and ReactDOM. 
-In that case, replace 17 in each of the src attributes with the version 
-number you wish to load.
-- It's best to set the crossorigin attribute in the scripts used to 
-load React and ReactDOM to enable a better error handling experience 
-in React 16 and later.
-
-
-Step 3. Create your component
-
-- Create a JavaScript file, called “DonationButton.js”, inside the 
-same folder your HTML file is located.
-1. We defined a component named DonateButton.
-2. We assigned a donated property to DonateButton’s state object.
-3. Programmed the component to return "Thank you so much for the
-support! It really makes a difference." if the state’s donated
-property is true. Otherwise, it should create a button element and 
-append an onClick event and a “☕ Buy me a coffee” text on it.
-4. Initialized the domContainer variable with the `<div>` container 
-we added to our HTML file in step 1.
-5. Used the ReactDOM API to display the DonateButton component 
-inside our DOM’s `<div>` container.
-
-
-And That’s It!
-
-You’ve successfully added your first React component to your 
-website. Check it out by opening the HTML file in the browser. You
-can also see mine on [StackBlitz](https://stackblitz.com/edit/web-platform-ph3amu?file=index.html).
-
-* You can display a component in multiple sections of your HTML page.
-* In the example above, we used JavaScript codes that browsers support 
-natively. However, an alternative option is to use JSX.
-* Most React developers find it easier to build and manage React 
-elements with the JSX syntax.
-
-Quick Overview
-
-This chapter discussed adding React components directly to your 
-website without using Create React App (CRA).
-
-
-# CREATE REACT APP - How to Configure a New React Project
-
-
-There are several ways to configure a React application depending 
-on your project’s objectives.
-
-Amongst all the options available, the Create React App package 
-offers  the best way to learn React or build a new single-page React 
-application.
-
-The Create React App (CRA) package helps set up React projects 
-easily without troubling yourself configuring build tools like 
-Webpack or Babel.
-
-How To Configure The Create React App Package
-
-Step 1: Get The Right Node And NPM Version 
-
-Ensure you have Node 10.16 (or greater) and NPM 5.6 (or greater) 
-installed on your system.
-
-* Use this guide to install, update, or verify your Node version.
-* If you prefer to use Yarn, ensure you have Yarn 0.25 (or greater).
-
-Step 2: Navigate To Your Project’s Abode
-
-Use the terminal to go to the directory wherein you want your new 
-project to reside.
-
-$ cd path/to/the/home/of/your/project
-
-Step 3: Create A New React Project
-
-You can create a new React app through NPM or Yarn.
-
-Note:
-
-* Yarn is a package manager (an alternative to NPM) that automatically 
-helps find and execute a specified package.
-* The choice between NPM or Yarn is totally up to you. Feel free to 
-test both package managers to decide which you prefer to use.
-In this book, I will show you how to create a new React project with 
-both NPM and Yarn so that you can have a taste of both ways.
-
-
-
-How To Create A React App With NPM
-
-Use NPM to create a new React app by running the following code on 
-your terminal:
-
-$ npx create-react-app my-project
-
-Note: npx is node’s package runner tool. It helps to automatically 
-find and execute a specified package (create-react-app in this case).
-
-
-
-How To Create React App With Yarn
-
-Use Yarn to create a new React app by running the following code on 
-your terminal:
-
-$ yarn create react-app my-project
-
-
-
-What Happens Once You Initiate The Creation Of A New React App?
-
-% // page 32
-
-Once you use the NPX (or Yarn) code to create a new app, the package 
-manager will:
-
-1. Create a `my-project` directory inside the current folder (the 
-directory you navigated to in step 2).
-2. Locally install react, react-dom, reactscripts, and other 
-transitive dependencies into `my-project` directory.
-3. Generate an initial project structure that looks like so:
-
-my-project
-├── .git
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-├── public
-│ ├── favicon.ico
-│ ├── index.html
-│ ├── logo192.png
-│ ├── logo512.png
-│ ├── manifest.json
-│ └── robots.txt
-└── src
-├── App.css
-├── App.js
-├── App.test.js
-├── index.css
-├── index.js
-├── logo.svg
-├── serviceWorker.js
-└── setupTests.js
-
-Step 4: Go Inside Your Project Directory
-
-After you’ve created a new React app, navigate into your project 
-directory like so:
-
-$ cd my-project
-
-Step 5: Run Your Application
-
-Start your application by running:
-
-$ npm start
-
-Or, if your package manager is Yarn, run:
-
-
-$ yarn start
-
-
-Step 6: See Your App Running Live In The Browser!
-
-Open http://localhost:3000 in your browser to view your app running 
-live!
-
-## Info 1: Useful Commands
-
-Use `npm start` (or `yarn start`) to run your project in development mode.
-
-Once your app starts running, open `http://localhost:3000` in the
-browser to view it.
-
-After running `npm start`, your currently opened terminal will 
-continue to process your server’s activities. As such, you won’t be 
-able to input any command on that terminal until you stop the server.
-
-However, you can open a new terminal window to use simultaneously 
-with the one processing the server. That is, use one terminal to run 
-the server and another to input commands.
-
-To stop the server, use `ctrl + c` on window or `cmd + c` on mac.
-
-<!-- page 36 -->
-
-The `create-react-app` installation configured your app to reload 
-automatically. Therefore, each change you make to your app will 
-reflect in the browser immediately.
-
-Use `npm test` (or `yarn test`) to run React’s test runner in 
-watch mode.
-
-Use `npm run build` (or `yarn build`) to create a minified bundle of 
-your application. This process makes your app ready for deployment.
-
-## Info 2: You Can Use A Template To Create Your React App
-
-Suppose you prefer to use a specific file as a template for your new 
-project. In such a case, you can append `--template [template-name]` 
-to the project configuration command like so:
-
-```terminal
-$ npx create-react-app my-project --template your-template-name
-```
-
-If you do not specify a template, React will use its base template to 
-create your project.
-
-You can learn how to build your own template by following this 
-[guide](https://create-react-app.dev/docs/custom-templates/).
-
-
-## Info 3: How To Update Your Project's Create React App Package
-
-Whenever you wish to update your project’s Create React App package 
-to a newer version, navigate inside the app’s directory and run:
-
-```terminal
-npm install react-scripts@latest
-```
-
-
-# BUILD REACT APP - How to Develop a ReactJS Application
-
-
-*How To Clean Up React’s Boilerplates*
-
-
-Go inside the src directory of your newly configured React project 
-and delete all the files in it.
-
-Note: Do not delete the src folder. Only delete the files inside it. 
-You will populate the folder with your own file in the subsequent 
-section of this guide.
-
-
-*Create Your Index.js File*
-
-In the src directory, create an `index.js` file.
-
-
-*Import React And ReactDOM*
-
-Open your `index.js` file and import the React and ReactDOM libraries 
-like so:
-
-```javascript
-// index.js
-import React from "react";
-import ReactDOM from "react-dom";
-```
-
-Note: The `react` and `react-dom` libraries were part of the modules 
-that got installed during the project configuration stage. You can 
-confirm this by searching through your project’s `node_modules` 
-directory for a `react` and `react-dom` folder.
-
-
-*How To Display Content On A Webpage*
-
-Use the ReactDOM API to insert an `<h1>` element into your HTML page’s 
-root DOM like so:
-
-```javascript
-// index.js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<h1>Hello World!</h1>,
-document.getElementById("root"));
-```
-
-The code in the snippet above instructs React to render 
-`<h1>Hello World!</h1>` into the HTML DOM element with an
-`id="root"` attribute.
-
-Note: During the project configuration, React created an HTML file in 
-your project’s `public` directory.
-
-Inside that file, you will find a `<div>` element with the attribute 
-`id="root"`. It is in this element React will insert the 
-`<h1>Hello World!</h1>` code at build time.
-
-
-*Run Your Application*
-
-Take a look at your app in the browser by running:
-
-```terminal
-npm start
-```
-
-Or, if your package manager is Yarn, run:
-
-```terminal
-yarn start
-```
-
-You can also see mine on [StackBlitz](https://stackblitz.com/edit/react-lga5df?file=src%2Findex.js).
-
-
-*Why Use HTML Inside JavaScript?*
-
-Are you wondering why we are writing HTML inside JavaScript? Well, 
-that HTML-like code is called JSX. Let’s learn more about it in the 
-next chapter.
-
-
-# WHAT IS JSX? - How Is It Used in ReactJS?
-
-JSX (JavaScript and XML) is a syntax extension to JavaScript that 
-allows you to build React elements with HTML-like syntax right inside 
-your JavaScript code.
-
-Although JSX makes it easier to create user interfaces (UI), it is 
-not mandatory to use it with React. In other words, whatever you can
-do with JSX, you can do the same with plain JavaScript.
-
-For instance, consider the two examples below. The first includes JSX 
-syntax, while the second contains regular JavaScript syntax.
-
-*Example 1: React element created and rendered with JSX syntax*
-
-```javascript
-function MyBio(props) {
-    return <h1>My name is Oluwatobi.</h1>;
-}
-
-ReactDOM.render(<MyBio />,
-document.getElementById("root"));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-8cgxyc?file=src%2Findex.js)
-
-
-In the snippet above, `<h1>My name is Oluwatobi.</h1>` and `<MyBio />` 
-are JSX code.
-
-
-*Example 2: React element created and rendered with regular JavaScript syntax*
-
-```javascript
-function MyBio(props) {
-    return React.createElement("h1", null,
-    "My name is Oluwatobi.");
-}
-
-ReactDOM.render(React.createElement(MyBio),
-document.getElementById("root"));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-hd3n7q?file=src%2Findex.js)
-
-Everything in the snippet above is regular JavaScript code.
-
-
-*What Is The React.createElement() Code?*
-
-Under the hood, the `React.createElement()` method creates an object 
-conventionally called "React element".
-
-A simplified version of a React element looks like so:
-
-```javascript
-const myBioReactElement = {
-    type: "h1",
-    props: {
-        className: null,
-        children: "My name is Oluwatobi."
-    }
-};
-```
-<!-- // page 50 -->
-
-Therefore, if you wish to avoid the compilation step in your build 
-environment, use React without JSX. However, doing so would make it 
-harder to read your code.
-
-## Info 2: JSX Still Needs The React Library In Its Scope
-
-Since JSX compiles into a `React.createElement()` call, it means you 
-must always have the React library in scope whenever you use the JSX 
-syntax.
-
-For instance, consider the code below:
-
-```javascript
-import React from "react";
-
-function MyBio(props) {
-  return <h1>My name is Oluwatobi.</h1>;
-}
-```
-
-In the snippet above, notice that `MyBio` does not reference React 
-explicitly. However, the `import React` statement is still necessary
-because MyBio’s JSX code will compile into a `React.createElement()` 
-call at runtime.
-
-## Info 3: JSX Is Not HTML
-
-While JSX looks a lot like HTML, it is not HTML. Instead, it enables 
-you to use HTML-like syntax along with all the strengths of
-JavaScript.
-
-
-## How To Use JSX
-
-The seven tips below are some of the ways to use JSX.
-
-*Tip 1: Use JSX like any JavaScript expression*
-
-At [execution time](https://codesweetly.com/web-tech-glossary#h-execution-time), 
-JSX transpiles into plain JavaScript. Therefore, 
-it is acceptable to use JSX like any other JavaScript expression.
-In other words, you can store JSX expressions in variables, use them 
-in if statements, or make them the return value of functions.
-
-Here's an example:
-
-```javascript
-import React from "react";
-import ReactDOM from "react-dom";
-
-const firstName = false;
-const myFirstName = <h1>My first name is Oluwatobi.</h1>;
-const mylastName = <h1>My last name is Sofela.</h1>;
-
-function DisplayMyName(props) {
-  if (firstName) {
-    return myFirstName;
-  } else {
-    return mylastName;
-  }
-}
-
-ReactDOM.render(<DisplayMyName />, document.getElementById("root"));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-yuuvvb?file=src%2Findex.js)
-
-
-
-*Tip 2: Wrap multi-line JSX in parentheses*
-
-Suppose you wish to write your JSX code on multiple lines. It is 
-recommended—but not compulsory—to wrap the code in parentheses. By so 
-doing, you will make your code readable and avoid the automatic
-semicolon insertion's [pitfalls](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi).
-
-Here's an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-const myName = (
-  <div>
-    <h1>My name is Oluwatobi.</h1>
-  </div>
-);
-
-ReactDOM.render(myName, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-j3g8tg?file=src%2Findex.js)
-
-
-*Tip 3: Wrap expressions in curly braces*
-
-To write JavaScript expressions in JSX, use the curly braces like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-const JavaScriptVsJSX = (
-  <h3>JSX makes it {10 * 2} times faster to build React UIs.</h3>
-);
-
-ReactDOM.render(JavaScriptVsJSX, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-z4hkla?file=src%2Findex.js)
-
-Note: React reads contents inside curly braces ({...}) as JavaScript 
-code.
-
-
-*Tip 4: Use camelCase to name attributes*
-
-When writing attribute names in JSX, use the camelCase naming 
-convention—instead of the HTML attribute naming convention. 
-
-For instance, instead of writing `class`, use `className`. Likewise, 
-instead of using `for`, write `htmlFor`. By so doing, React will get 
-access to JavaScript’s `className` and `htmlFor` APIs.
-
-Here's an example:
-
-```javascript
-const myName = (
-  <div>
-    <h1 className="about-me">My name is Oluwatobi.</h1>
-  </div>
-);
-```
-
-Note: React DOM uses the camelCase convention because JSX is much 
-like JavaScript than HTML. In other words, under the hood, JSX uses 
-JavaScript’s Web APIs.
-
-
-*Tip 5: Use lowercase to name custom attributes*
-
-Suppose you wish to create a custom attribute. In that case, use 
-lowercase like so:
-
-```javascript
-const myName = (
-  <div>
-    <h1 mycustomattribute="about-me">My name is Oluwatobi.</h1>
-  </div>
-);
-```
-
-*Tip 6: Close empty JSX tags properly*
-
-Always remember to close empty JSX tags appropriately with />, 
-just like you would do in XML.
-
-Here's an example:
-
-```javascript
-const emptyJSXElement = <input type="button" value="Click me" />;
-```
-
-
-*Tip 7: Place multiple JSX elements inside a parent element*
-
-Suppose you wish to create a UI with two or more elements. In that 
-case, place those elements inside a parent element. Otherwise, JSX 
-will throw an error.
-
-Example:
-
-```javascript
-const myButtonsUI = (
-  <div>
-    <button className="test-btn">Test JSX</button>
-    <button className="practicebtn"> Practice JSX</button>
-  </div>
-);
-```
-
-In the expression above, the `<div>` tag is the parent element used to 
-contain two (2) `<button>` tags.
-
-## Time To Practice With JSX
-
-Here is your moment to practice the concepts you've learned on JSX.
-
-In this exercise, your goal is to convert the regular JavaScript 
-code below to its JSX equivalence.
-
-```javascript
-function NameRequest(props) {
-return React.createElement(
-"div",
-{ className: "name-request-div" },
-"Enter your full name:",
-React.createElement("input", {
-id: "name-request-input",
-type: "text",
-placeholder: "Your last name first"
-})
-);
-}
-
-ReactDOM.render(
-React.createElement(NameRequest),
-document.getElementById("root")
-);
-```
-
-Note: To accomplish this task, you need to:
-
-1. Set up a new React project.
-2. Import React and ReactDOM libraries.
-3. Convert all the regular JavaScript in the snippet above to JSX.
-4. Run your application!
-
-Remember: You will benefit much from this tutorial if you do the 
-exercises yourself.
-
-If you get stuck at any point, don’t be discouraged. Instead, review 
-the lessons and give the exercise another try.
-
-Once you’ve given it your best shot (you’d only cheat yourself if 
-you don’t!), go ahead to see how I approached it on 
-[StackBlitz](https://stackblitz.com/edit/react-vhjnbf?file=src%2Findex.js)
-
-
-
-# WHAT IS A COMPONENT? - How Is It Used in ReactJS?
-
-<!-- // page59 -->
-
-React component is a JavaScript function (or class) that can accept 
-arbitrary inputs (called "props") and returns an element (UI).
-
-Note: The element returned by a component tells React what you want 
-it to display onscreen.
-
-Types Of Components
-
-There are two equivalent types of React components: function and 
-class components.
-
-
-What Is A Function Component?
-
-A function component is a regular JavaScript function that can accept 
-a single properties object (props) as its parameter and emits a React 
-element as its return value.
-
-Here's an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyBio(props) {
-  return React.createElement('h1', null, 'My name is Oluwatobi.');
-}
-
-ReactDOM.render(React.createElement(MyBio), document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-hd3n7q?file=src%2Findex.js)
-
-The code in the snippet above is a function component that accepts a 
-single properties object (props) and returns a React element.
-
-The JSX alternative to the function component above is:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyBio(props) {
-  return <h1>My name is Oluwatobi.</h1>;
-}
-
-ReactDOM.render(<MyBio />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-8cgxyc?file=src%2Findex.js)
-
-
-*What Is A Class Component?*
-
-A class component is a plain JavaScript Class that extends a 
-user-defined class to the builtin `React.Component` class located 
-inside the React library.
-
-Here's an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class MyBio extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return React.createElement('h1', null, 'My name is Oluwatobi.');
-  }
-}
-
-ReactDOM.render(<MyBio />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-ka5d5z?file=src%2Findex.js)
-
-## Important Stuff To Know About Class Components
-
-Keep these four essential pieces of info in mind whenever you choose 
-to use a class component.
-
-<!-- // page 62 -->
-
-*Info 1: You must extend your class component*
-
-
-In a class component, the `extends React.Component` code is a required 
-statement used to extend your component to React’s built-in `Component`  
-class. This extension makes it possible for your component to use 
-`React.Component`’s methods such as `constructor()`,
-`static getDerivedStateFromProps()`, `render()`, and 
-`componentDidMount()`.
-
-
-
-*Info 2: The constructor() method is not compulsory in a class component*
-
-
-Implementing a class component’s `constructor()` is not mandatory. 
-You only need it for two purposes:
-
-* To initialize the component’s local state by setting its `this.state` 
-property to an object.
-
-* To bind event handlers to instances of the component.
-
-
-*Info 3: Always call super() before other statements*
-
-
-Whenever you use the `constructor()` method in a class component, it 
-is essential to call `super(props)` before any other statement. 
-Otherwise, the constructor’s `this.props` value will be undefined, 
-which can cause bugs within your app.
-
-
-*Info 4: super() makes React’s built-in methods available to you*
-
-
-`super(props)` serves to invoke `React.Component`’s constructor 
-method—which allows your component to inherit `React.Component`’s 
-built-in methods.
-
-
-## How To Invoke React Components
-
-There are three common ways to invoke React components: without 
-props, with props, or with the dot notation.
-
-
-*How To Invoke Components Without Props*
-
-
-You can invoke a component without passing any property (props) 
-into it like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyBio(props) {
-  return <h1>My name is Oluwatobi.</h1>;
-}
-
-ReactDOM.render(<MyBio />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-8cgxyc?file=src%2Findex.js)
-
-
-In the snippet above, `<MyBio />` component tag is used—without 
-any props—to invoke MyBio component.
-
-
-*How To Invoke Components With Props*
-
-
-Suppose you wish to pass some properties into a component. In such a 
-case, invoke the component like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyBio(props) {
-  return <h1>My name is {props.firstName}.</h1>;
-}
-
-ReactDOM.render(
-  <MyBio firstName="Oluwatobi" />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-kqsqbh?file=src%2Findex.js)
-
-In the snippet above, `<MyBio firstName="Oluwatobi" />` component tag 
-is used to invoke MyBio component with `firstName="Oluwatobi"` passed 
-in as an argument to the `props` parameter.
-
-
-Note:
-
-* During `MyBio`’s invocation, React will turn the `firstName="Oluwatobi"`
-attribute into an object `({ firstName: "Oluwatobi" })`.
-
-* If you wish to specify two or more arguments, separate each with 
-whitespace
-
-like so:
-
-<MyBio firstName="Oluwatobi" lastName="Sofela" website="codesweetly.com" />
-
-
-In the snippet above, we invoked `MyBio`. At the same time, we passed 
-into it three attributes—which React will convert into a regular 
-JavaScript object `({ firstName:"Oluwatobi", lastName:"Sofela", website:"codesweetly.com" })`.
-
-
-*How To Invoke Components With The Dot Notation*
-
-
-Suppose your component is inside an object. In that case, use the dot 
-notation to invoke it like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Define two components inside an object:
-const MyBio = {
-  FirstName: function FirstName(props) {
-    return <h1>My first name is {props.firstName}.</h1>;
-  },
-
-  LastName: function LastName(props) {
-    return <h1>My last name is {props.lastName}.</h1>;
-  }
-};
-
-// Invoke the LastName component:
-ReactDOM.render(
-  <MyBio.LastName lastName="Sofela" />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-v6wdpg?file=src%2Findex.js)
-
-
-
-In the snippet above, `<MyBio.LastName lastName="Sofela" />` tells 
-React that: In `MyBio` object, invoke `LastName` component and pass in 
-`lastName="Sofela"` as its `props` argument.
-
-Note: You cannot use the bracket notation to invoke a component. In 
-other words, React will throw an error if you write
-`<MyBio[LastName]lastName="Sofela" />.
-
-## Time To Practice With React Components
-
-Here is your moment to practice the concepts you've learned on React 
-components.
-
-In this exercise, your goal is to convert the function component 
-below into its class equivalence.
-
-```javascript
-function NameRequest(props) {
-  return ( 
-    <div className="name-request-div">
-      Enter your full name:
-      <input
-        id="name-request-input"
-        type="text"
-        placeholder="Your last name first"
-      />
-    </div>
-  );
-}
-
-ReactDOM.render(<NameRequest />,
-document.getElementById("root"));
-```
-
-Note: To accomplish this task, you need to:
-
-1. Set up a new React project.
-
-2. Import React and ReactDOM libraries.
-
-3. Convert the function component to a class component.
-4. Run your application!
-
-Remember: You will benefit much from this tutorial if you do the 
-exercises yourself.
-
-If you get stuck at any point, don’t be discouraged. Instead, review 
-the lessons and give the exercise another try.
-
-Once you’ve given it your best shot (you’d only cheat yourself if you 
-don’t!), go ahead to see how I approached it on 
-[StackBlitz](https://stackblitz.com/edit/react-r4mjna?file=src%2Findex.js).
-
-
-## Function Vs. Class Components—What’s The Difference?
-
-
-Here are the three main differences between a function and a class 
-component:
-
-
-*Diff 1: Simplicity*
-
-
-A function component is shorter, simpler, and easier to read and debug 
-than a class component.
-
-For instance, consider this function component:
-
-```javascript
-function MyName(props) {
-  return <h1>My name is Oluwatobi.</h1>;
-}
-```
-
-The class equivalence of the function component above is this:
-
-```javascript
-class MyName extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <h1>My name is Oluwatobi.
-    </h1>;
-  }
-}
-```
-
-Notice that the two components above are equivalent and produce the 
-same result. However, the function component is shorter and easier 
-to understand.
-
-
-*Diff 2: "this" keyword*
-
-You can do without the keyword `this` in function components. However, 
-in class components, you are bound to use it considerably.
-
-Therefore, if you are uncomfortable with the keyword `this`, you will 
-find it better to stick with function components.
-
-Note: See my article on the keyword this for a simplified 
-[guide](https://codesweetly.com/javascript-this-keyword/).
-
-
-*Diff 3: Most developer’s choice*
-
-
-Before React 16.8 (February 6, 2019), most developers preferred class 
-components because it was the only way to add local states and 
-lifecycle methods to React components.
-
-However, with the introduction of Hooks in 2019, React expects the 
-combination of function components and Hooks to be the primary way 
-people write React components.
-
-### Which Is Better—Function Or Class Components?
-
-
-The best component type largely depends on your taste—as React sees 
-the two UI types as an equivalent way of defining React components. 
-Moreover, you can use both function and class components in the same
-project.
-
-Nevertheless, it is essential to note that most developers (including 
-the React team) prefer function components because they are easier 
-to understand than class components.
-
-
-### Important Stuff To Know About React Components
-
-Irrespective of your chosen component type, keep these three essential 
-pieces of info in mind whenever you decide to create React components.
-
-1. Always begin your component’s name with uppercase lettering.
-
-2. Ensure your component never modify its own props.
-
-3. It is best to split long components into smaller chunks to make 
-individual parts easy to read, manage, and reuse. 
-
-Let's now discuss the difference between a React component and a 
-React element.
-
-
-
-*React Component Vs. Element —What’s The Difference?*
-
-
-React component is a JavaScript function (or class) that can accept 
-a single properties object (props) as its parameter and emits a
-React element as its return value.
-
-Here's an example:
-
-```javascript
-function ReactComponent(props) {
-  return (
-    <p>I am a {props.nodeType} React
-    element inside a React component.</p>
-  );
-}
-```
-
-A component helps to think about each UI in isolation. It also helps 
-to split UIs into independent, reusable chunks of code.
-
-Note: A component is composed of one or more React elements.
-
-React element is the specific user interface (UI) you want to see 
-displayed on-screen.
-
-Here's an example:
-
-```javascript
-const reactElement = <p>I am a React element</p>;
-```
-
-Useful [Resource](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)
-
-See Dan Abramov’s article for more on the differences between React 
-components and elements.
-
-
-# RENDERING ELEMENTS - How to Render React Element to a Webpage
-<!-- page 77 -->
-
-To render (insert) an element into a webpage, React provides a 
-rendering method called `ReactDOM.render()`.
-
-
-*How Does The React Rendering Method Work?*
-
-`ReactDOM.render()` accepts two arguments. Here is its syntax:
-
-```javascript
-ReactDOM.render(First argument, Second argument);
-```
-
-First argument: The React element The first argument accepted by the 
-`ReactDOM.render()` method is the specific element you wish to render 
-to your HTML root DOM.
-
-Here’s an example:
-
-```javascript
-ReactDOM.render(<p>First argument</p>);
-```
-
-The snippet above tells React to render a paragraph element.
-
-Second argument: The DOM element The second argument accepted by the 
-`ReactDOM.render()` method is the HTML DOM container wherein you want 
-to render (insert) your React element.
-
-
-Here's an example:
-
-```javascript
-ReactDOM.render(<p>First argument</p>,
-document.getElementById("root"));
-```
-
-The snippet above tells React to render a paragraph element inside an 
-HTML element with `id="root"`.
-
-Here’s another example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-const reactElement = <h1>Hello 👋, I am Oluwatobi Sofela</h1>;
-
-ReactDOM.render(reactElement, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-2xub41?file=src%2Findex.js)
-
-In the snippet above, we used the `ReactDOM.render()` method to tell 
-React to render `reactElement` into the root DOM node with `id="root"`.
-As such, React will insert `reactElement`'s content inside your HTML 
-file’s `div` element with `id="root"`.
-
-
-### Important Stuff To Know About Rendering React Elements
-
-Keep these two essential pieces of info in mind whenever you choose 
-to render React elements.
-
-
-*Info 1: The root DOM node can be any HTML element*
-
-The "root DOM node" is the name popularly used for whatever HTML DOM 
-element you choose to use to contain your React elements.
-
-People use that name because it is the root (first) of all the DOM 
-nodes "React" will manage in a specific project.
-
-Note: It is not compulsory to use a `<div>` tag for the root DOM node. 
-Likewise, "root" is not a mandatory name for your root node’s id.
-
-Try it Yourself: Change the name and type of your project’s root DOM 
-like so:
-
-
-1. Go inside the React project you recently completed.
-
-2. Inside your project’s public directory, open the index.html file.
-
-3. Within the page’s `<body>` element, substitute `<div id="root"></div>` 
-with `<main id="user-name"></main>`.
-
-4. Go into your src directory and open the `index.js` file.
-
-5. Within the `ReactDOM.render()` method, substitute
-`document.getElementById("root")` with
-`document.getElementById("user-name")`.
-
-6. Go ahead to run your application and check its output in your 
-browser. Notice that although you’ve changed the root DOM's default 
-tag type and id attribute name, however, the application's output 
-remains the same!
-
-
-That is to say, the "root DOM node" is merely a conventional name for 
-any HTML element you create for React to manage.
-
-
-
-*Info 2: All React projects need both React and ReactDOM libraries*
-
-Always remember to import the `React` and `ReactDOM` libraries into 
-your project. Otherwise, your app will not render.
-
-
-## Time To Practice With Rendering Elements
-
-Here is your moment to practice the concepts you've learned on 
-rendering React elements.
-
-In this exercise, your goal is to render an ordered list of your 
-three (3) favorite colors.
-
-Note: To accomplish this task, you need to:
-
-1. Set up a new React project.
-
-2. Import React and ReactDOM libraries.
-
-3. Create the logic to render your ordered list.
-
-4. Run your application!
-
-Remember: You will benefit much from this tutorial if you do the 
-exercises yourself.
-
-If you get stuck at any point, don’t be discouraged. Instead, review 
-the lessons and give the exercise another try.
-
-Once you’ve given it your best shot (you'd only cheat yourself if you 
-don’t!), go ahead to see how I approached it below.
-
-
-
-### How Did You Go About Rendering Your Ordered List?
-
-
-Below is one feasible way to render an ordered list in ReactJS.
-
-
-*Step 1: Create a new React app*
-
-
-Setup the project by using npm’s `create-react-app` package to create 
-a new React app `called colors-app`:
-
-```terminal
-npx create-react-app colors-app
-```
-
-Alternatively, you can use Yarn to create a new React app like so:
-
-```terminal
-yarn create react-app colors-app
-```
-
-
-*Step 2: Clean up the src folder*
-
-
-Inside the app’s src directory, delete all files except `index.js`.
-
-
-*Step 3: Render three colors to the DOM*
-
-
-Inside `index.js`, render an ordered list of three colors to the DOM 
-element with `id="root"`:
-
-```javascript
-// index.js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(
-  <ol>
-    <li>Blue</li>
-    <li>White</li>
-    <li>SaddleBrown</li>
-  </ol>,
-
-  document.getElementById("root")
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-gkaeqq?file=src%2Findex.js)
-
-
-Keep in mind that you can refactor the code by moving the ordered list 
-element into a separate variable like so:
-
-```javascript
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-const myFavColors = [
-  <ol>
-    <li>Blue</li>
-    <li>White</li>
-    <li>SaddleBrown</li>
-  </ol>
-];
-
-ReactDOM.render(myFavColors[0], document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-yelvkj?file=src%2Findex.js)
-
-
-Alternatively, you can use a component to store the ordered list like so:
-
-```javascript
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyFavColors() {
-  return (
-    <ol>
-      <li>Blue</li>
-      <li>White</li>
-      <li>SaddleBrown</li>
-    </ol>
-  );
-}
-
-ReactDOM.render(<MyFavColors />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-nxpbju?file=src%2Findex.js)
-
-
-*Step 4: Run the application*
-
-
-Take a look at the app in the browser by running:
-
-```
-npm start
-```
-
-Or, if your package manager is Yarn, run:
-
-```
-yarn start
-```
-
-*How To Update A Rendered Element*
-
-
-React elements are immutable objects that you cannot change once 
-you’ve created them. You can only update a React element by creating 
-a new one and rendering it with `ReactDOM.render()`.
-
-Once you’ve used the rendering method to render your new user 
-interface (UI), React DOM will update only the necessary part. It 
-will do so by comparing the new element to the previous one and apply 
-just the difference.
-
-
-# CREATING LIST OF ELEMENTS - How to Create a List of React Elements from an Array
-
-<!-- // page 89 -->
-
-Suppose you wish to use the items in a specific JavaScript array to 
-create a list of React elements. In such a case, you can use the 
-`map()` method.
-
-
-For instance, consider the code below:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Define the bestColors array:
-const bestColors = ['Blue', 'White', 'Peru'];
-
-// Use the bestColors array to create a list of React elements:
-const bestColorsElements = bestColors.map(color => (
-  <li className="template-list">{color}</li>
-));
-
-// Render the element array to the root DOM:
-ReactDOM.render(<ul>{bestColorsElements}</ul>, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-ys73px?file=src%2Findex.js)
-
-
-
-In the snippet above, we used `map()` to create a new list of React 
-elements by converting each of `bestColors` items to `<li>` elements.
-
-
-Notice that we rendered the list of elements directly in the 
-`ReactDOM.render()` method. However, in most cases, you would use a 
-component to do such rendering.
-
-
-So, let’s refactor the previous example by moving the 
-`bestColorsElements` variable and the `<ul>` element into a component:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Define the bestColors array:
-const bestColors = ['Blue', 'White', 'Peru'];
-
-function BestColor(props) {
-  const bestColorsDup = props.myBestColors;
-  const bestColorsElements = bestColorsDup.map(color => (
-    <li className="template-list">{color}</li>
-  ));
-  return <ul>{bestColorsElements}</ul>;
-}
-
-// Render the BestColor component to the root DOM:
-ReactDOM.render(
-  <BestColor myBestColors={bestColors} />,
-  document.getElementById('root')
-);
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-z7ravq?file=src%2Findex.js)
-
-
-Observe that the script above creates the same elements as the 
-previous example. But in this scenario, we made the array of React 
-elements the output of our component. Then, we instructed the 
-computer to render the component to the root DOM.
-
-If you now run the code, all will appear fine. However, we’ve got a 
-slight issue. Let’s discuss the problem.
-
-
-
-*Each React Element In An Array Needs A Key!*
-
-
-If you check your console, you will see a warning message that says: 
-"Each child in an array or iterator should have a unique "key" prop". 
-The message means that whenever you create an array of elements, 
-React needs you to specify a unique identity for each item in the 
-list.
-
-The unique identity keys help React identify which array items have 
-been changed, added, or removed.
-
-Therefore, let’s refactor the previous snippet so that each element 
-in the `bestColorsElements` will have a unique key attribute.
-
-
-*How To Add Unique Keys To Each React Element*
-
-
-There are two common ways to assign unique keys to each element of 
-an array. The first is the unrecommended way. While the second is
-the best technique.
-
-
-*The Unrecommended Way To Assign Keys To An Array Of React Elements*
-
-One way to add unique keys is to use each item’s index as its key 
-attribute value.
-
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Use the bestColors array to create a list of React elements:
-function BestColor(props) {
-  const bestColorsDup = props.myBestColors;
-
-  // Use each item’s index as its key attribute value:
-  const bestColorsElements = bestColorsDup.map((color, index) => (
-    <li key={index} className="template-list">
-      {color}
-    </li>
-  ));
-  return <ul>{bestColorsElements}</ul>;
-}
-
-// Define the bestColors array:
-const bestColors = ['Blue', 'White', 'Peru'];
-
-// Render the BestColor component to the root DOM:
-ReactDOM.render(
-  <BestColor myBestColors={bestColors} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-bubvpe?file=src%2Findex.js)
-
-
-In the snippet above, we specified a key attribute on each `<li>` 
-element. We then used each item’s index as the attribute’s value.
-
-Note:
-
-* React does not recommend using indexes as an item’s key. Only use 
-it as a last resort when you do not have stable IDs.
-
-* Whenever you use an index as the key attribute’s value, ensure the 
-order of items in the array never changes. Otherwise, you may have 
-severe issues with performance and component state.
-
-<!-- // page 95 -->
-
-
-*The Best Way To Assign Keys To An Array Of React Elements*
-
-
-The best way to add unique keys is to use stable IDs.
-
-Typically, in real projects, you will use IDs from a database. 
-However, when you do not have access to a database, you can install a
-package that helps to generate unique ids.  In this tutorial, I will 
-use the `uniqid NPM` package to illustrate how you may use stable
-IDs as keys to an array of React elements.
-
-
-
-*What Is Uniqid?*
-
-`Uniqid` is an id generator package that creates unique ids based on 
-your current time, process, and machine’s name.
-
-*How To Use Uniqid*
-
-Follow the steps below to learn how to use the uniqid package.
-
-
-*Step 1: Configure a new React project* 
-
-Set up a new React project.
-
-Remember: It is best practice for your project’s name to reflect its 
-purpose.
-
-
-Note: It would help if you attempted the configuration on your own 
-first. Afterward, if you need a refresher, revisit chapter three—
-where we dealt with the easiest way to set up a new React project. 
-
-
-*Step 2: Clean up the src folder*
-
-
-Inside the src directory of your project, delete all files except 
-`index.js`.
-
-
-*Step 3: Install uniqid*
-
-
-While you are in your project’s folder, run:
-
-```
-npm install uniqid
-```
-
-Or, if your package manager is Yarn, run:
-
-```
-yarn add uniqid
-```
-
-
-*Step 4: Import and use uniqid in your project*
-
-
-Open your `index.js` file and replicate the code below:
-
-```javascript
-// Import React, ReactDOM, and uniqid:
-import React from 'react';
-import ReactDOM from 'react-dom';
-import uniqid from 'uniqid';
-
-// Use the bestColors array to create a list of React elements:
-function BestColor(props) {
-  const bestColorsDup = props.myBestColors;
-
-  // Use uniqid to generate each item’s key attribute value:
-  const bestColorsElements = bestColorsDup.map(color => (
-    <li key={uniqid()} className="template-list">
-      {color}
-    </li>
-  ));
-  return <ul>{bestColorsElements}</ul>;
-}
-
-// Define the bestColors array:
-const bestColors = ['Blue', 'White', 'Peru'];
-
-// Render the BestColor component to the root DOM:
-ReactDOM.render(
-  <BestColor myBestColors={bestColors} />,
-  document.getElementById('root')
-);
-```
-
-In the snippet above, we imported the `uniqid` package. Then, we used 
-it to generate unique id keys for each list item.
-
-
-*Step 5: Run your application*
-
-
-Go ahead to run your application and check its output in your browser.
-
-You can also see mine on 
-[StackBlitz](https://stackblitz.com/edit/react-rek4lj?file=src%2Findex.js).
-
-
-## Important Stuff To Know About Assigning Keys
-
-Keep these two essential pieces of info in mind whenever you assign 
-keys to an array of React elements. They will help you avoid 
-unnecessary headaches.
-
-
-*Info 1: Set each array element’s key while creating the array*
-
-
-The right time to specify each array element’s unique key is during 
-the array’s creation.
-
-In other words, suppose you extract your template element into a 
-separate component.
-
-In such a case, you should set the key attribute on the component’s 
-invocation tag—not on the extracted template element.
-
-For instance, here is incorrect placement of the key attribute:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import uniqid from 'uniqid';
-
-function ColorListElement(props) {
-  const color = props.currColor;
-  // The key is wrongly placed here:
-  return (
-    <li key={uniqid()} className="template-list">
-      {color}
-    </li>
-  );
-}
-
-function BestColor(props) {
-  const bestColorsDup = props.myBestColors;
-  const bestColorsElements = bestColorsDup.map(color => (
-    // The key attribute above should have been set here:
-    <ColorListElement currColor={color} />
-  ));
-  return <ul>{bestColorsElements}</ul>;
-}
-
-const bestColors = ['Blue', 'White', 'Peru'];
-ReactDOM.render(
-  <BestColor myBestColors={bestColors} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-dsbknq?file=src%2Findex.js)
-
-
-In the snippet above, observe that we incorrectly set each item’s key 
-outside the `map()` method. You should avoid such a mistake!
-
-Always set the key attribute while creating the array of elements.
-So, in the example above, we should have set the key on the component 
-invocation tag—in the `map()` method.
-
-Therefore, let’s refactor the script like so:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import uniqid from 'uniqid';
-
-function ColorListElement(props) {
-  const color = props.currColor;
-  return <li className="template-list">{color}</li>;
-}
-
-function BestColor(props) {
-  const bestColorsDup = props.myBestColors;
-  const bestColorsElements = bestColorsDup.map(color => (
-    // The key attribute is rightly specified here:
-    <ColorListElement key={uniqid()} currColor={color} />
-  ));
-  return <ul>{bestColorsElements}</ul>;
-}
-
-const bestColors = ['Blue', 'White', 'Peru'];
-
-ReactDOM.render(
-  <BestColor myBestColors={bestColors} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-h4cxie?file=src%2Findex.js)
-
-
-
-*Info 2: Keys don’t get passed to React components*
-
-
-React neither transfers the key attribute to components nor includes 
-it as an attribute of a rendered element.
-
-React uses keys solely to know the state of array items. They help 
-React identify which elements have changed, are added, or removed from 
-the list.
-
-Therefore, if you need to use a specific key’s value in your component 
-or on your DOM element, you must explicitly pass it as the value of 
-a different attribute.
-
-Here’s an example:
-
-```javascript
-const bestColorsElementArray = bestColorsArr.map(color =>
-  <ColorListElement
-    key={color}
-    id={color}
-    currColor={color} />
-);
-```
-
-In the snippet above, we initialized `id` with the same value as the 
-`key` attribute.
-
-By so doing, we can access `props.id` in the `ColorListElement` 
-component, but not `props.key`.
-
-
-
-# REACT DOM TAG VS COMPONENT TAG - What Is the Difference?
-
-The difference between React DOM tags and component tags is that a 
-DOM tag begins with lowercase lettering. In contrast, a component 
-tag starts with an uppercase lettering.
-
-Let’s talk more about these differences.
-
-
-*DOM Tags Begin With Lowercase Lettering*
-
-
-If you start your tag name with a lowercase letter, React will treat 
-such a name as an HTML element tag name.
-
-Here’s an example:
-
-```javascript
-<div />;
-```
-
-React will interpret the tag in the snippet above as an HTML element 
-tag because it begins with a lowercase letter.
-
-
-Note: At runtime, Babel will compile the DOM tag above to
-`React.createElement("div")`—where the "div" string represents the
-HTML `div` tag.
-
-
-*Component Tags Start With Uppercase Lettering*
-
-
-If you begin your tag name with an uppercase letter, React will 
-consider such a name as a user-defined component tag name.
-
-Here’s an example:
-
-```javascript
-<Div />;
-```
-
-React will read the tag in the above snippet as a React component tag 
-because it begins with an uppercase letter.
-
-Note: At runtime, Babel will compile the component tag above to
-`React.createElement(Div)`—where the Div text references the Div component
-you defined in your JavaScript file.
-
-
-## Important Stuff To Know About React Component Tags
-
-Keep these two essential pieces of info in mind whenever you choose 
-to use React component tags.
-
-
-*Info 1: You cannot use an expression as a component tag*
-
-
-Keep in mind that you cannot use an [expression](https://codesweetly.com/javascript-statement#what-is-a-javascript-expression-statement) 
-as a React component tag. For instance, consider the code below:
-
-```javascript
-// Import the React and ReactDOM libraries:
-import React from "react";
-import ReactDOM from "react-dom";
-// Define a function component:
-function FirstName(props) {
-  return <h1>My first name is {props.firstNameText}.</h1>;
-}
-// Define another function component:
-function LastName(props) {
-  return <h1>My last name is {props.lastNameText}</h1>;
-}
-
-const bioComponents = {
-  firstNameComponent: FirstName,
-  lastNameComponent: LastName
-};
-// Use a third function component to invoke the two components defined above:
-function ComponentInvocator(props) {
-  return (
-    // Wrong! Your component tag cannot be an expression.
-    <bioComponents[props.componentName]
-      firstNameText={props.firstNameText}
-      lastNameText={props.lastNameText}
-    />
-  );
-}
-// Render the ComponentInvocator component to the root DOM:
-ReactDOM.render(
-  <ComponentInvocator
-    componentName="lastNameComponent"
-    firstNameText="Oluwatobi"
-    lastNameText="Sofela"
-  />,
-  document.getElementById("root")
-);
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-wma3x7?file=src%2Findex.js)
-
-
-
-In the script above, observe that we incorrectly used an expression 
-as a component tag. So, when you run the script, React will throw an 
-error.
-
-The correct way to use an expression to express the name of a 
-component tag is to set it as a variable. Let’s see how below.
-
-
-*Info 2: You can use a variable as a component tag*
-
-
-Suppose you wish to use an expression to express the name of a 
-component tag. In such a case, assign that expression to a capitalized 
-variable. By so doing, you can use the variable as the component tag.
-
-For instance, consider the code below:
-
-
-```javascript
-// Import the React and ReactDOM libraries:
-import React from 'react';
-import ReactDOM from 'react-dom';
-// Define a function component:
-function FirstName(props) {
-  return <h1>My first name is {props.firstNameText}.</h1>;
-}
-// Define another function component:
-function LastName(props) {
-  return <h1>My last name is {props.lastNameText}</h1>;
-}
-// Set the components above as the value of two different properties:
-const bioComponents = {
-  firstNameComponent: FirstName,
-  lastNameComponent: LastName
-};
-// Use a third function component to invoke the two components defined above:
-function ComponentInvocator(props) {
-  // Assign an expression to a capitalized variable:
-  const ComponentToBeInvoked = bioComponents[props.componentName];
-  return (
-    // Correct! A component tag can be a capitalized variable.
-    <ComponentToBeInvoked
-      firstNameText={props.firstNameText}
-      lastNameText={props.lastNameText}
-    />
-  );
-}
-// Render the ComponentInvocator component to the root DOM:
-ReactDOM.render(
-  <ComponentInvocator
-    componentName="lastNameComponent"
-    firstNameText="Oluwatobi"
-    lastNameText="Sofela"
-  />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-gxhbvu?file=src%2Findex.js)
-
-
-
-The code in the script above is the right way to use an expression to 
-reference the name of a component tag.
-
-
-Note:
-
-* The `const ComponentToBeInvoked = bioComponents[props.componentName]`
-code instructs the computer to initialize the `ComponentToBeInvoked` 
-variable with the output of the `bioComponents[props.componentName]`
-expression.
-
-* As per the script above, `bioComponents[props.componentName]`
-output will be the `LastName` function component because we passed
-`componentName="lastNameComponent"` to `ComponentInvocator`’s `props`
-parameter.
-
-
-# CHAPTER 10: REUSABLE COMPONENTS - How to Split React Components into Reusable Files
-
-<!-- // page 113 -->
-
-Suppose you have a complex component or one that has elements you wish 
-to reuse. In that case, it’s best to split such components into smaller 
-chunks. You can then separate the extracts into individual files.
-
-So how exactly does this work? Let's see with an example.
-
-
-Example Of A Splittable Component
-
-
-Consider this `RandomImageGenerator` component below:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function RandomImageGenerator(props) {
-  return (
-    <div className="imageInfo">
-      <div className="image">
-        <img src={props.imageData.url} alt={props.imageData.title} />
-      </div>
-      <div className="image-title">
-        <p>
-          <strong>{props.imageData.title}</strong>
-        </p>
-      </div>
-      <div className="image-description">
-        <p>{props.imageData.description}</p>
-      </div>
-    </div>
-  );
-}
-
-const data = {
-  url: 'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.',
-};
-
-ReactDOM.render(
-  <RandomImageGenerator imageData={data} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-wsxvuy?file=src%2Findex.js)
-
-<!-- // page 115 -->
-
-
-The snippet above programmed the `RandomImageGenerator` component to 
-render an `imageInfo` div which contains three nested divs (`image`, 
-`image-title`, and `image-description`).
-
-The issue with `RandomImageGenerator`'s definition is that it is hard 
-to reuse its nested elements.
-
-For instance, suppose you want to reuse the `image-title` div in a 
-different project. In such a case, you must duplicate or rewrite the
-code because its definition in `RandomImageGenerator` makes it hard
-to reuse.
-
-A better way to define the `RandomImageGenerator` UI is to split its
-reusable parts into separate files. By so doing, you will have a 
-palette of reusable components that will save you a considerable
-amount of coding time—especially in larger projects.
-
-
-## How To Split The RandomImageGenerator Component
-
-Follow the steps below to learn how you can split `RandomImageGenerator` 
-into smaller chucks.
-
-
-*Step 1: Configure a new project*
-
-Set up a new React project.
-
-Remember: It is best practice for your project’s name to reflect its 
-purpose.
-
-
-Note: It will help if you attempt the configuration on your own first. 
-Afterward, if you need a refresher, revisit chapter three—where we 
-dealt with the easiest way to set up a new React project.
-
-
-*Step 2: Clean up the src folder*
-
-
-Inside the src directory of your project, delete all files except 
-`index.js`.
-
-
-*Step 3: Create a `RandomImageGenerator.js` file*
-
-
-While you are in the src directory, create a new file called
-`RandomImageGenerator.js`.
-
-
-*Step 4: Define the `RandomImageGenerator` component*
-
-
-Open your `RandomImageGenerator.js` file and define a
-`RandomImageGenerator` component in it like so:
-
-
-```javascript
-import React from 'react';
-
-function RandomImageGenerator(props) {
-  return (
-    <div className="imageInfo">
-      <div className="image">
-        <img src={props.imageData.url} alt={props.imageData.title} />
-      </div>
-      <div className="image-title">
-        <p> <strong>{props.imageData.title}</strong></p>
-      </div>
-      <div className="image-description">
-        <p>{props.imageData.description}</p>
-      </div>
-    </div>
-  );
-}
-
-const data = { url: 'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.'
-};
-
-export default RandomImageGenerator;
-```
-
-
-*Step 5: Create an Image.js file*
-
-
-In the src directory, create a new file called `Image.js`.
-
-
-*Step 6: Extract the image div into the `Image.js` file*
-
-
-Open your `Image.js` file and extract into it the image div from the
-`RandomImageGenerator` component like so:
-
-
-```javascript
-import React from "react";
-
-function Image(props) {
-  return (
-    <div className="image">
-      <img src={props.imageData.url} alt={props.imageData.title} />
-    </div>
-  );
-}
-
-export default Image;
-```
-
-Your  RandomImageGenerator.js` file should now look like so:
-
-
-```javascript
-import React from 'react';
-
-function RandomImageGenerator(props) {
-  return (
-    <div className="imageInfo">
-      <div className="image-title">
-        <p>
-          <strong>{props.imageData.title}</strong>
-        </p>
-      </div>
-      <div className="image-description">
-        <p>{props.imageData.description}</p>
-      </div>
-    </div>
-  );
-}
-
-
-const data = {url:'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.'
-};
-
-export default RandomImageGenerator;
-```
-
-*Step 7: Create an ImageTitle.js file*
-
-
-In the `src` directory, create a new file called `ImageTitle.js`.
-
-
-*Step 8: Extract the `image-title` div into the `ImageTitle.js` file*
-
-
-Open your `ImageTitle.js` file and extract into it the `image-title` 
-div from the `RandomImageGenerator` component like so:
-
-
-```javascript
-import React from "react";
-
-function ImageTitle(props) {
-  return (
-    <div className="image-title">
-      <p><strong>{props.imageData.title}</strong></p>
-    </div>
-  );
-}
-
-export default ImageTitle;
-```
-
-Your `RandomImageGenerator.js` file should now look like so:
-
-```javascript
-import React from 'react';
-
-function RandomImageGenerator(props) {
-  return (
-    <div className="imageInfo">
-      <div className="image-description">
-        <p>{props.imageData.description}</p>
-      </div>
-    </div>
-  );
-}
-
-const data = {url:'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.'
-};
-
-export default RandomImageGenerator;
-```
-
-
-*Step 9: Create an `ImageDescription.js` file*
-
-
-In the `src` directory, create a new file called `ImageDescription.js`.
-
-
-
-*Step 10: Extract the `image-description` div into the `ImageDescription.js` file*
-
-
-Open your `ImageDescription.js` file and extract into it the 
-`image-description` div from the `RandomImageGenerator` component 
-like so:
-
-
-```javascript
-import React from "react";
-
-function ImageDescription(props) {
-  return (
-    <div className="image-description">
-      <p>{props.imageData.description}</p>
-    </div>
-  );
-}
-
-export default ImageDescription;
-```
-
-
-Your `RandomImageGenerator.js` file should now look like so:
-
-
-```javascript
-import React from 'react';
-
-function RandomImageGenerator(props) {
-  return (
-    <div className="imageInfo"></div>
-  );
-}
-
-const data = {url:'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.'
-};
-
-export default RandomImageGenerator;
-```
-
-
-*Step 11: Import your extracted components into the `RandomImageGenerator.js` file*
-
-
-Import the `Image`, `ImageTitle`, and `ImageDescription` components into 
-your `RandomImageGenerator.js` file and invoke them like so:
-
-```javascript
-import React from 'react';
-
-// Import Image, ImageTitle, and ImageDescription:
-import Image from './Image';
-import ImageTitle from './ImageTitle';
-import ImageDescription from './ImageDescription';
-
-function RandomImageGenerator(props) {
-return (
-  <div className="imageInfo">
-    {/** Invoke Image, ImageTitle, and ImageDescription: */}
-    <Image imageData={data} />
-    <ImageTitle imageData={data} />
-    <ImageDescription imageData={data} />
-  </div>
-  );
-}
-
-const data = {url:'https://placeimg.com/400/400/any',
-  title: 'Random Image',
-  description: 'Get a new image each time you refresh your browser.'
-};
-
-export default RandomImageGenerator;
-```
-
-Note:
-
-* In the snippet above, observe that while we imported the components, 
-we included each file’s relative path (that is, ./). You must always 
-do so for files that are not third-party dependencies. By so doing, 
-JavaScript will know precisely where to locate the imported module.
-
-
-If you omit the relative path, JavaScript will automatically look 
-anywhere for any file with the specified name—which may cause your
-app to malfunction.
-
-* In "./Image", the dot (.) means current. While the slash (/) means 
-directory. Therefore, "./Image" means in the current directory, look 
-for the component file named Image.
-
-* We omitted the `.js` extension because the `import` statement looks 
-for JavaScript files by default. So, you only need to include the
-file extension for non-JavaScript files.
-
-
-*Step 12: Render the `RandomImageGenerator` component to the DOM*
-
-
-Import the `RandomImageGenerator` component into your `index.js` file 
-and render it to the root DOM like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RandomImageGenerator from './RandomImageGenerator';
-
-ReactDOM.render(<RandomImageGenerator />,
-document.getElementById('root'));
-```
-
-
-*Step 13: Run your application*
-
-
-Go ahead to run your application and check its output in your browser.
-
-You can also see mine on [StackBlitz](https://stackblitz.com/edit/react-qf7eba?file=src%2Findex.js).
-
-
-And that’s it!
-
-
-You’ve successfully extracted the reusable portion of the 
-`RandomImageGenerator` component into individual parts that are easier 
-to read, manage, and reuse!
-
-
-Note:
-
-* By convention, React developers typically use one file for just one 
-component. By so doing, it makes each UI easy to reuse in multiple 
-projects.
-
-* It is best to use uppercase for the first letter of a component’s 
-filename. This practice helps to quickly differentiate a React 
-component file from a regular JavaScript file.
-
-* React developers typically create a components directory for storing 
-all of a project’s component files for effective organization.
-
-
-In other words, you can create a components folder to store the 
-`RandomImageGenerator`, `Image`, `ImageTitle`, and `ImageDescription`
-components. When you do so, remember to update each file’s relative 
-path. For instance, instead of "`./Image`", you will use
-"`./components/Image`".
-
-* A common practice is to use an App component as the parent 
-(container) of all other components in a project. And `index.js` 
-(the entry file) is typically used to render the App component to 
-the root DOM. So, for instance, you may choose to rename the 
-`RandomImageGenerator` component (and file) to `App`.
-
-
-## Time To Practice With Reusable Components
-
-
-Here is your moment to practice the concepts you’ve learned on 
-reusable components.
-
-In this exercise, your goal is to render four (or more) checkboxes to 
-the webpage. Ensure each checkbox has its associated text next to it.
-
-
-Note:
-
-To accomplish this task, you need to:
-
-1. Set up a new React project.
-
-2. Import React and ReactDOM libraries.
-
-3. Create the required logic to render four (or more) checkboxes to 
-the webpage.
-
-4. Run your application!
-
-
-Remember:
-
-
-You will benefit much from this tutorial if you do the exercises yourself.
-
-
-If you get stuck at any point, don’t be discouraged. Instead, review the 
-lessons and give the exercise another attempt.
-
-
-Once you’ve given it your best shot (you’d only cheat yourself if you 
-don’t!), go ahead to see how I approached it below.
-
-
-
-### How Did You Go About Creating Your Checkboxes?
-
-
-Below is one feasible way to render multiple checkboxes to the webpage.
-
-
-*Step 1: Create a new React app*
-
-
-Setup the project by using npm’s `create-react-app` package to create 
-a new React app called checkboxes-app:
-
-```
-npx create-react-app checkboxes-app
-```
-
-
-*Step 2: Clean up the src folder*
-
-
-Inside the src directory, delete all files except `index.js` and `App.js`.
-
-
-
-*Step 3: Create a components directory*
-
-
-While you are in the src directory, create a new folder called 
-`components` and move `App.js` inside it.
-
-
-
-*Step 4: Create a Checkbox.js file*
-
-
-Go into the `src/components` directory and create a new file called 
-`Checkbox.js`.
-
-
-
-*Step 5: Create the Checkbox component*
-
-
-Open the `Checkbox.js` file. Then, create a `Checkbox` function 
-component that returns a `<div>` element containing an `<input>` 
-element and a <label> element:
-
-
-```javascript
-// Checkbox.js
-import React from "react";
-
-function Checkbox(props) {
-  return (
-    <div className="checkbox">
-      <input type="checkbox" id={props.id} />
-      <label htmlFor={props.id}>{props.text}</label>
-    </div>
-  );
-}
-
-export default Checkbox;
-```
-
-
-
-*Step 6: Create an App component*
-
-
-Open your `App.js` file. Then, create an App component that returns 
-a `<div>` element containing a `<p>` element and four (4) `<Checkbox>` 
-components:
-
-
-```javascript
-// App.js
-import React from "react";
-import Checkbox from "./Checkbox";
-
-function App() {
-  return (
-    <div className="techSubjectsQuestionnaire">
-      <p><strong>What tech subjects are you learning?</strong></p>
-      <Checkbox id="javascript" text="JavaScript" />
-      <Checkbox id="css" text="CSS" />
-      <Checkbox id="html" text="HTML" />
-      <Checkbox id="react" text="ReactJS" />
-    </div>
-  );
-}
-
-export default App;
-```
-
-
-
-*Step 7: Render the App component*
-
-
-Open your `index.js` file and render the App component to the DOM 
-like so:
-
-```javascript
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-
-*Step 8: Run the application*
-
-
-Take a look at the app in the browser by running:
-
-```
-npm start
-```
-
-You can also see mine on [StackBlitz](https://stackblitz.com/edit/react-32pyep?file=src%2Findex.js).
-
-
-Keep in mind that had we not separated the `checkbox` div element into 
-a separate file, our `App` component would have looked like so:
-
-```javascript
-// App.js
-import React from 'react';
-import Checkbox from './Checkbox';
-
-function App() {
-  return (
-    <div className="techSubjectsQuestionnaire">
-      <p>
-        <strong>What tech subjects are you learning?</strong>
-      </p>
-      <div className="checkbox">
-        <input type="checkbox" id="javascript" />
-        <label htmlFor="javascript">JavaScript</label>
-      </div>
-      <div className="checkbox">
-        <input type="checkbox" id="css" />
-        <label htmlFor="css">CSS</label>
-      </div>
-      <div className="checkbox">
-        <input type="checkbox" id="html" />
-        <label htmlFor="html">HTML</label>
-      </div>
-      <div className="checkbox">
-        <input type="checkbox" id="react" />
-        <label htmlFor="react">ReactJS</label>
-      </div>
-    </div>
-  );
-}
-
-export default App;
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-rqp1ik?file=src%2Fcomponents%2FApp.js)
-
-Notice how long-winded and unreadable the App component looks. Such 
-is the disadvantage of not splitting your UI into reusable files.
-
-
-# CHAPTER 11: REACT PROPS - What Exactly Is props in ReactJS?
-
-<!-- // page 136 -->
-
-React props are parameters used to pass arguments (objects) to 
-components. Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class MyName extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <h1>My name is {this.props.firstName}.</h1>;
-  }
-}
-
-ReactDOM.render(
-  <MyName firstName="Oluwatobi" />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-hsvwqz?file=src%2Findex.js)
-
-
-
-In the snippet above, we defined MyName’s constructor with a single 
-properties (props) parameter. And we also passed the props parameter 
-into the super() method.
-
-Note that the function component equivalence of the code above is this:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function MyName(props) {
-  return <h1>My name is {props.firstName}.</h1>;
-}
-
-ReactDOM.render(
-  <MyName firstName="Oluwatobi" />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-aumrkv?file=src%2Findex.js)
-
-
-
-## Important Stuff To Know About React Props
-
-
-Keep these two essential pieces of info in mind whenever you choose to 
-use React props.
-
-
-*Info 1: You can set default props on a component*
-
-
-Suppose you wish to define a default properties object (props) on your 
-component. In such a case, you can use the `defaultProps` property.
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Create a class component:
-class MyName extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <h1>My name is {this.props.fullName}.</h1>;
-  }
-}
-
-// Set a default props on MyName:
-MyName.defaultProps = {
-  fullName: 'Oluwatobi Sofela'
-};
-
-ReactDOM.render(<MyName />, document.getElementById('root'));
-```
-
-
-If you now invoke MyName without providing any value for `props.fullName`,
-
-React will default to "Oluwatobi Sofela".
-
-For instance, when you run the code below, `MyName` will return the 
-`defaultProps`’ value.
-
-
-```javascript
-// Invoke MyName without any props:
-<MyName />;
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-g2txfg?file=src%2Findex.js)
-
-
-The function component way of setting default properties is like so:
-
-
-```javascript
-// Create a function component:
-function MyName(props) {
-  return <h1>My name is {props.fullName}.</h1>;
-}
-
-// Set a default props on MyName:
-MyName.defaultProps = {
-  fullName: 'Oluwatobi Sofela'
-};
-
-// Invoke MyName without any props:
-ReactDOM.render(<MyName />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-fnpzwo?file=src%2Findex.js)
-
-
-
-Keep in mind that you can also set default properties right inside 
-your class component.
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Create a class component:
-class MyName extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  // Set a default props on MyName:
-  static defaultProps = {
-    fullName: 'Oluwatobi Sofela'
-  };
-
-  render() {
-    return <h1>My name is {this.props.fullName}.</h1>;
-  }
-}
-
-// Invoke MyName without any props:
-ReactDOM.render(<MyName />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-eyemex?file=src%2Findex.js)
-
-
-Note: defaultProps works for undefined props only—not for null props.
-
-In other words, suppose we had invoked `<MyName fullName={null} />`. 
-In that case, `props.fullName` will remain null.
-
-
-*Info 2: Do not copy props into your state*
-
-
-To prevent bugs in your app, never copy props into state like so:
-
-```javascript
-this.state = { fullName: props.fullName};
-```
-
-If you make the common mistake of writing your code as in the snippet 
-above, the state object will not reflect updates to the `fullName` 
-prop—which may cause your app to malfunction.
-
-Check this [blog post](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html) to learn more about the common problems you may 
-encounter if you copy props into the state object.
-
-
-
-# CHAPTER 12: REACT STATE - What Exactly Is the State Object?
-
-<!-- // page 143 -->
-
-React state is a built-in object used to store a component’s values 
-that are likely to change over time.
-
-React provides two different ways to access the state object. The 
-specific technique you will employ depends on the type of component 
-you prefer to use. Below is an overview of the two approaches.
-
-
-*The First Way To Access React State (The Class Component Way)*
-
-
-Suppose your UI is a class component. In that case, you can use 
-`this.state` in the `constructor()` method to access React state.
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutUs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { companyName: 'CodeSweetly' };
-  }
-
-  render() {
-    return <h1>About {this.state.companyName}</h1>;
-  }
-}
-
-ReactDOM.render(<AboutUs />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-qw5mzp?file=src%2Findex.js)
-
-
-
-In the snippet above, we stored a `companyName` property inside the
-component’s state object.
-
-Over time, if you decide to update any of the state’s properties, you 
-can do so via React’s `setState()` method like so:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyAge: 2
-    };
-    this.updateCompanyAge = this.updateCompanyAge.bind(this);
-  }
-
-  updateCompanyAge() {
-    this.setState({ companyAge: this.state.companyAge + 1 });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName} is {this.state.companyAge} years old!
-        </p>
-        <button type="button" onClick={this.updateCompanyAge}>
-          Click to update age
-        </button>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-yag3ie?file=src%2Findex.js)
-
-
-
-In the snippet above, whenever `updateCompanyAge()` gets triggered, 
-`this.setState()` will update AboutComp’s state object.
-
-Note:
-
-* You should always define your class component’s state in the 
-`constructor()` method.
-
-* Unless your class component’s event handler is a class field or an 
-arrow function, you should use bind to define the handler’s operating 
-context. You will see exactly why in chapter fifteen.
-
-Just in case you are wondering how the `setState()` method works, 
-let’s discuss it below.
-
-
-
-*How Does The `SetState()` Method Work?*
-
-
-`setState()` is the method used to update a class component’s state.
-The method enqueues updates to a component's state, and alerts React 
-of the need to re-render the UI with the updated state.
-
-It is best to think of `setState()` as a request—not an immediate 
-command—to update a component’s state because React may accomplish the 
-update asynchronously.
-
-Therefore, there’s no guarantee that the state update will happen 
-immediately.
-
-
-Note: Unless `shouldComponentUpdate()` returns false, `setState()` 
-will trigger a re-rendering of your class component.
-
-So now that we know what `setState()` is, we can talk about its syntax.
-
-
-
-*SetState’s Syntax*
-
-
-`setState()` accepts two arguments: an updater and an optional 
-callback function. 
-
-```javascript
-setState(updater, callback);
-```
-
-
-## What Is SetState’s Updater Argument?
-
-
-An updater is the first argument accepted by the  setState()` method. 
-It is a required argument for specifying the new value you want to 
-merge with the component’s current state.
-
-Keep in mind that the updater argument can be an object or a function.
-
-
-*How to set an object as setState’s updater argument*
-
-
-The `setState()` syntax with an updater object looks like so:
-
-```javascript
-this.setState({ propertyName:
-propertyValue });
-```
-
-In the snippet above, we specified an object as `setState()`’s 
-updater argument.
-
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: 'CodeSweetly' };
-  }
-
-  updateName = () => {
-    this.setState({ name: 'Oluwatobi' });
-  };
-
-  render() {
-    return (
-      <div>
-        {console.log(this.state)}
-        <h1>The name state is: {this.state.name}</h1>
-        <button type="button" onClick={this.updateName}>
-          Click to update state
-        </button>
-        <p>
-          <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-        </p>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-6ueac1?file=src%2Findex.js)
-
-<!-- // page 150 -->
-
-
-
-
-In the snippet above, observe that we specified an object as 
-setState()’s updater argument.
-
-In other words, we used an updater object to update AboutComp’s name 
-state from “CodeSweetly” to “Oluwatobi”.
-
-Let’s now see how to set a function as setState()’s updater argument.
-
-
-
-*How to set a function as setState’s updater argument*
-
-
-The setState syntax with an updater function looks like so:
-
-
-```javascript
-this.setState((currState, currProps) => {
-  return { ... };
-});
-```
-
-
-In the snippet above, we specified a function as setState()’s updater 
-argument.
-
-
-Note:
-
-* The updater function’s first parameter (currState) refers to the 
-component’s current state at the time setState is applying the 
-state’s update.
-
-* The updater function’s second parameter (currProps) refers to the 
-component’s current props when setState is applying the state’s update.
-
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: 'Oluwatobi' };
-  }
-
-  updateName = () => {
-    this.setState((currState, currProps) => ({
-      name: currState.name + ' ' + currProps.lastName
-    }));
-  };
-
-  render() {
-    return (
-      <div>
-        {console.log(this.state)}
-        <h1>The name state is: {this.state.name}</h1>
-        <button type="button" onClick={this.updateName}>
-          Click to update state
-        </button>
-        <p>
-          <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-        </p>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <AboutComp lastName="Sofela" />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-k9cxta?file=src%2Findex.js)
-
-
-
-In the snippet above, we specified a function as setState()’s updater 
-argument.
-
-In other words, we used an updater function to update AboutComp’s name 
-state from “Oluwatobi” to “Oluwatobi Sofela”.
-
-Let’s now discuss setState’s second argument.
-
-
-
-
-*What Is SetState's Callback Argument?*
-
-
-A callback function is the second argument accepted by the `setState()` 
-method.
-
-The callback argument is optional and will run only after `setState() `
-has completed its task, and the component is re-rendered.
-
-Note: React recommends `componentDidUpdate()` as a better alternative 
-to setState’s callback argument.
-
-
-
-## Important Stuff To Know About State In A Class Component
-
-
-Keep these three essential pieces of info in mind whenever you choose 
-to use state in a class component.
-
-
-*Info 1: Always modify state with the `setState()` method*
-
-
-The built-in `setState()` method makes React know that you have 
-modified your component’s state. Consequently, it ensures React 
-invokes the UI’s `render()` method (and other lifecycle methods) 
-with the updated state.
-
-
-Therefore, to avoid bugs in your React app, always use `setState()` 
-to alter your states —not the assignment operator (=).
-
-In other words, never modify state like so: 
-
-
-```javascript
-this.state.companyAge = 32.
-```
-
-Instead, update your state object like so:
-
-```javascript
-this.setState({ companyAge: 32 }).
-```
-
-
-
-*Info 2: setState()’s object argument gets merged into the UI’s current state*
-
-
-`setState()` merges whatever object you provided as its argument with 
-the properties currently in the component’s state.
-
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyAge: 2,
-      companyWebsite: 'www.codesweetly.com'
-    };
-  }
-
-  updateCompanyAge = () => {
-    this.setState({ companyAge: 175 });
-  };
-
-  render() {
-    return (
-      <div>
-        {console.log(this.state)}
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName} is {this.state.companyAge} years old!
-        </p>
-        <button type="button" onClick={this.updateCompanyAge}>
-          Click to update age
-        </button>
-        <p>
-          <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-        </p>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-xglq4d?file=src%2Findex.js)
-
-
-
-In the snippet above, `setState` will merge `{ companyAge: 175 }` with 
-the component’s current state.
-
-In other words, `{ companyAge: 175 `}` will totally replace
-`this.state.companyAge`.
-
-
-
-*Info 3: Use an updater function for successive state updates*
-
-
-Whenever you update a component’s state multiple times in the same 
-cycle, React may accomplish such updates asynchronously. So, you may 
-get an erroneous result if you use an object as setState’s argument.
-
-
-Therefore, it is best to use an updater function —not an updater 
-object—whenever you need to use multiple successive `setState()` 
-calls to modify a specific state. 
-
-For instance, consider the scenario below where I used two updater 
-objects in the same cycle to update a component’s state:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyAge: 5
-    };
-  }
-
-  updateCompanyAge = () => {
-    this.setState({ companyAge: this.state.companyAge + props.numbA });
-    this.setState({ companyAge: this.state.companyAge + props.numbB });
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName} is {this.state.companyAge} years old!
-        </p>
-        <button type="button" onClick={this.updateCompanyAge}>
-          Click to update age
-        </button>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <AboutComp numbA={10} numbB={1} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-cywe9t?file=src%2Findex.js)
-
-<!-- // page 157 -->
-
-
-Only the second `this.setState()` code may eventually update the UI’s 
-state because React will run the two codes asynchronously.
-
-As such, subsequent calls will override values from previous calls. 
-Therefore, the component’s state will update erroneously.
-
-To ensure successive `setState()` codes update your component’s state 
-appropriately, you must use a function as setState’s argument.
-
-
-
-For instance, consider the scenario below where I used two updater 
-functions in the same cycle to update a component’s state:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyAge: 5
-    };
-  }
-
-  updateCompanyAge = () => {
-    this.setState((currState, currProps) => ({
-      companyAge: currState.companyAge + currProps.numbA
-    }));
-    this.setState((currState, currProps) => ({
-      companyAge: currState.companyAge + currProps.numbB
-    }));
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName} is {this.state.companyAge} years old!
-        </p>
-        <button type="button" onClick={this.updateCompanyAge}>
-          Click to update age
-        </button>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <AboutComp numbA={10} numbB={1} />,
-  document.getElementById('root')
-);
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-3bcewm?file=src%2Findex.js)
-
-
-
-In the snippet above, I used two updater functions inside two separate 
-`setState()` methods to update AboutComp’s state reliably.
-
-
-Remember:
-
-* The updater function’s first parameter (`currState`) refers to the 
-component’s current state at the time `setState` is applying the 
-state’s update.
-
-* The updater function’s second parameter (`currProps`) refers to the 
-component’s current props at the time `setState` is applying the 
-state’s update.
-
-
-Let’s now discuss the second way to access React state.
-
-
-## The Second Way To Access React State (The Function Component Way)
-
-
-Suppose your component is a function component. In such a case, you 
-can use `useState` (the state hook) to access React state.
-
-
-Here’s an example:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp(props) {
-  const [companyName] = React.useState('CodeSweetly');
-  return <h1>About {companyName}</h1>;
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-jydgqe?file=src%2Findex.js)
-
-
-
-
-In the snippet above, we stored a “CodeSweetly” string inside the 
-component’s state object. Then, we set the state object as 
-`companyName`’s initial value.
-
-Over time, if you decide to update any of the state’s properties, 
-you can do so via the state’s updater function like so:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp(props) {
-  const [companyName] = React.useState('CodeSweetly');
-  const [companyAge, setCompanyAge] = React.useState(2);
-
-  function updateCompanyAge() {
-    setCompanyAge(companyAge + 1);
-  }
-
-  return (
-    <div>
-      <h1>About {companyName}</h1>
-      <p>
-        {companyName} is {companyAge} years old!
-      </p>
-      <button type="button" onClick={updateCompanyAge}>
-        Click to update age
-      </button>
-    </div>
-  );
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-pctpwn?file=src%2Findex.js)
-
-
-In the snippet above, whenever `updateCompanyAge()` gets triggered,
-`setCompanyAge()` will update `AboutComp`’s state object.
-
-
-Note: A typical naming convention is to prefix the updater function’s 
-name with “set”.  So, for instance, if the state’s name is color, the 
-updater’s name will be `setColor`.
-
-
-So now that we’ve seen both ways to access the state object, we can 
-discuss the differences between a class component’s state and that of 
-a function component.
-
-
-## Class Component’s State Vs. Function Component’s State
-
-
-Below are the differences between a class component’s state and that 
-of a function component.
-
-
-
-*Difference 1: What Data Type Can You Assign To The State Object?*
-
-
-In a class component, you must always initialize and update state with 
-an object data type.
-
-However, in a function component, you can initialize and update state 
-with various data types such as string, number, array, object, and 
-Boolean.
-
-For instance, consider this example of a class component:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyAge: 2
-    };
-    this.updateCompanyAge = this.updateCompanyAge.bind(this);
-  }
-
-  updateCompanyAge() {
-    this.setState({ companyAge: this.state.companyAge + 1 });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName} is {this.state.companyAge} years old!
-        </p>
-        <button type="button" onClick={this.updateCompanyAge}>
-          Click to update age
-        </button>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-yag3ie?file=src%2Findex.js)
-
-
-
-
-Notice that the component’s state got initialized and updated with 
-objects (`{companyName: "CodeSweetly", companyAge: 2`} and 
-`{companyAge:this.state.companyAge + 1 }`).
-
-Such is the requirement of a class component’s state: you must always 
-assign it an object data type.
-
-Now, consider this example of a function component:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp(props) {
-  const [companyName] = React.useState('CodeSweetly');
-  const [companyAge, setCompanyAge] = React.useState(2);
-
-  function updateCompanyAge() {
-    setCompanyAge(companyAge + 1);
-  }
-
-  return (
-    <div>
-      <h1>About {companyName}</h1>
-      <p>
-        {companyName} is {companyAge} years old!
-      </p>
-      <button type="button" onClick={updateCompanyAge}>
-        Click to update age
-      </button>
-    </div>
-  );
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-pctpwn?file=src%2Findex.js)
-
-
-
-Observe that the component’s state got initialized and updated with 
-numbers (2 and companyAge + 1). Such is the dynamic nature of a 
-function component’s state: you are free to assign it a number, 
-Boolean, string, object, or array data type.
-
-
-
-
-*Difference 2: Will Both Function And Class Components Auto-Merge A New State Into The Current One?*
-
-
-A class component’s updater function will auto-merge the new state 
-into the UI’s current state.
-
-However, a function component’s updater function will not auto-merge 
-the new and old states together.
-
-Instead, you must use the [spread operator](https://codesweetly.com/spread-operator/) to merge states manually. 
-Otherwise, the new state will completely overwrite the old one.
-
-
-For instance, consider the class component example below:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class AboutComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: 'CodeSweetly',
-      companyFounder: 'Oluwatobi Sofela'
-    };
-  }
-
-  updateCompanyBio = () => {
-    this.setState({ companyWebsite: 'www.codesweetly.com' });
-  };
-
-  render() {
-    return (
-      <div>
-        {console.log(this.state)}
-        <h1>About {this.state.companyName}</h1>
-        <p>
-          {this.state.companyName}’s founder is {this.state.companyFounder}.
-        </p>
-        {this.state.companyWebsite ? (
-          <p>Our website is: {this.state.companyWebsite}.</p>
-        ) : null}
-        <button type="button" onClick={this.updateCompanyBio}>
-          Click to update bio
-        </button>
-        <p>
-          <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-        </p>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-s2efuj?file=src%2Findex.js)
-
-
-
-In the snippet above, AboutComp’s current state is 
-`{ companyName:"CodeSweetly", companyFounder:"Oluwatobi Sofela" }`.
-
-When the component’s button gets clicked, React will auto-merge the 
-new state with the current state.
-
-Therefore, setState will update the current state to 
-
-`{ companyName:"CodeSweetly", companyFounder:"Oluwatobi Sofela"`,
-`companyWebsite:"www.codesweetly.com" }`.
-
-
-
-Now, consider this instance of a function component:
-
-
-
-```javascript
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp() {
-  const [companyBio, setCompanyBio] = useState({
-    companyName: 'CodeSweetly',
-    companyFounder: 'Oluwatobi Sofela'
-  });
-
-  function updateCompanyBio() {
-    setCompanyBio({ companyWebsite: 'www.codesweetly.com' });
-  }
-
-  return (
-    <div>
-      {console.log(companyBio)}
-      <h1>About {companyBio.companyName}</h1>
-      <p>
-        {companyBio.companyName}’s founder is {companyBio.companyFounder}.
-      </p>
-      {companyBio.companyWebsite ? (
-        <p>Our website is: {companyBio.companyWebsite}.</p>
-      ) : null}
-      <button type="button" onClick={updateCompanyBio}>
-        Click to update bio
-      </button>
-      <p>
-        <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-      </p>
-    </div>
-  );
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-nvatuf?file=src%2Findex.js)
-
-
-
-In the snippet above, AboutComp’s current state is 
-`{ companyName:"CodeSweetly", companyFounder:"Oluwatobi Sofela" }`.
-
-When the component’s button gets clicked, React will not auto-merge 
-the new state with the current state.
-
-Therefore, `setCompanyBio` will update the current state to 
-`{companyWebsite:"www.codesweetly.com"}`.
-
-Notice that the update completely replaced the previous state. The 
-overwriting of the new on the old happened because React does not
-auto-merge a function component’s states.
-
-To merge a function component’s new state with the old one, you must 
-use the [spread operator](https://codesweetly.com/spread-operator/). Let’s see how below.
-
-
-
-
-### How To Use The Spread Operator To Merge A Function Component’s State 
-
-
-Consider the code below:
-
-```javascript
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp() {
-  const [companyBio, setCompanyBio] = useState({
-    companyName: 'CodeSweetly',
-    companyFounder: 'Oluwatobi Sofela'
-  });
-
-  function updateCompanyBio() {
-    setCompanyBio({ ...companyBio, companyWebsite: 'www.codesweetly.com' });
-  }
-
-  return (
-    <div>
-      {console.log(companyBio)}
-      <h1>About {companyBio.companyName}</h1>
-      <p>
-        {companyBio.companyName}’s founder is {companyBio.companyFounder}.
-      </p>
-      {companyBio.companyWebsite ? (
-        <p>Our website is: {companyBio.companyWebsite}.</p>
-      ) : null}
-      <button type="button" onClick={updateCompanyBio}>
-        Click to update bio
-      </button>
-      <p>
-        <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-      </p>
-    </div>
-  );
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-uzmndw?file=src%2Findex.js)
-
-
-
-The snippet above first used the spread operator `(...)` to copy 
-`companyBio`'s content. Then, it merged the duplicated state with the 
-new one.
-
-Therefore, `setCompanyBio` will update the current state to 
-`{ companyName:"CodeSweetly", companyFounder:"Oluwatobi Sofela",`
-`companyWebsite:"www.codesweetly.com" }`.
-
-
-Note: React recommends calling the state hook multiple times rather 
-than putting all your function component’s states into a single
-object.
-
-By so doing, it becomes easy later to extract some related logic into 
-a custom Hook.
-
-So, for a mini practice, see if you can split `companyName`, 
-`companyFounder`, and `companyWebsite` into individual state variables.
-
-
-Keep in mind that the spread operator works the same way when your 
-function component’s state is an array. For instance, consider the 
-example below.
-
-
-
-*Example of how to use spread to merge a function component’s state array data types*
-
-Suppose your function component’s state is an array. In that case, 
-you can use the spread operator to merge the component’s new state
-with the old one like so:
-
-
-```javascript
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutComp() {
-  const [companyBio, setCompanyBio] = useState([
-    'CodeSweetly',
-    'Oluwatobi Sofela'
-  ]);
-
-  function updateCompanyBio() {
-    setCompanyBio([...companyBio, 'www.codesweetly.com']);
-  }
-
-  return (
-    <div>
-      {console.log(companyBio)}
-      <h1>About {companyBio[0]}</h1>
-      <p>
-        {companyBio[0]}’s founder is {companyBio[1]}.
-      </p>
-      {companyBio[2] ? <p>Our website is: {companyBio[2]}.</p> : null}
-      <button type="button" onClick={updateCompanyBio}>
-        Click to update bio
-      </button>
-      <p>
-        <strong>⬇⬇⬇ Check the console ⬇⬇⬇</strong>
-      </p>
-    </div>
-  );
-}
-
-ReactDOM.render(<AboutComp />, document.getElementById('root'));
-```
-
-
-
-Try it on [StackBlitz](https://stackblitz.com/edit/react-4ihnuh?file=src%2Findex.js)
-
-
-
-The snippet above first used the spread operator `(...)` to copy 
-`companyBio`'s content. Then, it merged the duplicated state
-array with the new value.
-
-Therefore, `setCompanyBio` will update the current state to 
-`["CodeSweetly","Oluwatobi Sofela","www.codesweetly.com"]`.
-
-
-So now that we understand the differences between a class component’s 
-state and that of a function component, we can talk about what
-makes React state different from a JavaScript variable.
-
-
-
-
-*React State Vs. JavaScript Variable*
-
-
-React state and JavaScript variable are two similar storage systems. 
-You can use both to store a component’s values that are likely to
-change over time.
-
-The main difference between the two boils down to how React knows when 
-to re-render your component.
-
-Essentially, React knows you have updated your component’s values when 
-you modify them using the `setState()` method or `useState`'s updater 
-function. But React does not keep track of updates to JavaScript
-variables.
-
-
-Remember: Unless `shouldComponentUpdate()` returns `false, setState()` 
-and `useState`'s updater function will trigger a re-rendering of
-your component.
-
-So, when is the best time to use React state instead of a JavaScript 
-variable? Let’s find out below.
-
-
-
-
-*When Is The Best Time To Use React State Instead Of A JavaScript Variable?*
-
-
-Keep in mind that React will not trigger a re-rendering of your 
-component if you do not use the state hook or the `setState()` method 
-to update your values.
-
-Therefore, to ascertain whether to use React state or a JavaScript 
-variable to store a specific value, ask yourself this question:
-
-Should React trigger a re-rendering of this component when I update 
-this value?
-
-If yes, then use React state to store that value. If no, then use 
-JavaScript variable to store that value.
-
-Note: React will not keep any record of your JavaScript variable 
-across renders. In other words, a variable will disappear whenever its
-function exits.
-
-Therefore, define the variable outside your component if you wish to 
-retain its data across render. By so doing, you will ensure the 
-variable’s value is preserved entirely by JavaScript—not React.
-
-
-
-
-## Time To Practice With React State
-
-
-Here is your moment to practice the concepts you’ve learned on React 
-state.
-
-In this exercise, your goal is to create a button element that allows 
-users to log in and out of an app.
-
-You should also create an H1 text that shows if the user is logged in 
-or logged out.
-
-
-Note:
-
-To accomplish this task, you need to:
-
-1. Set up a new React project.
-
-2. Import React and React DOM libraries.
-
-3. Create the required logic to create the login (out) button.
-
-4. Run your application!
-
-
-Remember:
-
-
-You will benefit much from this tutorial if you do the exercises 
-yourself.
-
-If you get stuck at any point, don’t be discouraged. Instead, 
-review the lessons and give the exercise another attempt.
-
-Once you’ve given it your best shot (you’d only cheat yourself if you 
-don’t!), go ahead to see how I approached it below.
-
-
-
-### How Did You Go About Creating Your Login (Out) Button?
-
-Below is one feasible way to get the exercise done.
-
-
-*Step 1: Create a new React app*
-
-Setup the project by using npm’s create-react-app package to create 
-a new React app called login-button-app:
-
-```
-npx create-react-app login-button-app
-```
-
-
-*Step 2: Clean up the src folder*
-
-
-Inside the src directory, delete all files except `index.js` and 
-`App.js`.
-
-
-
-*Step 3: Create the App component*
-
-
-Open your `App.js` file. Then, create an App component that contains 
-a `<button>` element whose `onClick` event handler updates the UI’s 
-state:
-
-
-
-```javascript
-// App.js
-import React from 'react';
-
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = { isLoggedIn: false };
-    this.changeState = this.changeState.bind(this);
-  }
-
-  changeState() {
-    this.setState({ isLoggedIn: !this.state.isLoggedIn });
-  }
-
-  render() {
-    const buttonText = this.state.isLoggedIn ? 'Log out' : 'Log in';
-    const displayText = buttonText === 'Log in' ? 'out' : 'in';
-    return (
-      <div>
-        <h1>You are logged {displayText}</h1>
-        <button onClick={this.changeState}>{buttonText}</button>
-      </div>
-    );
-  }
-}
-
-export default App;
-```
-
-
-*Step 4: Render the App component*
-
-
-
-Open your `index.js` file and render the `App` component to the DOM 
-like so:
-
-```javascript
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-
-*Step 5: Run the application*
-
-
-Take a look at the app in the browser by running:
-
-```
-npm start
-```
-
-
-You can also see mine on [StackBlitz]()
-
-
-
-# CHAPTER 13: REACT PROPS VS. STATE - What’s the difference?
-
-So now that we know what state and props are, let’s discuss their 
-differences.
-
-<!-- // page 183 -->
-
-
-*Difference 1: What Is The Purpose Of React Props And The State Object?*
-
-
-React props is a parameter used to pass an object into a component.
-In contrast, React state is a built-in object used inside a component 
-to store properties that can change over time.
-
-
-
-*Difference 2: Is It Okay To Mutate Props And State?*
-
-
-
-React props is a read-only parameter, so you should never attempt to 
-modify its content.
-
-However, it is okay to use the `setState()` method or the state hook 
-to modify React
-state.
-
-
-
-*Difference 3: How Does Data Exchange Work With Props And State?*
-
-
-The props parameter is effective for data exchange from one component 
-to another, whereas state is not.
-
-The state object is internally available to store a component’s values 
-that are likely to change over time.
-
-For instance, consider the code below:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// First component
-class PageTitle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { pageSEOTitle: this.props.pageSEOTitle };
-  }
-
-  render() {
-    return <h1>This is the {this.state.pageSEOTitle} page.</h1>;
-  }
-}
-
-// Second component
-function PageDescription() {
-  return (
-    <div>
-      <PageTitle pageSEOTitle="About" />
-      <p>Excellence is our culture.</p>
-    </div>
-  );
-}
-
-ReactDOM.render(<PageDescription />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz]
-
-
-
-In the snippet above, we used PageTitle’s props parameter to exchange 
-data between PageTitle and PageDescription.
-
-
-At the same time, we used PageTitle’s state object to store the 
-component’s pageSEOTitle property.
-
-
-
-# CHAPTER 14: REACT LIFECYCLE METHODS - What Exactly Are They?
-
-<!-- // page 187 -->
-
-Lifecycle methods are the inbuilt React methods you can use to operate 
-on your components during their lifecycle in the DOM.
-
-
-Note: You can invoke lifecycle methods only in class components—not 
-inside function components. However, you can use Hooks to access 
-lifecycle methods in a function component.
-
-We will talk more about React Hooks in the next chapter. For now, 
-though, let's discuss what lifecycle means in ReactJS.
-
-
-
-*What Exactly Does Lifecycle Mean In React?*
-
-
-A component's lifecycle refers to the series of stages a component 
-instance goes through from its creation to its total removal from the 
-DOM.
-
-Each React component has four (4) lifecycle phases:
-
-* Mounting Phase
-
-* Updating Phase
-
-* Unmounting Phase
-
-* Error Handling Phase
-
-Let’s discuss each of these lifecycle phases, starting with the 
-mounting phase.
-
-
-
-*What Is The Mounting Phase?*
-
-
-A component’s mounting phase is when the component instance is being 
-created and rendered into the DOM.
-
-During the mounting phase, React will call the four methods below in 
-the specified order:
-
-
-*First Mounting Phase Lifecycle Method: Constructor()*
-
-
-Use the constructor() method to initialize your component’s local 
-state and for binding event handlers to the component’s instance.
-
-Note: It is best to avoid side-effects or subscriptions in the 
-`constructor()`. Instead, use `componentDidMount()` for such use 
-cases.
-
-
-
-*Second Mounting Phase Lifecycle Method: Static GetDerivedStateFromProps()*
-
-
-The static `getDerivedStateFromProps()` method is one of the rarely 
-used lifecycle methods. It exists only for the single purpose of 
-allowing a component to update its internal state due to changes in 
-its props.
-
-Note: See this [post](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props) 
-for an example of the `getDerivedStateFromProps` method.
-
-
-
-*Third Mounting Phase Lifecycle Method: Render()*
-
-
-
-Use the `render()` method to specify the content a component should 
-display on the screen.
-
-Keep in mind that `render()` must be pure and must not create any side 
-effects.
-
-In other words, do not use `render()` to either modify your component’s 
-state or interact directly with the browser.
-
-Note: Amongst the four methods React will call during the mounting 
-phase, `render()` is the only required one. The others are optional 
-mounting methods that React will call if you define them.
-
-
-
-*Fourth Mounting Phase Lifecycle Method: ComponentDidMount()*
-
-
-
-Use `componentDidMount()` to run code on a component immediately after 
-it has been mounted (inserted into the DOM tree).
-
-
-Typical usage of `componentDidMount()` are:
-
-* Implementations that require DOM nodes. For instance, addEventListener()s
-
-* Data fetching from remote endpoints
-
-* Subscription configurations
-
-
-Note:
-
-* You can call setState() in componentDidMount(). If you do so, 
-beware that such action will trigger a new rendering of your component. 
-But the rendering will occur before the browser updates the display 
-onscreen.
-
-As such, even though render() will get invoked twice, the user will 
-only see componentDidMount()’s rendering—not the intermediate one.
-
-* React recommends using setState() inside componentDidMount() with
-caution—as it often causes performance issues. Preferably, assign your 
-initial state in the constructor() method.
-
-* A good use case of setState() in componentDidMount() is when you
-need to measure a DOM node before rendering something that relies on 
-its position or size. Examples of such cases are tooltips and modals.
-
-
-
-*What Is The Updating Phase?*
-
-
-
-A component’s updating phase is the period when the component instance 
-is being updated.
-
-In other words, the updating phase takes place whenever there is a 
-change to the component’s props (or state).
-
-During the updating phase, React will call the five methods below in 
-the specified order:
-
-
-
-**First Updating Phase Lifecycle Method: Static**
-
-GetDerivedStateFromProps() The static getDerivedStateFromProps()
-method is one of the rarely used lifecycle methods. It exists only 
-for the single purpose of allowing a component to update its internal 
-state due to changes in its props.
-
-Note: See this post for an example of the getDerivedStateFromProps 
-method.
-
-
-
-**Second Updating Phase Lifecycle Method: ShouldComponentUpdate()**
-
-
-shouldComponentUpdate() is one of the rarely used lifecycle methods. 
-Use it to notify React whether it should update (re-render) your 
-component after a modification to its state (or props).
-
-By default, React re-renders a component each time setState() gets 
-called, and in most cases, you should rely on the default behavior.
-
-But if you feel strongly about using shouldComponentUpdate(). In that 
-case, you can make the method return false by comparing this.props 
-with nextProps and this.state with nextState. By so doing, React will 
-know it can skip updating your component.
-
-
-Here’s an example:
-
-```javascript
-shouldComponentUpdate(nextProps, nextState) {
-  return (
-    this.props.userEmail !==
-    nextProps.userEmail ||
-    this.state.userName !==
-    nextState.userName
-  )
-}
-```
-
-
-A logic like in the snippet above helps to change 
-shouldComponentUpdate()’s default from true to false—thereby making 
-React know it can skip re-rendering your component.
-
-Note: In the future, shouldComponentUpdate() may still re-render your 
-component, so do not depend on it to prevent an update to your UI.
-
-
-
-**Third Updating Phase Lifecycle Method: Render()**
-
-
-Use the render() method to specify the content a component should 
-display on the screen.
-
-Keep in mind that render() must be [pure](https://codesweetly.com/pure-function-vs-impure-function/) 
-and must not create any [side effects](https://codesweetly.com/side-effect/).
-
-In other words, do not use render() to either modify your component’s 
-state or interact directly with the browser.
-
-Note: Amongst the five methods React will call during the updating 
-phase, render() is the only required one. The others are optional
-updating methods that React will call if you define them.
-
-
-
-**Fourth Updating Phase Lifecycle Method: GetSnapshotBeforeUpdate()**
-
-
-getSnapshotBeforeUpdate() is one of the rarely used lifecycle methods. 
-Use it to snapshot some information from the DOM right before your 
-component gets updated.
-
-For instance, you can use getSnapshotBeforeUpdate() to snapshot the 
-page’s scroll position before your component re-renders.
-
-After the snapshot, any value returned by getSnapshotBeforeUpdate() 
-will get passed to componentDidUpdate()’s third parameter.
-
-
-
-**Fifth Updating Phase Lifecycle Method: ComponentDidUpdate()**
-
-
-Use componentDidUpdate() to run code on your component immediately 
-after an update occurs on it. Some typical usages of the method are:
-
-* Operating on the DOM immediately after the component’s update.
-
-* Network requests.
-
-
-
-## Important Stuff To Know About ComponentDidUpdate()
-
-Keep these four essential pieces of info in mind whenever you choose 
-to use componentDidUpdate().
-
-
-*Info 1: React invokes componentDidUpdate() immediately after an update*
-
-
-React does not call componentDidUpdate() for the initial render. The 
-method only gets invoked immediately after an update.
-
-
-
-*Info 2: Always compare current props to the previous props*
-
-
-Whenever you use componentDidUpdate(), always compare the component’s 
-current props to the previous one—as a network request may be
-unnecessary if the props parameter has not changed.
-
-For instance, consider the code below:
-
-
-```javascript
-componentDidUpdate(prevProps) {
-  // Typical usage: Remember always to   compare the props:
-  if (this.props.userEmail !==
-    prevProps.userEmail) {
-      this.fetchData(this.props.userEmail);
-  }
-}
-```
-
-In the snippet above, we instructed React to fetch userEmail only if 
-the current props’ userEmail differs from the previous one. By so 
-doing, we’ve prevented an infinite loop of data fetching.
-
-
-
-*Info 3: It is okay to use setState() in componentDidUpdate()*
-
-
-
-You can use setState() in componentDidUpdate(). If you do so, keep in 
-mind that you must use the setState() method inside a conditional 
-statement (like in info 2’s example). Otherwise, you will cause an
-infinite loop of state updates.
-
-
-
-*Info 4: The false state of shouldComponentUpdate() stops componentDidUpdate()’s invocation*
-
-
-Suppose shouldComponentUpdate() returns the Boolean value false. In 
-such a  case, React will not run componentDidUpdate().
-
-So now that we know what the mounting and updating phase means, we 
-can talk about the unmounting phase.
-
-
-## What Is The Unmounting Phase?
-
-
-A component’s unmounting phase is when the component’s instance is 
-being removed from the DOM.
-
-To handle the unmounting phase, React provides only the 
-componentWillUnmount() lifecycle method.
-
-
-
-**How Does ComponentWillUnmount() Work?**
-
-
-Use componentWillUnmount() to run code on a component right before 
-the computer unmounts it from the DOM and destroys it.
-
-A typical task performed in componentWillUnmount() is cleaning up of 
-logics created in componentDidMount().
-
-
-Examples of such cleanups are:
-
-* Subscription cancellation
-
-* Network request termination
-
-* Event listener removal
-
-* Cache clearance
-
-* Timer invalidation
-
-Note: Avoid calling setState() in componentWillUnmount() because
-componentWillUnmount() will never re-render your component.
-
-
-
-## What Is The Error Handling Phase?
-
-
-A component’s error handling phase is the period when an error occurs 
-in any of the following cases:
-
-* During the component instance’s rendering
-
-* In a lifecycle method of the component
-
-* In any child component’s constructor To handle errors, React 
-provide two lifecycle methods: static getDerivedStateFromError() and 
-componentDidCatch().
-
-
-
-**First Error Handling Lifecycle Method: Static GetDerivedStateFromError()**
-
-
-Use the static getDerivedStateFromError() method to:
-
-
-1. Receive errors thrown by a descendant component
-
-2. Return a value that the component will use to update its state
-
-
-Note: The main difference between getDerivedStateFromError() and 
-componentDidCatch() is that static getDerivedStateFromError() does 
-not permit side-effects because the method gets called during the 
-render phase.
-
-
-
-**Second Error Handling Lifecycle Method: ComponentDidCatch()**
-
-
-
-Use componentDidCatch() to catch errors thrown by a descendant 
-component without the error crashing your app.
-
-
-Note:
-
-* componentDidCatch() permits side-effects as the method gets called 
-during the commit phase.
-
-* Nick Karnik gave a good overview of componentDidCatch() in this 
-[video](https://www.youtube.com/watch?v=m_mtV4YaI8c&t=976s).
-
-
-
-
-# CHAPTER 15: REACT HOOKS - What Exactly Are Hooks in ReactJS?
-
-<!-- // page 206 -->
-
-React Hooks are functions used in a function component to hook into 
-React’s state object, lifecycle methods, and other React features 
-without writing a class component.
-
-The two commonly used Hooks are the State Hook and Effect Hook.
-
-
-Note:
-
-* You cannot use Hooks in a class component.
-
-* Hooks works only at the top level of a function component. In other 
-words, you cannot call Hooks inside conditional statements, loops 
-statements, or nested functions.
-
-In the following sections, we will discuss the two commonly used Hooks 
-starting with the State Hook.
-
-
-## What Exactly Is The State Hook?
-
-
-The State Hook (useState) allows a function component hook into 
-React’s state object.
-
-Below are some of the use cases of the State Hook.
-
-
-### Use Case 1: State Hook Without An Argument
-
-
-Consider the code below:
-
-```javascript
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutMe() {
-  const myName = useState();
-  console.log(myName);
-  return null;
-}
-
-ReactDOM.render(<AboutMe />, document.getElementById('root'));
-```
-
-Try it on [StackBlitz]
-
-
-When React renders AboutMe, the console.log() statement will log
-[undefined, ƒ()] to the browser’s console.
-
-
-#### What Happened In The Snippet Above?
-
-
-Below is an explanation of use case 1’s snippet.
-
-
-
-**The first occurrence in Use Case 1's snippet**
-
-
-We used the import React, { useState } from "react" statement to 
-import the React library and the useState function (the State Hook) 
-into our program.
-
-Keep in mind that the useState function exists in the React library. 
-Therefore, an alternate importation technique to the {useState } one 
-above is to call React.useState() directly inside AboutMe function.
-
-
-Here’s an example:
-
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-function AboutMe() {
-  const myName = React.useState();
-  console.log(myName);
-  return null;
-}
-
-ReactDOM.render(<AboutMe />, document.getElementById('root'));
-```
-
-
-Try it on [StackBlitz]
-
-
-However, the { useState } named importation technique is more popular.
-
-
-
-**The second occurrence in Use Case 1's snippet**
-
-
-We initialized myName variable with the returned value of the 
-useState() function.
-
-
-**The third occurrence in Use Case 1's snippet**
-
-
-We used the console.log(myName) code to output myName’s content to 
-the browser’s console.
 
 
 #### Why Did The Console Statement Write Out [Undefined, Ƒ()]?
@@ -10799,7 +6232,765 @@ one is vital.
 
 In this chapter, you will learn all it takes to create forms in ReactJS.
 
-Let’s begin by discussing the difference between HTML and React form elements.
+Let’s begin by discussing the difference between HTML and React form 
+elements.
+
+
+
+## HTML Vs. ReactJS Forms: What’s The Difference?
+
+
+In HTML, form elements, such as `<select>`, `<input>`, and `<textarea>`, 
+generally maintain and update their own state based on a user’s input.
+
+However, in React, a form element’s state gets stored in a component’s 
+state object. And it gets updated with an event handler’s `setState()` 
+(or state hook) method. For instance, the React snippet below 
+specifies that whenever a user types a value (state) into the input 
+field, React should use the `handleChange()` event handler to update 
+the component’s state object.
+
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bestColor: '' };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert('The best color is: ' + this.state.bestColor);
+  };
+
+  handleChange = (event) => {
+    this.setState({ bestColor: event.target.value });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>My Best Color Is: {this.state.bestColor}</h1>
+        <label>
+          <span>Enter your best color: </span>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.bestColor}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-p3ebaz?file=src%2Findex.js)
+
+
+So, on every keystroke, handleChange’s `setState()` code will update 
+the component’s state with the new value of the input field.
+
+In other words, React exclusively maintains the `<input>` element’s 
+state in the component’s state object.
+
+
+Note:
+
+* The `event.preventDefault()` method inside `handleSubmit()` prevents 
+the submit button’s default behavior of submitting the form and 
+reloading the browser.
+
+* `event.target` references the element that triggered a specific event. 
+So, for instance, in the snippet above, `event.target.value` referenced 
+`<input>`’s value because it was the input element that invoked the 
+`onChange` event.
+
+
+
+Keep in mind that for most use cases, React recommends using 
+controlled components to implement form elements. But what exactly 
+are controlled components? Let’s find out below.
+
+
+
+## What Is A Controlled Component?
+
+A controlled component is a component whose form's data React controls 
+exclusively. In other words, if React is responsible for storing, 
+updating, and displaying your form element's data. In such an instance, 
+that form's component is a controlled UI because its form's data is 
+under React's total control. 
+
+Here’s an example:
+
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bestColor: '' };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert('The best color is: ' + this.state.bestColor);
+  };
+
+  handleChange = (event) => {
+    this.setState({ bestColor: event.target.value });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>My Best Color Is: {this.state.bestColor}</h1>
+        <label>
+          <span>Enter your best color: </span>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.bestColor}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-p3ebaz?file=src%2Findex.js)
+
+
+The snippet above used `onChange={this.handleChange}` to specify that 
+each time the input element’s value changes, React should update
+BestColorForm’s state with the input field’s data.
+
+Furthermore, `value={this.state.bestColor}` tells React to use the 
+component’s state as the input field’s displayed value. In other 
+words, the component’s state—not the DOM—manages `<input>`'s value
+exclusively.
+
+Therefore, `BestColorForm`'s state is the "single source of truth" 
+determining the form element's actual value.
+
+Beware that, at times, using controlled components may not be ideal. 
+For instance, suppose you are integrating a React application with a 
+non-React library. In such a case, controlled components may not be 
+your best option—as you may find it annoying to implement.
+
+Instead, using an uncontrolled component may be better in such a 
+situation. But what exactly is an uncontrolled component? Let’s find 
+out below.
+
+
+
+## What Exactly Is An Uncontrolled Component?
+
+An uncontrolled component is a component whose form's data React does 
+not control exclusively. In other words, if React is not responsible 
+for storing, updating, and displaying your form element’s data. In 
+such an instance, that form's component is an uncontrolled UI because 
+its form's data is not under React's control. Instead, the DOM manages 
+such form's data.
+
+
+Here’s an example:
+
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bestColor: '' };
+    this.myBestColor = React.createRef();
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ bestColor: this.myBestColor.current.value });
+    alert('The best color is: ' + this.myBestColor.current.value);
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>My Best Color Is: {this.state.bestColor}</h1>
+        <label>
+          <span>Enter your best color: </span>
+          <input type="text" ref={this.myBestColor} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-9ysvzb?file=src%2Findex.js)
+
+
+The snippet above used `React.createRef()` to initialize `myBestColor` 
+property with an object containing a current property (that is, 
+`{"current": null }`).
+
+We also used `ref={this.myBestColor}` to pass the constructor’s 
+`this.myBestColor` object to the input element’s ref property.
+Consequently, React will substitute the initial ref property’s value 
+with a shallow copy of the actual DOM’s input node at runtime.
+
+So, `ref={{ "current": null }}` will become 
+`ref={{"current": <input type="text">}}—where <input type="text"> `
+is a [shallow copy](https://codesweetly.com/web-tech-glossary/#shallow-copy-js) 
+of the DOM’s input node.
+Note that any change to the DOM’s input node will reflect in React’s 
+copy since ref’s `<input>` element is a shallow copy of the DOM’s 
+own. Meaning that the `BestColorForm` component does not manage its 
+form’s data—the DOM does it instead.
+
+In other words, `BestColorForm` is an uncontrolled component because 
+its input field’s data is stored, updated, and displayed by the 
+DOM—not React.
+
+Therefore, the DOM becomes the "single source of truth" that 
+determines the form element's actual value.
+
+Remember: The `<input> element in the snippet above is a JSX 
+element that React will later convert to a regular
+
+```
+React.createElement("input",
+{type: "text", ref:this.bestColor}) 
+```
+JavaScript code.
+
+You may have observed that the ref property is a vital part of an 
+uncontrolled component. But how exactly does it work? Let’s find 
+out below.
+
+
+
+## How Exactly Does React’s Ref Property Work?
+
+The ref property makes the DOM’s input element accessible to an 
+uncontrolled React component. So, for instance, `ref={this.myBestColor}` 
+makes `this.myBestColor.current.value` accessible.
+
+In other words, suppose your uncontrolled component needs to access the 
+DOM’s input field’s data. In that case, you must use the ref property as 
+a medium to get the DOM’s `<input>` node.
+
+Here is a simplified example of how the ref property works under 
+the hood:
+
+```javascript
+// Define an object that contains a createRef and a createElement properties:
+const Oluwatobi = {
+  // Program createRef() to return an object:
+  createRef: function () {
+    return { current: null };
+  },
+
+  // Define a function that creates a DOM element:
+  createElement: function (elementType, obj, children) {
+    const newEle = document.createElement(elementType);
+    if (children) {
+      newEle.innerText = children;
+    }
+    if (obj.ref) {
+      obj.ref.current = newEle;
+    }
+  },
+};
+
+// Initialize myBestColor with an initial value of {current: null}:
+const myBestColor = Oluwatobi.createRef();
+console.log(myBestColor);
+
+// Update myBestColor’s value to {current: <input>}:
+Oluwatobi.createElement('input', { ref: myBestColor }, null);
+console.log(myBestColor);
+```
+
+Try it on [StackBlitz]
+
+
+Here’s what’s happening in the snippet above:
+
+1. `myBestColor` got initialized with `Oluwatobi.createRef()`'s return
+value.
+
+2. `Oluwatobi.createElement()` got invoked with three arguments 
+`("input", { ref: myBestColor }, and null)`.
+
+3. The computer initialized newEle with an `<input>` element because 
+we specified "input" as the `elementType` parameter’s argument.
+
+4. The `if (children) {...}` conditional statement will not run 
+because children is null.
+
+5. The `obj.ref.current = newEle` code updates `myBestColor` with a 
+shallow copy of `newEle`'s `<input>` element.
+
+
+When you run the snippet, the first `console.log()` will 
+output `{current: null }`, while the second one will return 
+`{ current: <input> }`.
+
+Keep in mind that you can use one event handler for multiple `<input>` 
+elements. So, how exactly does that work? Let’s find out.
+
+
+
+
+## How To Use One Event Handler For Multiple `<Input>` Elements
+
+Suppose you prefer to use only one event handler to manage updates to 
+the state of multiple `<input>` elements. In such a case, you can add 
+a name attribute on each `<input>` element.
+
+Here’s an example:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { bestColor: '', hexCode: '' };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert(
+      `The best color is: ${this.state.bestColor} (${this.state.hexCode}).`
+    );
+  };
+
+  handleChange = (event) => {
+    const inputEleName = event.target.name;
+    const inputEleValue = event.target.value;
+    this.setState({ [inputEleName]: inputEleValue });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>
+          My Best Color Is: {this.state.bestColor} {this.state.hexCode}
+        </h1>
+        <div>
+          <span>Enter your best color: </span>
+          <input
+            type="text"
+            name="bestColor"
+            value={this.state.bestColor}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <span>Enter your best color’s HEX code: </span>
+          <input
+            type="text"
+            name="hexCode"
+            value={this.state.hexCode}
+            onChange={this.handleChange}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-hqpbin?file=src%2Findex.js)
+
+
+
+Here’s an explanation of the snippet above:
+
+1. We specified a name attribute on each `<input>` element.
+
+2. We used `event.target` to retrieve the name and value of the 
+`<input>` element the user is currently using.
+
+3. `this.setState({[inputEleName]: inputEleValue})` updates 
+`BestColorForm`'s state with the name and value of the `<input>` 
+element the user is currently using.
+
+Note:
+
+* The `[inputEleName]:inputEleValue` syntax used in the snippet
+above is JavaScript’s computed property name syntax. We used it to 
+dynamically generate the new state’s key based on `inputEleName`'s 
+current value.
+
+* It is not mandatory to use one event handler for multiple input 
+elements.
+
+In other words, you can use one handler for the `bestColor` input and 
+another for the `hexCode` input.
+
+However, React recommends using a single handler to handle multiple 
+controlled input elements because it makes your code cleaner.
+
+Observe that we’ve only discussed the `<input>` element. However, 
+there are times you may need to create forms containing a 
+`<textarea>` element. But is there any difference between HTML's 
+`<textarea>` and that of React? Let’s find out.
+
+
+## HTML Vs. React's `<Textarea>` Element—What's The Difference?
+
+
+The main difference between HTML's `<textarea>` and that of ReactJS 
+is that in HTML, you position a `<textarea>`'s text in-between the 
+opening and closing tag.
+
+
+Here’s an example:
+
+```
+<textarea>
+I am a plain text placed between a
+textarea’s opening and closing tag.
+</textarea>
+```
+
+
+However, in React, you must use a value attribute on the `<textarea>` 
+tag to specify the element’s text.
+
+Here’s an example:
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { aboutBestColor: '' };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert(
+      `Here is the story about my best color: ${this.state.aboutBestColor}`
+    );
+  };
+
+  handleChange = (event) => {
+    this.setState({ aboutBestColor: event.target.value });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>An Amazing Story About My Best Color</h1>
+        <textarea
+          placeholder="Please write your story here..."
+          value={this.state.aboutBestColor}
+          onChange={this.handleChange}
+        />
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-ixodo7?file=src%2Findex.js)
+
+Another element we’ve not discussed is the `<select>` element. Let’s 
+see how the HTML version compares with that of ReactJS.
+
+
+## HTML Vs. React’s `<Select>` Element—What’s The Difference?
+
+In HTML, suppose you wish to specify the `<option>` you want the 
+browser to select by default. In that case, you must place a 
+selected attribute on your desired `<option>` element.
+
+Here’s an example:
+
+```html
+<html>
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <form>
+    <h1>Select Your Best Color</h1>
+    <select>
+      <option value="Orange">Orange</option>
+      <option value="Pink" selected>Pink</option>
+      <option value="White">White</option>
+    </select>
+  </form>
+</body>
+
+</html>
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/web-platform-a54v5q?file=index.html)
+
+
+The HTML snippet above used the selected attribute to specify that the 
+browser should pre-select the Pink option when the page loads.
+
+However, in React, you must use a value attribute on the `<select>` 
+element’s opening tag to specify a default option.
+
+
+Here’s an example:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class BestColorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { bestColor: 'Pink' };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert('The best color is: ' + this.state.bestColor);
+  };
+
+  handleChange = (event) => {
+    this.setState({ bestColor: event.target.value });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>Select Your Best Color</h1>
+        <select value={this.state.bestColor} onChange={this.handleChange}>
+          <option value="Orange">Orange</option>
+          <option value="Pink">Pink</option>
+          <option value="White">White</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<BestColorForm />, document.getElementById('root'));
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-hg3zk3?file=src%2Findex.js)
+
+The React snippet above used the value attribute on the root 
+`<select>` tag to tell the browser to pre-select the Pink option 
+when the page loads.
+
+
+## Time To Practice With React Forms
+
+Here is your moment to practice the concepts you’ve learned on React 
+forms.
+
+In this exercise, your goal is to use function components to create 
+an application that allows users to input and submit a list of
+tasks.
+
+Note:
+
+* Your app should contain two components (an App component and a 
+ListMaker component).
+
+* Use the App component to render an input field and a submit button.
+
+* Use the ListMaker component to create a list item for each task 
+the user submits.
+
+* The submit button should allow users to add the input field’s 
+content to a “tasks array” managed in the component’s state.
+
+* For each task in the tasks array, render an HTML list element to 
+the webpage.
+
+Remember: You will benefit much from this tutorial if you do the 
+exercises yourself.
+
+If you get stuck at any point, don’t be discouraged. Instead, review 
+the lessons and give the exercise another attempt.
+
+Once you’ve given it your best shot (you’d only cheat yourself if you 
+don’t!), go ahead to see how I approached it below.
+
+
+### How Did You Go About Creating Your Form App?
+
+Below is one feasible way to create a React form app.
+
+
+**Step 1: Create a new React app**
+
+Setup the project by using npm’s `create-react-app` package to create 
+a new React app called my-task-app:
+
+```
+npx create-react-app my-task-app
+```
+
+**Step 2: Clean up the src folder**
+
+
+Inside the `src` directory, delete all files except `index.js` and 
+`App.js`.
+
+
+**Step 3: Create a components directory**
+
+
+In the `src` directory, create a new folder called `components` and move 
+`App.js` inside it.
+
+**Step 4: Render the App component**
+
+Open your `index.js` file and render the App component to the DOM 
+like so:
+
+```javascript
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+Note: The `<React.StrictMode>` code enables strict mode checks for 
+the App component.
+
+
+**Step 5: Create the App component**
+
+Open your `App.js` file. Then, create an App function component that 
+renders an input field and a submit button.
+
+```javascript
+// App.js
+import React, { useState } from 'react';
+import ListMaker from './ListMaker';
+
+function App() {
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
+
+  function handleChange(e) {
+    setTask(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setTasks([...tasks, task]);
+    setTask('');
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2>Enter a Task:</h2>
+        <input type="text" value={task} name="task" onChange={handleChange} />
+        <button type="submit">Submit</button>
+      </form>
+      <h3>{task ? `▶ Your input is: ${task}` : '▶'}</h3>
+      <ul>
+        <ListMaker items={tasks} />
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Note: The `event.preventDefault()` method inside `handleSubmit()` 
+prevents the submit button’s default behavior of submitting the 
+form and reloading the browser.
+
+
+**Step 6: Create a ListMaker.js file**
+
+
+Go to the `src/components` directory and create a new file called 
+`ListMaker.js`.
+
+
+**Step 7: Create the ListMaker component**
+
+Open your `ListMaker.js` file and define a ListMaker function 
+component that creates a list item for each task the user submits.
+
+```javascript
+// ListMaker.js
+import React from 'react';
+import uniqid from 'uniqid';
+
+function ListMaker(props) {
+  return props.items.map(item => {
+    return <li key={uniqid()}>{item}</li>;
+  });
+}
+
+export default ListMaker;
+```
+
+Observe that in the snippet above, we generate the key attribute’s 
+value using an NPM package called `uniqid`. You can learn more about 
+`uniqid` in chapter eight.
+
+
+**Step 8: Run the application**
+
+Take a look at the app in the browser by running:
+
+```
+npm start
+```
+
+
+You can also see mine on [StackBlitz](https://stackblitz.com/edit/react-okpi63?file=src%2Fcomponents%2FApp.js).
 
 
 
