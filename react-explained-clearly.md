@@ -220,6 +220,7 @@ directory you navigated to in step 2).
 transitive dependencies into `my-project` directory.
 3. Generate an initial project structure that looks like so:
 
+```terminal
 my-project
 ├── .git
 ├── README.md
@@ -242,6 +243,7 @@ my-project
 ├── logo.svg
 ├── serviceWorker.js
 └── setupTests.js
+```
 
 Step 4: Go Inside Your Project Directory
 
@@ -7457,6 +7459,192 @@ This chapter will show you how to deploy your app on GitHub Pages.
 Without any further ado, let’s get it started with the first step.
 
 
+## Step 1: Create A New GitHub Repo
+
+Go to your GitHub account to create a new repository for your React 
+app.
+
+Note: You can use this [guide](https://docs.github.com/en/get-started/quickstart/create-a-repo) 
+to create your new GitHub repo.
+
+
+## Step 2: Connect Your App’s Git Directory To The New GitHub Repo
+
+Once you’ve created a new repository, navigate to your app’s root 
+directory via the terminal. Then, connect the project’s [local Git directory](https://codesweetly.com/how-to-use-git#h-git-directory)
+ to the new GitHub repo like so:
+
+```
+git remote add origin https://github.com/yourusername/appreponame.git
+```
+
+Note:
+
+* Replace `yourusername` in the code above with your GitHub username.
+
+* Replace `appreponame` with the name of the new repository you created 
+in step 1.
+
+
+## Step 3: Confirm The Connection
+
+Run the `git remote -v` command on your terminal to confirm that the 
+connection was successful.
+
+If the displayed URL is the same as the remote URL you intend to 
+connect to, it means you connected successfully.
+
+
+
+## Step 4: Push Your App’s Local Git Repo To The Remote Repo
+
+After successfully connecting your local directory to the remote 
+repository, push your local project upstream like so:
+
+```
+git push -u origin master
+```
+
+
+
+
+## Step 5: Confirm The Upload
+
+Go back to your GitHub repository page to confirm that Git has 
+successfully pushed your local [Git](https://codesweetly.com/how-to-use-git/) 
+directory to the remote repository.
+
+Note: You may need to refresh the remote repository's page for the 
+changes to reflect.
+
+
+
+
+## Step 6: Add Homepage To Package.json
+
+Open your `package.json` file and add a homepage field to it like so:
+
+```json
+"homepage": "https://yourusername.github.io/appreponame",
+```
+
+Note:
+
+* Replace `yourusername` in the code above with your GitHub username.
+
+* Replace `appreponame` with the name of the new repository you 
+created in step 1.
+
+
+
+
+
+## Step 7: Install Gh-Pages
+
+Install gh-pages to your project as a devdependency.
+
+```
+npm install gh-pages --save-dev
+```
+
+Alternatively, you may install with Yarn like so:
+
+```
+yarn add gh-pages --dev
+```
+
+
+
+## Step 8: Add Deploy To Package.json’s Scripts Field
+
+Go back to your `package.json` file and add a predeploy field and a 
+deploy field like so:
+
+```json
+"scripts": {
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+...
+},
+```
+
+After adding the predeploy and deploy fields, your scripts property 
+should look similar to this:
+
+```json
+"scripts": {
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+"start": "react-scripts start",
+"build": "react-scripts build",
+"test": "react-scripts test",
+"eject": "react-scripts eject"
+},
+```
+
+Note:
+
+* The “predeploy” script will create a build directory (in the 
+project’s root folder) containing an optimized production version 
+of your app.
+
+* The “deploy” script will publish the build directory to GitHub Pages.
+
+
+
+
+## Step 9: Deploy Your App
+
+Publish your app to GitHub Pages by running:
+
+```
+npm run deploy
+```
+
+Alternatively, you may deploy with Yarn like so:
+
+```
+yarn deploy
+```
+
+Note:
+
+* NPM (or Yarn) will automatically run the “predeploy” script first 
+before running the “deploy” script.
+
+* If you get an error message saying “fatal: A branch named 'ghpages' 
+already exists.”, you may need to remove gh-pages from the `.cache `
+directory.
+
+You can do so by running `rm -rf node_modules/.cache/gh-pages` on
+your terminal.
+
+Alternatively, you can manually go to `node_modules/.cache/` and 
+delete the gh-pages folder.
+
+Afterward, run your deploy command again.
+
+
+
+## Step 10: Use The Correct GitHub Pages Settings
+
+Go back to your GitHub repository page and click the settings tab.
+
+Then click the Pages tab located towards the bottom of the side menu.
+
+Under the Source section, make sure the selected branch is gh-pages.
+
+
+
+## Step 11: View Your Published App!
+
+Congratulations! You are now able to access your published site at 
+the URL you specified in step 6.
+
+
+
+
+
 
 # CHAPTER 20: REACT ROUTER - How to Mimic a Multipage App with React
 
@@ -7466,6 +7654,29 @@ a React app that functions like a multi-page application.
 
 Up until now, we’ve discussed how to build single-page applications 
 (SPA) that render just one component to the root DOM.
+
+
+However, you can use a third-party library to extend React's 
+functionality to make your single-page app render multiple components 
+interchangeably.
+
+In other words, with a library like React Router, you can configure 
+React to insert a `<Contact />` component into the root DOM if the 
+browser’s URL file path is `"/contact"`.
+
+Or insert a `<Shop />` component to the root DOM if the browser’s 
+URL file path is `"/shop"`.
+
+Or render a `<App />` component if the browser’s URL file path is `"/"`.
+
+Before saying more about React Router, let’s clarify the differences 
+between a single-page and a multi-page application.
+
+
+<!-- // page 336  -->
+
+
+
 
 
 
