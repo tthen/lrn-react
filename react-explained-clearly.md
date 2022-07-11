@@ -203,13 +203,14 @@ How To Create React App With Yarn
 Use Yarn to create a new React app by running the following code on 
 your terminal:
 
+```
 $ yarn create react-app my-project
-
+```
 
 
 What Happens Once You Initiate The Creation Of A New React App?
 
-% // page 32
+<!-- // page 32 -->
 
 Once you use the NPX (or Yarn) code to create a new app, the package 
 manager will:
@@ -250,19 +251,23 @@ Step 4: Go Inside Your Project Directory
 After you’ve created a new React app, navigate into your project 
 directory like so:
 
+```
 $ cd my-project
+```
 
 Step 5: Run Your Application
 
 Start your application by running:
 
+```
 $ npm start
+```
 
 Or, if your package manager is Yarn, run:
 
-
+```
 $ yarn start
-
+```
 
 Step 6: See Your App Running Live In The Browser!
 
@@ -7675,9 +7680,525 @@ between a single-page and a multi-page application.
 
 <!-- // page 336  -->
 
+## Single-Page Vs. Multi-Page Applications – What’s The Difference?
+
+Here are the differences between a singlepage
+and multi-page application.
+
+
+**Difference 1: URL File Path**
+
+
+single-page application (SPA) is a web app 
+in which each of its unique URL file paths 
+refers to a single HTML page that gets loaded 
+only once from the server. 
+
+In other words, whenever users go to a new
+file path, the page will remain the same. But
+you can use a library like React Router to
+substitute specific contents of the page with
+those meant for the new file path.
+
+However, a multi-page application (MPA) is 
+a web app in which each of its unique URL 
+file paths refers to a brand-new HTML page 
+that needs to be reloaded from the server each 
+time users request the page. 
+
+So, when users go to a new file path, a new 
+page—meant for the requested URL—and all 
+its resources (such as JavaScript and videos) 
+get loaded from the app's server.
+
+
+**Difference 2: Page Quantity**
+
+A single-page application contains only one HTML page.
+
+But a multi-page application contains
+multiple HTML pages.
 
 
 
+
+**Difference 3: Page Reload**
+
+After a single-page application’s initial 
+loading, the app never reloads.
+
+However, after a multi-page application's 
+initial loading, its pages get reloaded based 
+on users' file path requests. 
+
+
+
+Keep in mind that you can only create singlepage 
+applications with ReactJS. 
+
+However, libraries like React Router can help 
+you extend React’s functionality so that your 
+single-page app can function like a multipage 
+application.
+
+But what exactly is React Router, I hear you 
+say? Let’s find out below.
+
+## What Exactly Is React Router?
+
+
+React Router is a popular routing library that 
+tells React the specific component it should 
+render based on the route (file path) a user 
+requested through the URL. 
+
+So, for instance, you can use React Router to 
+tell React to render your project’s `<App />` 
+component whenever users request 
+`www.codesweetly.com/`. Or to render a 
+`<CodeTidbits />` component if a user’s 
+request is 
+`www.codesweetly.com/codetidbits`. 
+Keep in mind that a “router” is a code logic 
+used to handle a client’s request to a specific 
+file path. 
+
+As an example, suppose a client request 
+`www.codesweetly.com/about`. In such 
+a case, the router will be the logic that 
+handles responses to the `/about` file path 
+request.
+
+To understand routing better, let’s see how to 
+use the React Router library.
+
+## How To Use The React Router Library
+
+In the following steps, we will discuss how to 
+use React Router in a React application.
+
+You will gain more if you do not just read— 
+so instead, open your code editor and recreate 
+the steps yourself .
+
+So then, let’s begin from step 1.
+
+
+**Step 1: Create A New React App**
+
+
+Create a new project by running:
+
+```
+npx create-react-app component-routing
+```
+
+In the snippet above, we used npm’s 
+create-react-app package to create a 
+new React app called `componentrouting`.
+
+An alternate way to create your project is to 
+use Yarn like so:
+
+```
+yarn create react-app component-routing
+```
+
+
+**Step 2: Clean Up The Src Folder**
+
+Inside the `src` directory, delete all files 
+except `index.js` and `App.js`.
+
+
+
+
+**Step 3: Create Components Directory**
+
+In the `src` directory, create a new folder 
+called `components` and move `App.js` 
+inside it.
+
+
+
+**Step 4: Render App Component**
+
+Open your `index.js` file and replicate the
+code below:
+
+```javascript
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(
+  <React.StrictMode>
+  <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+In the snippet above, we rendered the App 
+component to the DOM.
+
+
+**Step 5: Create The App Component**
+
+Open your App.js file and replicate the 
+code below:
+
+```javascript
+// App.js
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to our Homepage!</h1>
+      <p>Learn more <a href="/about">about us</a></p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+In the snippet above, we created an App 
+function component that returns a `<div>` 
+element containing an `<h1>` and a `<p>` 
+element.
+
+
+**Step 6: Create An About.js File**
+
+
+In the `src/components` directory, create a 
+new file called `About.js`.
+
+
+
+**Step 7: Create The About Component**
+
+Open your `About.js` file and replicate the 
+code below:
+
+```javascript
+// About.js
+import React from "react";
+
+function About() {
+  return (
+    <div>
+      <h1>You will learn all about us here!</h1>
+      <p>Checkout our <a href="/">homepage</a></p>
+    </div>
+  );
+}
+
+export default About;
+```
+
+
+In the snippet above, we created an About 
+function component that returns a `<div>` 
+element containing an `<h1>` and a `<p>` 
+element.
+
+
+
+**Step 8: Install React Router**
+
+Open your terminal, navigate into your 
+project folder, and run:
+
+```
+npm install react-router-dom
+```
+
+The code above will install React Router and 
+all its dependencies into your project. 
+An alternate way to install React Router is to 
+use Yarn like so:
+
+```
+yarn add react-router-dom
+```
+
+
+**Step 9: Create A `Routes.js` File**
+
+In the `src/components` directory, create a 
+new file called `Routes.js`.
+
+
+
+
+**Step 10: Render Your `Routes.js` File**
+
+
+Currently, your `index.js` file should look 
+like so:
+
+```javascript
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+
+In other words, you are presently rendering 
+your App component to the DOM. 
+
+However, we do not want React to render 
+only the App component. Instead, we want 
+React to alternate between different 
+components depending on whose path 
+matches the client’s file path. 
+
+Therefore, instead of specifying `<App />` as 
+`ReactDOM.render()`'s argument, replace 
+it with your `<Routes />` component like 
+so:
+
+
+```javascript
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import Routes from "./components/Routes";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Routes />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+
+By so doing, the `Routes.js` file will get 
+called first whenever your application starts 
+to run.
+
+You will later see how to use React Router’s 
+`<BrowserRouter>` code to handle the 
+logic of alternating the components React 
+needs to render based on the client’s URL 
+request.
+
+For now, let’s create the Routes component. 
+
+
+
+**Step 11: Create The Routes Component**
+
+Open your `Routes.js` file and replicate the 
+code below. We will go through its 
+explanation afterward. 
+
+
+```javascript
+// Routes.js
+import React from "react";
+import App from "./App";
+import About from "./About";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Linkto="/">Home</Link> | <Linkto="/about">About</Link>
+        </p>
+        <Route path="/" component={App} />
+        <Route path="/about" component={About} />
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+In the snippet above, we did the following:
+
+1. Imported `React` and our two components 
+(`App` and `About`) from their respective files. 
+
+2. Imported the `BrowserRouter`, `Route`,
+and `Link` components from the `react-router-dom` file.
+
+3. Created a `Routes` function component 
+that returns a `<div>` element containing a 
+`<BrowserRouter>` element. 
+
+4. Exported the `Routes` component as a 
+default export.
+
+
+But what exactly is the `<BrowserRouter>` 
+element? Let’s discuss it below.
+
+
+
+
+## What Exactly Is The `<BrowserRouter>` Element In ReactJS?
+
+`<BrowserRouter>` sandwiches all the 
+codes you want React Router to manage. You 
+can think of it as the React Router’s space. 
+
+Note: React Router will not deal with 
+anything you have not kept inside its 
+territory. Also, only the code inside React 
+Router’s space will get the privilege to use its 
+facilities. 
+
+
+Another element you might find strange in 
+the snippet above is the `<Route>` element 
+inside `<BrowserRouter>`. So, let’s 
+discuss its purpose below.
+
+
+
+## What Is The `<Route>` Component In A React Application?
+
+You can use `<Route>` to specify the exact 
+component you want to render once 
+`<Route>`'s path matches the requested URL 
+file path.
+
+Observe that we also used a `<Link>` element 
+in the `<p>` tag of the `<BrowserRouter>` 
+element. What exactly is `<Link>`'s 
+function? Let’s find out. 
+
+
+
+## What Exactly Is The `<Link>` Element Of A ReactJS App?
+
+`<Link>` tells React Router to render an
+anchor element.
+
+The advantage of using `<Link>` instead of 
+`<a>` tag is that `<Link>` helps prevent a page 
+reload whenever an anchor element gets 
+clicked.
+
+Note: Suppose you wish to apply some styles 
+to your active links. In that case, use 
+`<NavLink>` instead of the `<Link>` 
+component. 
+
+The difference between `<Link>` and 
+`<NavLink>` is that `<NavLink>` adds 
+styling attributes to the rendered anchor 
+element whenever it is the active link.
+
+
+
+So, now that you know about the `<Link>` 
+component, go back to the App and About 
+components and change their `<a>` elements 
+to `<Link>`. 
+
+Remember also to import Link from the 
+`react-router-dom` file. 
+
+Once you've finished changing the `<a>` 
+elements to `<Link>`s, we can move ahead to 
+discuss how the `<BrowserRouter>` 
+element works. 
+
+
+
+## How Does The `<BrowserRouter>` Element Work?
+
+Let’s take a closer look at the Routes 
+function component’s `<BrowserRouter>` 
+code:
+
+
+```javascript
+import React from 'react';
+import App from './App';
+import About from './About';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        </p>
+        <Route path="/" component={App} />
+        <Route path="/about" component={About} />
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-nkcmvv?file=src%2Fcomponents%2FRoutes.js)
+
+
+
+`<BrowserRouter>` tells React to render 
+the `<p>` element and any of the `<Route>`s 
+whose path attribute matches the client’s 
+URL path.
+
+Keep in mind that by default,
+`<BrowserRouter>` checks if `<Route>`'s 
+path matches the beginning of the requested 
+file path, not the whole URL. 
+
+Therefore, a `<Route>` with `path="/"` will 
+always match every file path because all file 
+paths begin with a slash ("/").
+
+As an example, consider the 
+`<BrowserRouter>` element in the 
+previous snippet.
+
+Suppose a client makes a
+`www.codesweetly.com/about` request.
+In such a case, React Router will render the
+two `<Route>` elements—not just the one
+with `path="/about"`.
+
+The reason the two `<Route>`'s will get
+rendered is this:
+
+When `<BrowserRouter>` looks for 
+a path that matches the beginning of 
+the requested URL’s file path 
+(`/about`), the two Routes meet the 
+criteria. Because `/about` begins with 
+both a slash (`"/"`) and `"/about"`. 
+Therefore, React Router will render 
+the two `<Route>` elements.
+
+But what if you prefer to match `<Route>`'s 
+path with the entire URL’s file path? Let’s 
+discuss how to do so below. 
+
+<!-- // Page 354 -->
 
 
 # EPILOGUE
