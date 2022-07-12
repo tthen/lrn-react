@@ -8201,6 +8201,396 @@ discuss how to do so below.
 <!-- // Page 354 -->
 
 
+
+## How To Match `<Route>`'S Path With The Entire URL File Path
+
+
+You can use any of the three techniques 
+below to ensure `<BrowserRouter>` 
+matches your `<Route>`'s path with the 
+entire URL file path a client requests. 
+
+
+**Technique 1: Avoid using "/"**
+
+One way to ensure `<BrowserRouter>` 
+matches your `<Route>`s path with the 
+whole of a client’s file path is to avoid using 
+"/" as a path.
+
+
+Here’s an example:
+
+```javascript
+import React from 'react';
+import App from './App';
+import About from './About';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Link to="/home">Home</Link> |{' '}
+          <Link to="/about">About</Link>
+        </p>
+        <Route path="/home" component={App} />
+        <Route path="/about" component={About} />
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-cnfd9d?file=src%2Fcomponents%2FRoutes.js)
+
+
+Notice that instead of using "/" as our App 
+component’s path, we used "/home".
+
+So, suppose a client request 
+`www.codesweetly.com/about`. In that 
+case, React Router will render just the 
+`<Route>` with `path="/about"`—because 
+it is the only one whose path matched the 
+beginning of the requested file path.
+
+Note: If you use this technique, remember to 
+substitute `<Linkto="/">Home</Link>` with 
+`<Linkto="/home">Home</Link>`. Otherwise, 
+nothing will display on your homepage.
+
+
+Let’s discuss the second way to match 
+`<Route>`'s path with the entire URL’s file
+path.
+
+
+
+**Technique 2: Use `<Switch>` and line-up your `<Route>`'s by specificity**
+
+Another way to ensure `<BrowserRouter>` 
+matches your `<Route>`'s path with the 
+whole of a client’s file path is:
+
+1. Use `<Switch>` to wrap up your 
+`<Route>` elements. By so doing, 
+`<BrowserRouter>` will render only the 
+first child `<Route>` whose path matches 
+the requested endpoint's beginning. 
+
+2. Line up your `<Route>` elements by 
+specificity from top to bottom.
+
+In other words, order your Routes so that the 
+ones whose path you want React Router to 
+analyze first appear at the top. Because 
+`<Switch>` will ignore all the other Routes 
+once it renders its first match.
+
+
+Here’s an example:
+
+```javascript
+import React from 'react';
+import App from './App';
+import About from './About';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        </p>
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/" component={App} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-4er9bq?file=src%2Fcomponents%2FRoutes.js)
+
+
+
+In the example above, we first used 
+`<Switch>` to envelop all our `<Route>` 
+elements.
+
+Secondly, we moved the `<Route>`` with
+`path="/about"` above the one with 
+`path="/"`.
+
+As such, suppose a client request 
+`www.codesweetly.com/about`. In that 
+case, React Router will render only the 
+`<Route>` with `path="/about"`—because 
+it is the first one whose path matched the 
+beginning of the requested file path. 
+
+Note:
+
+* `<Switch>` works like JavaScript’s switch 
+statement. React Router uses it to render the 
+first child `<Route>` whose path matches 
+the beginning of the requested file path. 
+
+* Remember to import Switch from 
+`react-router-dom`.
+
+So now that we know the first and second 
+techniques, we can discuss the third one. 
+
+
+
+
+**Technique 3: Add the exact keyword to your `<Route>`**
+
+
+The best way to ensure
+`<BrowserRouter>` matches your 
+`<Route>`'s path with the entire URL file 
+path is to add an exact keyword onto your 
+`<Route>`.
+
+The exact keyword tells 
+`<BrowserRouter>` that the `<Route>`'s 
+path must exactly match the entire URL file 
+path.
+
+In other words, exact implies that 
+`<BrowserRouter>` should not find only 
+the first strings of characters that match the 
+URL’s file path. Instead, it should find the 
+exact match.
+
+Here’s an example:
+
+```javascript
+import React from 'react';
+import App from './App';
+import About from './About';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        </p>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-wgh9tx?file=src%2Fcomponents%2FRoutes.js)
+
+
+In the example above, we first used 
+`<Switch>` to wrap all our `<Route>` 
+elements. 
+
+Secondly, we added the exact keyword to
+the Routes.
+
+Therefore, `<BrowserRouter>` will only 
+render the `<Route>` whose path matches 
+the requested file path exactly. 
+
+So, for instance, suppose a client request 
+`www.codesweetly.com/about`. In that 
+case, React Router will render only the 
+`<Route>` with `path="/about"`. Because 
+it is the first one whose path exactly 
+matches the requested URL file path 
+(`"/about"`).
+
+Keep in mind that you can use `"/:id"` to 
+represent an unknown path. For instance, 
+suppose you need to generate a page 
+dynamically for a shop’s website. In such a 
+case, you can have a `<Route>` configured 
+like so:
+
+
+`<Route exact path="/shop/:id" component={ProductInfo} />`
+
+
+In the snippet above, `":id"` means “any 
+value”. Therefore, React will render the 
+ProductInfo component if the client’s 
+URL file path matches 
+`".../shop/:id"`—where `":id"` 
+represents any value. 
+
+Observe that in `":id"`, you can substitute 
+the id parameter with any other thing. So, 
+for instance, instead of `"/shop/:id"`, you 
+can alternatively use 
+`"/shop/:productName"`. 
+
+Note: Remember to add Switch as part of 
+the components you are importing from 
+`react-router-dom`.
+
+So now that you know how to create Route 
+components, we can discuss how to handle 
+unavailable URL file paths. 
+
+
+**Step 12: How To Handle Unavailable URL Requests In ReactJS**
+
+Suppose a user enters an incorrect URL. In 
+such a case, React Router provides a way to 
+handle such a scenario. 
+
+_First, create an Error.js file_
+
+In the `src/components` directory, create a 
+new file called `Error.js`.
+
+_Secondly, create the Error component_
+
+Open your `Error.js` file and replicate the
+code below:
+
+
+```javascript
+// Error.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Error() {
+  return (
+    <div>
+      <h1>404</h1>
+      <h2>Oops! Page not found!</h2>
+      <p>
+        Checkout our <Link to="/">homepage</Link>
+      </p>
+    </div>
+  );
+}
+
+export default Error;
+```
+
+
+In the snippet above, we created an Error 
+function component that returns a `<div>` 
+element containing an `<h1>`, `<h2>`, and a 
+`<p>` element.
+
+
+_Thirdly, add a `<Route>` with no path to your `<BrowserRouter>`_
+
+Inside your `Routes.js` file, import your 
+`Error.js` file and add a new `<Route>` 
+(with no path attribute) as a child of your 
+`<BrowserRouter>`.
+
+
+```javascript
+// Routes.js
+import React from 'react';
+import App from './App';
+import About from './About';
+import Error from './Error';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>
+          Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        </p>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
+          <Route component={Error} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+
+_In the snippet above, we used the <Route> with no path to tell <BrowserRouter>**_
+
+
+to render the Error component if it receives 
+any unknown URL request.
+
+By doing so, if users enter any incorrect URL 
+file path, React Router will render the Error 
+component to the DOM.
+
+
+So now that we’ve created the Routes needed 
+for this project, we can run the app! So, let’s 
+do that below. 
+
+
+**Step 13: Run Your Application!**
+
+
+Go ahead and run your application by 
+running:
+
+```
+npm start
+```
+
+Alternatively, if your package manager is 
+Yarn, run:
+
+```
+yarn start
+```
+
+Once your app starts to run, click the links on 
+the page to see how the page never reloads, 
+but its content changes depending on the 
+URL request made.
+
+You can also see mine on [StackBlitz](https://stackblitz.com/edit/react-k7rpsa?file=src%2Fcomponents%2FRoutes.js).
+
+Before we wrap up our discussion on React 
+Router, let’s talk about deploying your app so 
+that the world can see your gem! 
+
+
+**Step 14: How To Deploy A React Router Application To GitHub Pages**
+<!-- // page 366 -->
+
+
+
+
+
+
 # EPILOGUE
 
 
