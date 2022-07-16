@@ -8586,6 +8586,393 @@ that the world can see your gem!
 **Step 14: How To Deploy A React Router Application To GitHub Pages**
 <!-- // page 366 -->
 
+Keep in mind that GitHub Pages does not 
+support routers that use the HTML5 history 
+API to keep a component in sync with the 
+URL. 
+
+For example, suppose you deploy your 
+project to GitHub Pages and load one of its 
+URLs—for instance, 
+http://user.github.io/componentrouting/about. 
+In that case, the GitHub 
+Pages’ server will return a 404-error message. 
+
+The server will throw an error because, by 
+default, GitHub Pages does not use the 
+HTML5 history API to keep a component in 
+sync with the requested URL. As such, 
+GitHub will have no record of the `/about` 
+file path.
+
+Therefore, to deploy your app to GitHub 
+pages successfully, use the `hashHistory` API 
+or teach GitHub Pages to redirect 404s to 
+your `index.html` page. 
+
+Let’s discuss the hashHistory API technique 
+below.
+
+### How To Use The HashHistory API To Deploy A React App To GitHub Pages
+
+Previously, in our Routes function 
+component, recall that we used the 
+`browserHistory` API (that is, 
+`<BrowserRouter>`) to route users’ URL 
+file paths. 
+
+Here’s that snippet again:
+
+```javascript
+// Routes.js
+import React from "react";
+import App from "./App";
+import About from "./About";
+import Error from "./Error";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+
+function Routes() {
+  return (
+    <div>
+      <BrowserRouter>
+        <p>Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link></p>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
+          <Route component={Error} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+While such configuration will suffice in 
+development, it won’t work in production—
+since GitHub Pages does not support the 
+HTML5 history API.
+
+So, one way to deploy to GitHub pages 
+successfully is to use the `hashHistory` 
+API (that is, `<HashRouter>`) to handle 
+users’ file path routings.
+
+By so doing, GitHub Pages will use hashes to 
+keep your component in sync with the 
+requested URL.
+
+So, the resultant URL will look something
+like so:
+
+```
+https://username.github.io/reponame/#/path/to/file
+```
+
+For instance, to configure GitHub Pages to 
+host the Routes script above, substitute the 
+`<BrowserRouter>` code with `<HashRouter>`.
+
+Here’s an example:
+
+
+```javascript
+// Routes.js
+import React from "react";
+import App from "./App";
+import About from "./About";
+import Error from "./Error";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
+
+function Routes() {
+  return (
+    <div>
+      <HashRouter>
+        <p>Our Pages: <Link to="/">Home</Link> | <Link to="/about">About</Link></p>
+          <Switch>
+            <Route exact path="/" component={App} />
+            <Route exact path="/about" component={About} />
+            <Route component={Error} />
+          </Switch>
+      </HashRouter>
+    </div>
+  );
+}
+
+export default Routes;
+```
+
+
+After switching to `<HashRouter>`, go 
+ahead to deploy your app to GitHub Pages 
+using the steps we covered in chapter 
+nineteen. You will see that the deployment 
+will now be successful!
+
+Note: See the Create React App deployment 
+[documentation](https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing) 
+if you prefer to deploy with 
+other static file servers such as Azure and 
+Firebase.
+
+
+
+## Important Stuff To Know About React Router
+
+Keep these two essential pieces of info in 
+mind whenever you use the React Router 
+library. 
+
+
+### Info 1: A Match Object Get Sent To Your `<Route>`'S Component
+
+
+Whenever `<Route>`'s path matches a 
+user’s URL file path, React Router 
+automatically sends a match object to the 
+component it will render for that `<Route>`.
+
+React Router uses the match object to store 
+details on how a specific `<Route>`'s path 
+matched the client’s URL file path.
+
+In other words, the match object will 
+contain the following four properties: 
+
+
+- `isExact`: The first match object’s property
+
+`isExact` is a Boolean that indicates whether 
+`<Route>`'s path matched the URL exactly 
+or partially. 
+
+If `isExact`'s value is `true`, it means the 
+match was exact. 
+
+However, if `isExact` is `false`, it implies
+that the match was partial.
+
+
+
+- `params`: The second match object’s property
+
+`params` is an object that contains the 
+parameters of the dynamic segments of a 
+`<Route>`'s path and a client’s URL file 
+path. 
+
+For instance, consider the `<Route>` below:
+
+```javascript
+<Route exact path="/shop/:category/:item"
+component={ItemInfo} />
+```
+
+
+Suppose the URL that matched the `<Route>` 
+above is
+"https://www.codesweetly.com/shop/women"
+In such a case, the match object’s params
+that will get sent to the `ItemInfo`
+component will look like so:
+
+```json
+params: {
+  category: "women",
+  item: "snowboard-jacket"
+}
+```
+
+
+In the snippet above, `params` keys 
+(`category` and `item`) reference the 
+parameters of the dynamic segments of the 
+`<Route>`'s path (that is, `:category` and 
+`:item`). 
+
+At the same time, `params` values
+(`"women"` and `"snowboard-jacket"`)
+represent the parameters of the dynamic
+segments of the client’s URL (that is, `women`
+and `snowboard-jacket`).
+
+
+
+- `path`: The third match object’s property
+
+`path` is a string that represents a 
+`<Route>`'s path attribute.
+
+For instance, consider the `<Route>` below:
+
+```javascript
+<Route exact path="/shop/:category/:item"
+component={ItemInfo} />
+```
+
+Based on the snippet above, the match
+object’s path property that will get sent to
+the `ItemInfo` component will look like so:
+
+```javascript
+path: "/shop/:category/:item"
+```
+
+
+- `url`: The fourth match object’s property
+
+`url` is a string that represents the URL 
+portion that matched a `<Route>`'s path 
+attribute. 
+
+For instance, consider the `<Route>` below:
+
+```javascript
+<Route exact path="/shop/:category/:item"
+component={ItemInfo} />
+```
+
+Suppose the URL that matched the `<Route>`
+above is
+"https://www.codesweetly.com/shop/women/"
+
+In such a case, the match object’s url
+property that will get sent to the `ItemInfo`
+component will look like so:
+
+```javascript
+url: "/shop/women/snowboard-jacket"
+```
+
+So now that we know about the match 
+object, we can discuss how to access it.
+
+
+
+### Info 2: How To Access The Match Object
+
+You can access the match object by 
+specifying it as your `<Route>` component’s 
+parameter. 
+
+For instance, consider the `<Route>` below:
+
+```javascript
+<Route exact path="/shop/:item"
+component={ItemInfo} />
+```
+
+We can access the match object `<Route>` 
+will send to the `ItemInfo` component like
+so:
+
+```javascript
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function ItemInfo({ match }) {
+  return (
+    <div>
+      {console.log(match)}
+      <h1>Check Items in the Console ⬇⬇⬇</h1>
+      <p>
+        Checkout our <Link to="/">homepage</Link>
+      </p>
+    </div>
+  );
+}
+
+export default ItemInfo;
+```
+
+Try it on [StackBlitz](https://stackblitz.com/edit/react-h2b6fv?file=src%2Fcomponents%2FItemInfo.js)
+
+
+The snippet above puts the function’s match 
+parameter into a [destructuring object](https://codesweetly.com/destructuring-object/). 
+
+So, whenever a user’s URL matches the 
+`<Route>`'s path, React Router will invoke 
+the `ItemInfo` component and send a 
+match object to its parameter. 
+
+Then, `ItemInfo` will receive the object as 
+its match parameter’s argument and log its 
+value to the browser’s console. 
+
+
+Note:
+
+* A good use case of the match object is 
+when you need to reuse a specific portion of a 
+client’s URL in your `<Route>`'s component. 
+For instance, you may need to fetch data 
+based on the URL’s id parameter. 
+
+* [This video](https://www.youtube.com/watch?v=Law7wfdg_ls&t=1006s) 
+to see how you can use the 
+match object to build a simple website. The 
+app dynamically displays details about a 
+product whenever the product’s name gets 
+clicked.
+
+
+
+## Time To Practice With Creating A React App That Functions Like A Multi-Page Application
+
+Here is your moment to practice the concepts 
+you’ve learned on React Routing. 
+
+In this exercise, your goal is to create a 
+shopping cart app. 
+
+Your shopping cart should allow users to 
+browse for products, add them to the cart, and 
+pay for items in the cart. 
+
+Keep in mind that you do not need to 
+implement the payment logic in the practice 
+session. 
+
+Note:
+
+* Your app must contain at least two routes (a 
+homepage route and a shop page route).
+
+* Provide a way for users to navigate between 
+the app’s pages. 
+
+* Implement a clickable cart icon that shows 
+the number of items currently in the cart. And 
+on clicking the icon, the app should direct 
+users to the cart area to check out and pay for 
+items in the basket. 
+
+* On the shop’s page, display each item in a 
+card format where each card includes the 
+product’s image, price, description, and a 
+way to add the item to the cart. 
+
+* Make your app beautiful by adding styles to 
+it. 
+
+* Deploy your app to GitHub Pages! 
+
+Remember: You will benefit much from this 
+tutorial if you do the exercises yourself. 
+If you get stuck at any point, don’t be 
+discouraged. Instead, review the lessons and 
+give the exercise another try. 
+
+
+Once you’ve given it your best shot (you’d 
+only cheat yourself if you don’t!), go ahead to 
+check mine on [GitHub Pages](https://oluwatobiss.github.io/shopping-cart/#/). You can also 
+browse through other students’ approaches at 
+The [Odin Project](https://www.theodinproject.com/lessons/javascript-shopping-cart), where I got this project’s 
+idea. 
+
 
 
 
