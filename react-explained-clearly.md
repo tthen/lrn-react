@@ -5,7 +5,7 @@ React.js Apps
 Oluwatobi Sofela 
 -->
 
-React
+React Explained Clearly
 ===================
 
   - [Introduction](#resumen-de-la-sintaxis-markdown)
