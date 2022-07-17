@@ -49,14 +49,14 @@ Essentially, each independent componente tells React the exact
 element you want to see displayed on-screen.
 
 
-_s React a framework ?_
+_Is React a framework ?_
 
 No, it is a library -- not a framework. React serves only as an 
 add-on feature to your application. It is not designed to be used as 
 an app's primary support system.
 
 
-_s React only a web Technology ?_
+_Is React only a web Technology ?_
 
 No, it is no only used on the web.
 
