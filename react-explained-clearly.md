@@ -5,7 +5,12 @@ React.js Apps
 Oluwatobi Sofela 
 -->
 
-# Introduction
+React
+===================
+
+  - [Introduction](#resumen-de-la-sintaxis-markdown)
+
+## Introduction ##
 
 The best way to learn is through progressive practice. In other words, 
 the easiest way to understand React is to proactively write React 
@@ -19,7 +24,7 @@ Don'te let the projects type scare you off! You are for an exciting
 ride -- where you will learn the fundamental concepts needed to build 
 any React application. So, give it a chance.
 
-# Intro to React - Useful key points about React
+## Intro to React - Useful key points about React ##
 
 
 wwhat is React ?
