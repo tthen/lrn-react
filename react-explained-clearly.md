@@ -27,13 +27,13 @@ any React application. So, give it a chance.
 ## Intro to React - Useful key points about React ##
 
 
-wwhat is React ?
+_What is React ?_
 
 React is a component-based JavaScript library used to build user 
 interfaces (UI) efficiently.
 
 
-Why use React ?
+_Wy use React ?_
 
 Developers primarily use ReactJS to build independent, reusable 
 components that you combine with other isolated user interfaces to 
@@ -49,14 +49,14 @@ Essentially, each independent componente tells React the exact
 element you want to see displayed on-screen.
 
 
-Is React a framework ?
+_s React a framework ?_
 
 No, it is a library -- not a framework. React serves only as an 
 add-on feature to your application. It is not designed to be used as 
 an app's primary support system.
 
 
-Is React only a web Technology ?
+_s React only a web Technology ?_
 
 No, it is no only used on the web.
 
