@@ -68,7 +68,7 @@ JSX elements can have attributes, just like how HTML elements can.
 
 A JSX attribute is written using HTML-like syntax: a name, followed by an equals sign, followed by a value. The value should be wrapped in quotes, like this:
 
-```
+```javascript
 my-attribute-name="my-attribute-value"
 ```
 
