@@ -12,7 +12,7 @@ If you are new to React, then this course is for you—no prior React knowledge 
 
 ### What is JSX?
 
-JSX is a syntax extension for JavaScript. It was written to be used with React. JSX code looks a lot like HTML.
+[JSX](https://www.codecademy.com/resources/docs/react/jsx) is a syntax extension for JavaScript. It was written to be used with React. JSX code looks a lot like HTML.
 
 What does “syntax extension” mean?
 
@@ -61,6 +61,30 @@ const myTeam = {
   pointGuard: <li>Femi Billon</li>
 };
 ```
+
+### Attributes In JSX
+
+JSX elements can have attributes, just like how HTML elements can.
+
+A JSX attribute is written using HTML-like syntax: a name, followed by an equals sign, followed by a value. The value should be wrapped in quotes, like this:
+
+```
+my-attribute-name="my-attribute-value"
+```
+
+Here are some JSX elements with attributes:
+
+```jsx
+<a href='http://www.example.com'>Welcome to the Web</a>;
+const title = <h1 id='title'>Introduction to React.js: Part I</h1>; 
+```
+
+A single JSX element can have many attributes, just like in HTML:
+
+```jsx
+const panda = <img src='images/panda.jpg' alt='panda' width='500px' height='500px'>;
+```
+
 
 
 
