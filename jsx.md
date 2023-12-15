@@ -52,7 +52,7 @@ const navBar = <nav>I am a nav bar</nav>;
 
 Here’s an example of several JSX elements being stored in an object:
 
-```
+```jsx
 const myTeam = {
   center: <li>Benzo Walli</li>,
   powerForward: <li>Rasha Loa</li>,
