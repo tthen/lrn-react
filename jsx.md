@@ -238,7 +238,29 @@ const blog = (
     </article>
   </div>
 );
-   
+```
+
+### Rendering JSX
+
+You've learned how to write JSX elements! Now its time to learn how to render them.
+
+To render a JSX expression means to make it appear on screen.
+
+**Example app.js**
+
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+// Copy code here:
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<h1>Hello world</h1>);
+```
+
+```terminal
+https://localhost:8000
+Hello world
 ```
 
 <!-- 
