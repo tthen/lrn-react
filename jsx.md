@@ -310,11 +310,46 @@ root.render(<h1>Hello world</h1>)
 
 uses the `render()` method of `root` to render the content passed in as an argument. Here we pass an `<h1>` element, which displays Hello world. This is the “what content to render” part of React rendering.
 
+### Passing a Variable to `render()`
+
+In the previous exercise, we saw how we can create a React `root` using `createRoot()` and use its `render()` method to render JSX.
+
+The `render()` method's argument doesn't need to be JSX, but it should evaluate to a JSX expression. The argument could also be a variable, so long as that variable evaluates to a JSX expression.
+
+In this example, we save a JSX expression as a variable named `toDoList`. We then pass `toDoList` as the argument of `render()`:
+
+```jsx
+const toDoList = (
+  <ol>
+    <li>Learn React</li>
+    <li>Become a Developer</li>
+  </ol>
+);
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(toDoList);
+```
+
 **Example `app.js`**
 
 ```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
+const container = document.getElementById('app');
+const root = createRoot(container);
+// Write code here:
+const myList = (
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+  </ul>
+);
+root.render(myList);
 ```
+
+
 
 
 
