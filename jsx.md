@@ -98,13 +98,13 @@ You can nest JSX elements inside of other JSX elements, just like in HTML.
 
 Here’s an example of a JSX <h1> element, nested inside of a JSX <a> element:
 
-```
+```jsx
 <a href="https://www.example.com"><h1>Click me!</h1></a>
 ```
 
 To make this more readable, you can use HTML-style line breaks and indentation:
 
-```
+```jsx
 <a href="https://www.example.com">
   <h1>
     Click me!
@@ -114,7 +114,7 @@ To make this more readable, you can use HTML-style line breaks and indentation:
 
 If a JSX expression takes up more than one line, then you must wrap the multi-line JSX expression in parentheses. This looks strange at first, but you get used to it:
 
-```
+```jsx
 (
   <a href="https://www.example.com">
     <h1>
@@ -136,12 +136,11 @@ Nested JSX expressions can be saved as variables, passed to functions, etc., jus
  );
 ```
 
+<!-- 
 Instructions
 Checkpoint 1 Enabled
 
-1.
-
-Declare a new variable named myDiv. Set myDiv equal to a JSX <div> element.
+1. Declare a new variable named myDiv. Set myDiv equal to a JSX <div> element.
 
 Wrap the <div></div> in parentheses, and use indentation and line breaks like in the examples. In between the <div></div> tags, nest an <h1></h1> containing the text Hello world.
 Concept Review
@@ -153,5 +152,4 @@ Here are some helpful links to the top questions asked by coders about this exer
     Why do we need parentheses around multi-line JSX expressions?
 
 Still have questions? View this exercise's thread in the Codecademy Forums.
-Code Editor
-
+-->
