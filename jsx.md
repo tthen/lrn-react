@@ -96,7 +96,7 @@ const p2 = <p id = 'small'>bar</p>;
 
 You can nest JSX elements inside of other JSX elements, just like in HTML.
 
-Here’s an example of a JSX <h1> element, nested inside of a JSX <a> element:
+Here's an example of a JSX `<h1>` element, nested inside of a JSX `<a>` element:
 
 ```jsx
 <a href="https://www.example.com"><h1>Click me!</h1></a>
