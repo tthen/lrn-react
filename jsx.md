@@ -176,8 +176,53 @@ It’s easy to forget about this rule and end up with errors that are tough to d
 
 If you notice that a JSX expression has multiple outer elements, the solution is usually simple: wrap the JSX expression in a `<div>` element.
 
+#### Can I wrap multi-line JSX expressions in an element other than a <div>?
+
+**Answer**
+
+JSX expressions can be wrapped in an element other than a `<div>` element to be sure that the first opening tag and final closing tag of a JSX expression belong to the same element.
+
+This element can be an HTML element where the nesting is valid according to HTML5 specifications (see MDN documentation to check for permitted content in a specific element) or, this element can be custom components that have child components or other HTML elements nested inside.
+
+[Fragments](https://react.dev/reference/react/Fragment)
+
+**Short Syntax**
+
+There is a new, shorter syntax you can use for declaring fragments. It looks like empty tags:
+
+```jsx
+class Columns extends React.Component {
+  render() {
+    return (
+      <>        <td>Hello</td>
+        <td>World</td>
+      </>    );
+  }
+}
+```
 
 
+You can use `<></>` the same way you’d use any other element except that it doesn’t support keys or attributes.
+
+**Keyed Fragments**
+
+Fragments declared with the explicit `<React.Fragment>` syntax may have keys. A use case for this is mapping a collection to an array of fragments — for example, to create a description list:
+
+```jsx
+function Glossary(props) {
+  return (
+    <dl>
+      {props.items.map(item => (
+        // Without the `key`, React will fire a key warning
+        <React.Fragment key={item.id}>
+          <dt>{item.term}</dt>
+          <dd>{item.description}</dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  );
+}
+```
 <!-- 
 
 -->
