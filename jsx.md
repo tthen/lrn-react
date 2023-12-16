@@ -85,6 +85,11 @@ A single JSX element can have many attributes, just like in HTML:
 const panda = <img src='images/panda.jpg' alt='panda' width='500px' height='500px'>;
 ```
 
+Example, `app.js` file
 
+```jsx
+const p1 = <p id = 'large'>foo</p>;
+const p2 = <p id = 'small'>bar</p>;
+```
 
 
