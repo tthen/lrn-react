@@ -349,8 +349,36 @@ const myList = (
 root.render(myList);
 ```
 
+### The Virtual DOM
+
+One special thing about a React root's `render()` method is that it only updates DOM elements that have changed.
+
+That means that if you render the exact same thing twice in a row, the second render will do nothing:
+
+```jsx
+const hello = <h1>Hello world</h1>;
+
+// This will add "Hello world" to the screen:
+root.render(hello, document.getElementById('app'));
+
+// This won't do anything at all:
+root.render(hello, document.getElementById('app'));
+```
+
+This is significant! Only updating the necessary DOM elements is a large part of what makes React so successful. This is accomplished using React's virtual DOM.
 
 
+**Why is DOM manipulation so slow?**
+
+Answer
+
+When there is a change to an element in the DOM, the DOM has to re-render the element and all of the element’s children to the DOM - making DOM manipulation very slow in comparison to the Virtual DOM.
+
+Actual DOM works on tree structure, which means if user interact with website and make any changes, it’ll update the entire DOM (tree structure), while virtual DOM is based on JavaScript object which compares present and previous versions of DOM and update only the specific nodes of the DOM, hence making it fast, optimized performance
+
+One of the main causes of slow DOM manipulation is accessing the DOM too frequently or unnecessarily, as each time you use a method like document. getElementById, document. querySelector, or document. createElement, you are triggering a reflow or repaint.
+
+See more in [Análisis del navegador web moderno (parte 1)](https://developer.chrome.com/blog/inside-browser-part1?hl=es-419)
 
 
 <!-- 
