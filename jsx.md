@@ -176,7 +176,7 @@ It’s easy to forget about this rule and end up with errors that are tough to d
 
 If you notice that a JSX expression has multiple outer elements, the solution is usually simple: wrap the JSX expression in a `<div>` element.
 
-#### Can I wrap multi-line JSX expressions in an element other than a <div>?
+#### Can I wrap multi-line JSX expressions in an element other than a `<div>`?
 
 **Answer**
 
