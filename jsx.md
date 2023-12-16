@@ -136,20 +136,48 @@ Nested JSX expressions can be saved as variables, passed to functions, etc., jus
  );
 ```
 
+Example, `app.js` file
+
+```jsx
+const myDiv = (
+  <div>
+    <h1>Hello world</h1>
+  </div>
+);
+```
+
+### JSX Outer Elements
+
+There’s a rule that we haven’t mentioned: a JSX expression must have exactly one outermost element.
+
+In other words, this code will work:
+
+```jsx
+const paragraphs = (
+  <div id="i-am-the-outermost-element">
+    <p>I am a paragraph.</p>
+    <p>I, too, am a paragraph.</p>
+  </div>
+);
+```
+
+But this code will not work:
+
+```jsx
+const paragraphs = (
+  <p>I am a paragraph.</p> 
+  <p>I, too, am a paragraph.</p>
+);
+```
+
+The first opening tag and the final closing tag of a JSX expression must belong to the same JSX element!
+
+It’s easy to forget about this rule and end up with errors that are tough to diagnose.
+
+If you notice that a JSX expression has multiple outer elements, the solution is usually simple: wrap the JSX expression in a `<div>` element.
+
+
+
 <!-- 
-Instructions
-Checkpoint 1 Enabled
 
-1. Declare a new variable named myDiv. Set myDiv equal to a JSX <div> element.
-
-Wrap the <div></div> in parentheses, and use indentation and line breaks like in the examples. In between the <div></div> tags, nest an <h1></h1> containing the text Hello world.
-Concept Review
-Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
-Community Forums
-
-Here are some helpful links to the top questions asked by coders about this exercise:
-
-    Why do we need parentheses around multi-line JSX expressions?
-
-Still have questions? View this exercise's thread in the Codecademy Forums.
 -->
