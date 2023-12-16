@@ -92,4 +92,66 @@ const p1 = <p id = 'large'>foo</p>;
 const p2 = <p id = 'small'>bar</p>;
 ```
 
+### Nested JSX
+
+You can nest JSX elements inside of other JSX elements, just like in HTML.
+
+Here’s an example of a JSX <h1> element, nested inside of a JSX <a> element:
+
+```
+<a href="https://www.example.com"><h1>Click me!</h1></a>
+```
+
+To make this more readable, you can use HTML-style line breaks and indentation:
+
+```
+<a href="https://www.example.com">
+  <h1>
+    Click me!
+  </h1>
+</a>
+```
+
+If a JSX expression takes up more than one line, then you must wrap the multi-line JSX expression in parentheses. This looks strange at first, but you get used to it:
+
+```
+(
+  <a href="https://www.example.com">
+    <h1>
+      Click me!
+    </h1>
+  </a>
+)
+```
+
+Nested JSX expressions can be saved as variables, passed to functions, etc., just like non-nested JSX expressions can! Here’s an example of a nested JSX expression being saved as a variable:
+
+```jsx
+ const theExample = (
+   <a href="https://www.example.com">
+     <h1>
+       Click me!
+     </h1>
+   </a>
+ );
+```
+
+Instructions
+Checkpoint 1 Enabled
+
+1.
+
+Declare a new variable named myDiv. Set myDiv equal to a JSX <div> element.
+
+Wrap the <div></div> in parentheses, and use indentation and line breaks like in the examples. In between the <div></div> tags, nest an <h1></h1> containing the text Hello world.
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
+Community Forums
+
+Here are some helpful links to the top questions asked by coders about this exercise:
+
+    Why do we need parentheses around multi-line JSX expressions?
+
+Still have questions? View this exercise's thread in the Codecademy Forums.
+Code Editor
 
