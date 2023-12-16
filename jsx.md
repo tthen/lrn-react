@@ -263,6 +263,10 @@ https://localhost:8000
 Hello world
 ```
 
+**Concept review**
+
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's [cheatsheet!](https://www.codecademy.com/learn/react-101/modules/react-101-jsx-u/cheatsheet)
+
 <!-- 
 -->
 
