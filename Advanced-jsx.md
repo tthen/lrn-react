@@ -74,3 +74,24 @@ But, in JSX, you have to include the slash. If you write a self-closing tag in J
 // NOT FINE AT ALL in JSX:
 <br>
 ```
+
+
+***Example app.js**
+
+```jsx
+const profile = (
+  <div>
+    <h1>John Smith</h1>
+    <img src="images/john.png" />
+    <article>
+      My name is John Smith.
+      <br />
+      I am a software developer.
+      <br />
+      I specialize in creating React applications.
+    </article>
+  </div>
+);
+```
+
+
