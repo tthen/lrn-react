@@ -76,7 +76,7 @@ But, in JSX, you have to include the slash. If you write a self-closing tag in J
 ```
 
 
-***Example app.js**
+**Example app.js**
 
 ```jsx
 const profile = (
@@ -93,5 +93,33 @@ const profile = (
   </div>
 );
 ```
+
+### JavaScript In Your JSX In Your JavaScript
+
+So far, we've focused on writing JSX expressions. It's similar to writing bits of HTML, but inside of a JavaScript file.
+
+In this lesson, we're going to add something new: regular JavaScript, written inside of a JSX expression, written inside of a JavaScript file.
+
+**Example app.js**
+
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+// Write code here:
+root.render(<h1>2 + 3</h1>);
+```
+
+**Question**
+
+Why would we want to put JavaScript in our JSX?
+
+**Answer**
+
+We want to use JavaScript in our JSX to render logic!
+
+When we inject JS into JSX we can make this process of rendering logic (based on things like data, events, and data changing over time) more seamless by putting our markup, the HTML part of JSX, that is based on our logic, the JS part of JSX, together in the same file.
 
 
