@@ -152,3 +152,77 @@ const root = createRoot(container);
 root.render(<h1>{2 + 3}</h1>);
 ```
 
+### 20 Digits of Pi in JSX
+
+You can now inject regular JavaScript into JSX expressions! This will be extremely useful.
+
+In the code editor, you can see a JSX expression that displays the first twenty digits of pi.
+
+Study the expression and notice the following:
+
+- The code is written in a JavaScript file. By default, it will all be treated as regular JavaScript.
+- Find `<div>` on line 5. From there, up through `</div>`, the code will be treated as JSX.
+- Find `Math.` From there, up through (20), the code will be treated as regular JavaScript again.
+- The curly braces themselves won’t be treated as JSX or as JavaScript. They are markers that signal the beginning and end of a JavaScript injection into JSX, similar to the quotation marks that signal the boundaries of a string.
+
+### Variables in JSX
+
+When you inject JavaScript into JSX, that JavaScript is part of the same environment as the rest of the JavaScript in your file.
+
+That means that you can access variables while inside of a JSX expression, even if those variables were declared outside of the JSX code block.
+
+```jsx
+// Declare a variable:
+const name = 'Gerdo';
+
+// Access your variable inside of a JSX expression:
+const greeting = <p>Hello, {name}!</p>;
+```
+
+**Example app.js**
+
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+const theBestString = 'This text was accessed through a javascript variable';
+
+root.render(<h1>{theBestString}</h1>);
+```
+
+**Question**
+
+When should I assign a variable to a JavaScript expression that I want to use in a JSX expression?
+
+**Answer**
+
+The use of variables to store JavaScript expressions will largely be based on preference. However, we will usually want to use variables assigned to our JS expressions when our JS code would otherwise be hard to read/follow before using our JS expression inside of our JSX.
+
+For example:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<h1>two + two = {2 + 2}</h1>, document.getElementById('app'));
+//Here, the JavaScript expression `2+2` is easy to read and understand what's going on in the code
+```
+
+vs.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myFunc  = (a, b) => {
+  //do some logic or calculations with parameters here
+}
+
+
+ReactDOM.render(<h1>{myFunc(3,4)}</h1>, document.getElementById('app')); 
+//Here, we assign a function to the variable `myFunc` then call the myFunc fuction from inside our JSX - this is especially useful if the logic inside myFunc would be difficult to read and understand from inside a JSX expression
+```
+
