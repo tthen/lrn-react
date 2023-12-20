@@ -47,3 +47,30 @@ In JSX, some HTML attributes will use camelCase and/or a different attribute nam
 
 To read about more HTML attributes that use different names in JSX, check the React documentation for Tags and Attributes.
 
+### Self-Closing Tags
+
+Another common JSX error involves self-closing tags.
+
+What’s a self-closing tag?
+
+Most HTML elements use two tags: an opening tag (<div>), and a closing tag (</div>). However, some HTML elements such as <img> and <input> use only one tag. The tag that belongs to a single-tag element isn’t an opening tag or a closing tag; it’s a self-closing tag.
+
+When you write a self-closing tag in HTML, it is optional to include a forward slash immediately before the final angle bracket:
+
+```jsx
+// Fine in HTML with a slash:
+<br />
+
+// Also fine, without the slash:
+<br>
+```
+
+But, in JSX, you have to include the slash. If you write a self-closing tag in JSX and forget the slash, you will raise an error:
+
+```jsx
+// Fine in JSX:
+<br />
+
+// NOT FINE AT ALL in JSX:
+<br>
+```
