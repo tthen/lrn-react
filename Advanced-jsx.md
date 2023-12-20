@@ -51,9 +51,9 @@ To read about more HTML attributes that use different names in JSX, check the Re
 
 Another common JSX error involves self-closing tags.
 
-What’s a self-closing tag?
+Wha's a self-closing tag?
 
-Most HTML elements use two tags: an opening tag (<div>), and a closing tag (</div>). However, some HTML elements such as <img> and <input> use only one tag. The tag that belongs to a single-tag element isn’t an opening tag or a closing tag; it’s a self-closing tag.
+Most HTML elements use two tags: an opening tag (`<div>`), and a closing tag (`</div>`). However, some HTML elements such as `<img>` and `<input>` use only one tag. The tag that belongs to a single-tag element isn't an opening tag or a closing tag; it's a self-closing tag.
 
 When you write a self-closing tag in HTML, it is optional to include a forward slash immediately before the final angle bracket:
 
