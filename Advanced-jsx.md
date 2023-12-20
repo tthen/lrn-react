@@ -223,6 +223,8 @@ const myFunc  = (a, b) => {
 
 
 ReactDOM.render(<h1>{myFunc(3,4)}</h1>, document.getElementById('app')); 
-//Here, we assign a function to the variable `myFunc` then call the myFunc fuction from inside our JSX - this is especially useful if the logic inside myFunc would be difficult to read and understand from inside a JSX expression
+//Here, we assign a function to the variable `myFunc` then call the myFunc
+//fuction from inside our JSX - this is especially useful if the logic inside
+//myFunc would be difficult to read and understand from inside a JSX expression
 ```
 
