@@ -711,3 +711,10 @@ const peopleList = people.map((person,i) =>
 root.render(<ul>{peopleList}</ul>)
 ```
 
+**Question**
+
+Can I use the index of an element (passed to a method/looped over) as the key attribute’s value?
+
+**Answer**
+
+We can use the index of an element as the key attribute’s value, however, using only the index of an element as the key may cause some issues as the order of the elements may change and potentially render incorrect data specifically when a list can be reordered or filtered. When a list of elements can be reordered or filtered we should use more unique keys for the elements.
