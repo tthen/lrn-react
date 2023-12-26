@@ -690,3 +690,24 @@ Not all lists need to have keys. A list needs keys if either of the following is
 1. A list's order might be shuffled. For instance, a list of search results might be shuffled from one render to the next.
 
 If neither of these conditions is true, then you don't have to worry about keys. If you aren't sure, then it never hurts to use them!
+
+
+**example**
+
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+const people = ['Rowe', 'Prevost', 'Gare'];
+
+const peopleList = people.map((person,i) =>
+  // expression goes here:
+  <li key={'person_'+ i}>{person}</li>
+);
+
+// root.render goes here:
+root.render(<ul>{peopleList}</ul>)
+```
+
