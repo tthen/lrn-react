@@ -547,10 +547,44 @@ We should decide to use either an if statement, ternary operator, or the && oper
 
 Tips to help decide on which conditional statement or operator to use:
 
-    the && and ternary operators are more concise, choose either of these when possible
-    choose the && over a ternary when you want an action to occur (or not) based on a single condition
-    choose an if/else/else if statement when you need to extrapolate logic to make it easier to read and understand
+-  the `&&` and ternary operators are more concise, choose either of these when possible
+-  choose the `&&` over a ternary when you want an action to occur (or not) based on a single condition
+-  choose an `if/else/else if` statement when you need to extrapolate logic to make it easier to read and understand
 
+### `.map` in JSX
 
+The `.map()` array method comes up often in React. It's good to get in the habit of using it alongside JSX.
+
+If you want to create a list of JSX elements, then using `.map()` is often the most efficient way. It can look odd at first:
+
+```jsx
+const strings = ['Home', 'Shop', 'About Me'];
+
+const listItems = strings.map(string => <li>{string}</li>);
+
+<ul>{listItems}</ul>
+```
+
+In the above example, we start out with an array of strings. We call `.map()` on this array of strings, and the `.map()` call returns a new array of `<li>`s.
+
+On the last line of the example, note that `{listItems}` will evaluate to an array, because it's the returned value of `.map()`! JSX `<li>`s don't have to be in an array like this, but they can be.
+
+```jsx
+// This is fine in JSX, not in an explicit array:
+<ul>
+  <li>item 1</li>
+  <li>item 2</li>
+  <li>item 3</li>
+</ul>
+
+// This is also fine!
+const liArray = [
+  <li>item 1</li>, 
+  <li>item 2</li>, 
+  <li>item 3</li>
+];
+
+<ul>{liArray}</ul>
+```
 
 
