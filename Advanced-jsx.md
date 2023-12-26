@@ -484,3 +484,73 @@ const img = <img src={pics[coinToss() === "heads" ? "kitty" : "doggy"]} />;
 
 root.render(img);
 ```
+
+### JSX Conditionals: `&&`
+
+We're going to cover one final way of writing conditionals in React: the `&&` operator.
+
+Like the ternary operator, `&&` is not React-specific, but it shows up in React very often.
+
+In the last two exercises, you wrote statements that would sometimes render a kitty and other times render a doggy. `&&` would not have been the best choice for that code.
+
+`&&` works best for conditionals that will sometimes do an action but other times do nothing at all.
+
+Here's an example:
+
+```jsx
+const tasty = (
+  <ul>
+    <li>Applesauce</li>
+    { !baby && <li>Pizza</li> }
+    { age > 15 && <li>Brussels Sprouts</li> }
+    { age > 20 && <li>Oysters</li> }
+    { age > 25 && <li>Grappa</li> }
+  </ul>
+);
+```
+
+If the expression on the left of the && evaluates as true, then the JSX on the right of the && will be rendered. If the first expression is false, however, then the JSX to the right of the && will be ignored and not rendered.
+
+**favorite-food.js**
+
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+// judgmental will be true half the time.
+const judgmental = Math.random() < 0.5;
+
+const favoriteFoods = (
+  <div>
+    <h1>My Favorite Foods</h1>
+    <ul>
+      <li>Sushi Burrito</li>
+      <li>Rhubarb Pie</li>
+      { !judgmental && <li>Nacho Cheez Straight Out The Jar</li> }
+      <li>Broiled Grapefruit</li>
+    </ul>
+  </div>
+);
+
+root.render(favoriteFoods);
+```
+
+**Question**
+
+When should I use an if statement, a ternary operator, or the && operator?
+
+**Answer**
+
+We should decide to use either an if statement, ternary operator, or the && operator based on what is most concise while still maintaining readability.
+
+Tips to help decide on which conditional statement or operator to use:
+
+    the && and ternary operators are more concise, choose either of these when possible
+    choose the && over a ternary when you want an action to occur (or not) based on a single condition
+    choose an if/else/else if statement when you need to extrapolate logic to make it easier to read and understand
+
+
+
+
