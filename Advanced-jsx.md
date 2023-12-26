@@ -587,4 +587,83 @@ const liArray = [
 <ul>{liArray}</ul>
 ```
 
+**example**
 
+```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+const people = ['Rowe', 'Prevost', 'Gare'];
+
+const peopleList = people.map((person,i) =>
+  // expression goes here:
+  <li>{person}</li>
+);
+
+// root.render goes here:
+root.render(<ul>{peopleList}</ul>)
+```
+
+**Question**
+
+Can I use .forEach() to create a list of JSX elements?
+
+**Answer**
+
+We can use `.forEach()` to create a list of JSX elements from an array as long as we are using `.forEach()` from outside a JSX expression as `.forEach()` does not evaluate to a value like `.map()` does. That said, `.forEach()` takes a little more code to do the same thing that `.map()` can do.
+
+For example:
+
+Using `.forEach()`:
+
+```jsx
+const myArr = ['one', 'two', 'three'];
+
+const myArrMadeFromForEach = [];
+// we create a new array which will evaluate to a value when we inject it into a JSX expression
+
+myArr.forEach((item, i) => myArrMadeFromForEach.push(<li key={item+i}>{item}</li>)); 
+// we push a JSX element containing a value to our 'myArrMadeFromForEach' because `.forEach()` does not return any value, nor does it mutate the array on which it is called
+
+
+const myList = (
+  <ul>{myArrMadeFromForEach}</ul>
+  // `myArrMadeFromForEach` will evaluate to an array of `<li>` elements
+)
+
+ReactDOM.render(myList, document.getElementById('app'));
+
+compared to using .map():
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myArr = ['one', 'two', 'three'];
+
+const myArrCreatedFromMap = myArr.map((item, i) => (<li key={item + i}>{item}</li>));
+// `.map()` creates/returns a new array from calling a function on every element in the array it's called on
+
+const myList = (
+  <ul>{myArrCreatedFromMap}</ul>
+  // `myArrCreatedFromMap` will evaluate to a list of `<li>` elements
+)
+
+ReactDOM.render(myList, document.getElementById('app'));
+```
+
+we can also use `.map()` inline without setting the return value to a variable:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myArr = ['one', 'two', 'three'];
+
+const myList = (
+  <ul>{myArr.map((item, i) => <li key={item + i}>{item}</li>)}</ul> // `.map()` creates/returns a new array from calling a function on every element in the array it's called on
+)
+
+ReactDOM.render(myList, document.getElementById('app'));
+```
