@@ -718,3 +718,28 @@ Can I use the index of an element (passed to a method/looped over) as the key at
 **Answer**
 
 We can use the index of an element as the key attribute’s value, however, using only the index of an element as the key may cause some issues as the order of the elements may change and potentially render incorrect data specifically when a list can be reordered or filtered. When a list of elements can be reordered or filtered we should use more unique keys for the elements.
+
+### `React.createElement`
+
+You can write React code without using JSX at all!
+
+The majority of React programmers do use JSX, but you should understand that it is possible to write React code without it.
+
+The following JSX expression:
+
+```jsxx
+const h1 = <h1>Hello world</h1>;
+```
+can be rewritten without JSX, like this:
+
+```jsx
+const h1 = React.createElement(
+  "h1",
+  null,
+  "Hello world"
+);
+```
+
+When a JSX element is compiled, the compiler transforms the JSX element into the method that you see above: `React.createElement()`. Every JSX element is secretly a call to `React.createElement()`.
+
+We won't go in-depth into how `React.createElement()` works, but check out the React [documentation](https://react.dev/reference/react/createElement) on `createElement()` to learn more.
