@@ -743,3 +743,31 @@ const h1 = React.createElement(
 When a JSX element is compiled, the compiler transforms the JSX element into the method that you see above: `React.createElement()`. Every JSX element is secretly a call to `React.createElement()`.
 
 We won't go in-depth into how `React.createElement()` works, but check out the React [documentation](https://react.dev/reference/react/createElement) on `createElement()` to learn more.
+
+
+Take a look at the following JSX element:
+
+```jsx
+const greatestDivEver = <div>i am div</div>;
+```
+
+In `app.js`, create the above element without using JSX.
+
+
+```jsx
+const greatestDivEver = React.createElement();
+const div = React.createElement(
+  "div",
+  null,
+  "i am div"
+);
+```
+
+**Question**
+
+Why would I use `React.createElement()` instead of JSX?
+
+**Answer**
+
+We would use `React.createElement()` instead of JSX when we do not want to set up compilation for our project, which the use of JSX requires!
+
