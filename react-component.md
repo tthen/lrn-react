@@ -302,5 +302,133 @@ Of course, this doesn’t quite make `<button>Back To Home</button>` render onto
 
 Let’s keep going so we can see how to render it and why the return statement was necessary!
 
+**Question**
+
+In the context of this exercise 21, can we return multiple elements in the render function?
+
+**Answer**
+
+Yes, you can return more than one element in the render function.
+
+In previous versions of React, if you wanted to do so, you had to wrap them inside another element, such as a `<div>` element. For example, you would have to do something like the following,
+
+```jsx
+render() {
+  return (
+    <div>
+      <Element1 />
+      <Element2 />
+    </div>
+  );
+}   
+```
+
+However, the downside is that this added another element to the DOM, even if you did not want to add the `<div>` element.
+
+In the current versions, you can utilize what is known as a React.Fragment, which lets you return multiple elements without the need to create a wrapper element. It would look like the following,
+
+```jsxx
+render() {
+  return (
+    <React.Fragment>
+      <Element1 />
+      <Element2 />
+    </React.Fragment>
+  );
+}
+```
+
+### Importing and Exporting React Components
+
+There’s a little bit more work we have to do before we can use our defined component and have it rendered onto the DOM.
+
+We previously mentioned that a React application typically has two core files: `App.js` and `index.js`. `App.js` file is the top level of your application, and `index.j`s is the entry point.
+
+So far, we’ve defined the component inside of `App.js`, but because `index.js` is the entry point, we have to export it to `index.js` to render.
+
+Components in React are great because they are reusable. We can keep our component pieces separated, organized, and reusable by putting them into separate files and exporting them to where we need them.
+
+To export them, we can prefix it with the export declaration and specify if it is a default or named export. In this case, we’ll stick with default. If you need a refresher on export, peruse the MDN web docs.
+
+After the function component definition, in App.js, we can default export our component like so:
+
+```h=jsx
+export default MyComponent;
+```
+
+We can head into our `index.js` file to import our component from './App':
+
+```jsx
+import MyComponent from './App';
+```
+
+This will allow us to use MyComponent in `index.js`.
+
+**example App.js**
+
+```jsx
+import React from 'react';
+
+function MyComponent() {
+  return <h1>Hello world</h1>;
+}
+
+export default MyComponent;
+```
+
+**Example index.js**
+
+```jsx
+import MyComponent from './App';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+```
+
+### Using and Rendering a Component
+
+Now that we have a defined function component, we can start using it.
+
+We can use it with an HTML-like syntax that resembles a self-closing tag:
+
+```jsx
+<MyComponent />
+```
+
+If you need to nest other components in between, you may also use an opening and corresponding closing tag structure:
+
+```jsx
+<MyComponent>
+  <OtherComponent />
+</MyComponent>
+```
+    
+However, to render our component to the browser, we must rely on the `.createRoot()` and `.render()` methods from the react-dom library. This should be done in our entry point, `index.js`.
+
+First, we call the createRoot method to create a React root container for displaying content. React applications typically have a single root DOM node, and everything inside it is managed by React DOM.
+
+In other words, we give createRoot a DOM element to render in, and React will take over managing the DOM inside it.
+
+Here’s an example:
+
+```jsx
+ReactDOM.createRoot(document.getElementById('app'));
+```
+
+Great! Let’s break it down a bit further:
+
+- `document.getElementById('app')` returns a DOM element from `index.html`.
+- `.createRoot()` receives the DOM element as the first argument and creates a root for it.
+- `.createRoot()` returns a reference to the root container on which you can call methods like `.render()`.
+
+After the root is created, all that’s left to do is call the `.render()` method on the returned root and display the React component like so:
+
+```jsx
+ReactDOM.createRoot(document.getElementById('app')).render(<MyComponent />);
+```
+From here, React will display `<MyComponent />` in the root and make it appear on the screen.
+
+In an application fully built with React, you will only need to do this once. Once this is set up, React will manage the DOM of your application, and any updates to the UI is taken care of efficiently. Adding more components should take place in your top-level `App.js` file.
+
+
 
 
