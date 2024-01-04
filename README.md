@@ -32,3 +32,7 @@ Modern Patterns for Developing React Apps
 - ⌨️ (12:27:55) Debugging the mega project
 
 
+[Software Technical Writing: A Guidebook](https://jamesg.blog/book.pdf)
+
+A Guidebook starts with an introduction to the role of a technical writer. The book then discusses guidance for writing, covering topics from clarity to style to code snippets. Finally, the book discusses how technical writing fits in with the rest of an organisation.
+
