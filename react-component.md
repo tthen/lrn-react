@@ -221,5 +221,86 @@ The class also provides a `componentDidMount()` method which is run right after 
 
 Another method is `componentDidUpdate()`, which runs immediately after any updates to the component occurs. This is typically used for code such as network requests which should be run if any updates occur to the component.
 
+### Name a Functional Component
+
+Good! Creating a JavaScript function is the way to declare a new functional component.
+
+When you declare a new functional component, you need to give that component a name. On our finished component, our component’s name was MyComponent:
+
+```
+function MyComponent() {
+  return <h1>Hello world</h1>;
+}
+```
+
+Function component names must start with capitalization and are conventionally created with PascalCase! Due to how JSX tags are compiled, capitalization indicates that it is a React component rather than an HTML tag.
+
+This is a React-specific nuance! If you are creating a component, be sure to name it starting with a capital letter so it interprets it as a React component. If it begins with a lowercase letter, React will begin looking for a built-in component such as div and input instead and fail.
+
+**Question**
+
+How should component classes be named?
+
+**Answer**
+
+In addition to using UpperCamelCase to name component classes, there are a few other suggestions that you may consider when naming component classes.
+
+Firstly, it can be important to name components in a meaningful and understandable way, such that the names reflect their purpose. This applies not only to React, but to any other classes and objects you name in a program.
+
+In addition, to keep the files organized, it is good to keep only one component per file, and name files after the component they contain. So, if you named your file board.js, then the contained class is most likely named Board. This may not always be applicable, such as if a component is declared in the app.js file, however.
+
+### Function Component Instructions
+
+Let’s review what you’ve learned so far! Find each of these points in `App.js` and `index.js`:
+
+- On line 1 of `App.js` and `index.js`, `import React from 'react'` creates a JavaScript object. This object contains properties that are needed to make React work, such as `React.createElement()`.
+- On line 2 of `index.js` `import ReactDOM from 'react-dom/client'` creates another JavaScript object. This object contains methods that help React interact with the DOM, such as `ReactDOM.createRoot()`.
+- On line 3 of `App.js`, by writing a JavaScript function, a function component was defined. We can’t see this component quite yet, as it’s more of a factory that produces instances of itself when used. If we want to see it, we need to render it into the DOM.
+- Whenever you create a function component, you need to give that function component a name. That name should be written in Pascal case like this: UpperCamelCase.
+
+Something that we haven’t talked about yet is the body of your function component: the pair of curly braces after the function definition and all of the code between those curly braces.
+
+Like all JavaScript functions, this one needs a body. The body will act as a set of instructions, explaining to your function component how it should build a React component.
+
+Here’s what your function body would look like on its own, without the rest of the function declaration syntax. Find it in `App.js`:
+
+```jsx
+return <h1>Hello, this is a function component body.</h1>;
+```
+
+That doesn’t look like a set of instructions explaining how to build a React component! Yet that’s exactly what it is.
+
+Click Next, and we’ll go into how these instructions work.
+
+### The Return Keyword in Functional Components
+
+When we define a functional component, we essentially define a factory that can build the appropriate combination of elements every time we reference its name. It builds it by consulting a set of instructions that you must provide.
+
+If you’re thinking, “That sounds just like what a regular Javascript function is for”, then you’re right! Functional components can be thought of in a very similar vein to regular Javascript functions, except that their job is to assemble a portion of the interface based on instructions given!
+
+Let’s talk a bit more about these instructions.
+
+For starters, these instructions should take the form of a function declaration body. That means that they will be delimited by curly braces, like this:
+
+```jsx
+function Button() {
+  // Instructions go here, between the curly braces.
+}
+```
+
+Our instructions can include a combination of markup, CSS, and JavaScript to produce the desired result. The one thing we must always include is a return statement.
+
+The function is expected to produce JSX code that can be used to render something onto the browser screen. Thus, when we define functional components, we must return a JSX element.
+
+```jsx
+function BackButton() {
+ return <button>Back To Home</button>;
+}
+```
+
+Of course, this doesn’t quite make `<button>Back To Home</button>` render onto the browser screen yet. We’ve only defined our component.
+
+Let’s keep going so we can see how to render it and why the return statement was necessary!
+
 
 
