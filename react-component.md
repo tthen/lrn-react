@@ -429,6 +429,69 @@ From here, React will display `<MyComponent />` in the root and make it appear o
 
 In an application fully built with React, you will only need to do this once. Once this is set up, React will manage the DOM of your application, and any updates to the UI is taken care of efficiently. Adding more components should take place in your top-level `App.js` file.
 
+**Example App.js**
+```jsx
+import React from 'react';
 
+function MyComponent() {
+  return <h1>Hello world</h1>;
+}
+
+export default MyComponent;
+```
+
+**Example index.js**
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import MyComponent from './App';
+
+ReactDOM.createRoot(document.getElementById('app'));
+ReactDOM.createRoot(document.getElementById('app')).render(<MyComponent />);
+```
+
+**Example index.html**
+```jsx
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+  </main>
+	<script src="https://content.codecademy.com/courses/React/react-18-course-bundle.min.js"></script>
+  <script src="/index.compiled.js"></script>
+</body>
+</html>
+```
+
+### Review
+
+In this lesson, you’ve learned about a foundational React concept: components.
+
+Before you go, here’s a recap:
+
+- React applications are made up of components.
+- Components are responsible for rendering pieces of the user interface.
+- To create components and render them, react and reactDOM must be imported.
+- React components can be defined with Javascript functions to make function components.
+- Function component names must start with a capitalized letter, and Pascal case is the adopted naming convention.
+- Function components must return some React elements in JSX syntax.
+- React components can be exported and imported from file to file.
+- A React component can be used by calling the component name in an HTML-like self-closing tag syntax.
+- Rendering a React component requires using .createRoot() to specify a root container and calling the .render() method on it.
+
+Phew! That was a lot, but components are at the core of React and they’re one of the reasons why React is such a powerful tool!
+
+If you would like to practice your learned skills, consider these challenges:
+
+-  Create a new JavaScript file in the file directory. Inside, define a new function component and export it.
+-  
+-  Modify the existing code to render the newly defined component to the browser screen.
 
 
