@@ -5,10 +5,10 @@ Modern Patterns for Developing React Apps
 [Full Stack React Developer Course with Appwrite](https://www.youtube.com/watch?v=Bvwq_S0n2pk)
 
 ⭐️ Contents ⭐️
-⌨️ (00:00:00) React Roadmap
-⌨️ (00:20:05) Create react projects
-⌨️ (00:42:37) Understand the react flow and structure
-⌨️ (01:09:15) Create your own react library and JSX
+- ⌨️ (00:00:00) React Roadmap
+- ⌨️ (00:20:05) Create react projects
+- ⌨️ (00:42:37) Understand the react flow and structure
+- ⌨️ (01:09:15) Create your own react library and JSX
 ⌨️ (01:40:45) Why you need hooks and project
 ⌨️ (02:00:12) Virtual DOM, Fibre and reconciliation
 ⌨️ (02:13:55) Tailwind and Props in reactjs
